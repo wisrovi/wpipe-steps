@@ -4,6 +4,22 @@ All notable changes to WPipe will be documented in this file.
 
 ---
 
+## [0.38.0] - 2026-04-28
+
+### Added
+- **Infrastructure Pack**: Complete infrastructure steps support
+  - `s3_upload`: Upload files to AWS S3 buckets
+  - `docker_container`: Manage Docker containers (start, stop, restart)
+  - `kubernetes_pod_check`: Monitor Kubernetes pod status
+  - `terraform_apply`: Execute Terraform apply for infrastructure changes
+  - `proxmox_vm`: Control virtual machines in Proxmox
+  - `digitalocean_droplet`: Manage DigitalOcean droplets via API
+- Examples for infrastructure Steps in `examples/infrastructure/`
+- Updated README.md with Infrastructure Steps inventory
+- Updated TODO.txt marking Infrastructure pack as completed
+
+---
+
 ## [0.37.0] - 2026-04-28
 
 ### Added

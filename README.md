@@ -96,6 +96,42 @@ Complete inventory of Security Steps available in `wpipe_steps.security`:
 
 ---
 
+## ☁️ Infrastructure Steps Inventory
+
+Complete inventory of Infrastructure Steps available in `wpipe_steps.infrastructure`:
+
+### S3 (package: `wpipe_steps.infrastructure`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `s3_upload` | `from wpipe_steps.infrastructure import S3BucketUploadStep` | Sync | [s3_example.py](examples/infrastructure/s3_example.py) | Upload files to AWS S3 buckets |
+
+### Docker (package: `wpipe_steps.infrastructure`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `docker_container` | `from wpipe_steps.infrastructure import DockerContainerStep` | Sync | [docker_example.py](examples/infrastructure/docker_example.py) | Manage Docker containers (start, stop, restart) |
+
+### Kubernetes (package: `wpipe_steps.infrastructure`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `kubernetes_pod_check` | `from wpipe_steps.infrastructure import KubernetesPodCheckStep` | Sync | [kubernetes_example.py](examples/infrastructure/kubernetes_example.py) | Monitor the status of a Kubernetes pod |
+
+### Terraform (package: `wpipe_steps.infrastructure`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `terraform_apply` | `from wpipe_steps.infrastructure import TerraformApplyStep` | Sync | [terraform_example.py](examples/infrastructure/terraform_example.py) | Execute Terraform apply for infrastructure changes |
+
+### Proxmox (package: `wpipe_steps.infrastructure`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `proxmox_vm` | `from wpipe_steps.infrastructure import ProxmoxVMStep` | Sync | [proxmox_example.py](examples/infrastructure/proxmox_example.py) | Control virtual machines in Proxmox |
+
+### DigitalOcean (package: `wpipe_steps.infrastructure`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `digitalocean_droplet` | `from wpipe_steps.infrastructure import DigitalOceanDropletStep` | Sync | [digitalocean_example.py](examples/infrastructure/digitalocean_example.py) | Manage DigitalOcean droplets via API |
+
+---
+
 ## 📋 Database Steps Inventory
 
 Complete inventory of Database Steps available in `wpipe_steps.database`:
