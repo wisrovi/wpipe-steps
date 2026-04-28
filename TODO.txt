@@ -12,11 +12,11 @@
 
     OAuth2AuthStep: Gestión automática de tokens de acceso.
 
-📊 2. Bases de Datos (Persistence Layer)
+📊 2. Bases de Datos (Persistence Layer) - ✅ REDIS COMPLETADO (v0.34.0)
 
     MySQLQueryStep: Ejecución de scripts en MySQL.
 
-    RedisCacheStep: Guardar/Recuperar datos de alta velocidad (usando tu wredis).
+    ✅ Redis Steps: Completo con wredis (bitmaps, hash, sets, sorted sets, streams, pub/sub, queue, geo, hyperloglog, transactions, pipeline, cache) - sync/async. Publicado en PyPI v0.23.0-v0.34.0.
 
     MongoInsertStep: Inserción de documentos NoSQL (usando tu wmongo).
 
