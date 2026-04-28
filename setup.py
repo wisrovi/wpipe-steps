@@ -14,7 +14,7 @@ if requirements_file.exists():
 
 setup(
     name="wpipe-steps",
-    version="0.6.0",
+    version="0.7.0",
     packages=find_packages(include=["wpipe_steps", "wpipe_steps.*"]),
     install_requires=requirements or [
         "wpipe>=2.3.0",
