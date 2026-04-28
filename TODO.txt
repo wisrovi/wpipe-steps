@@ -26,19 +26,19 @@
 
     CassandraWriteStep: Persistencia en bases de datos distribuidas. - ✅ (v0.36.0)
 
-🛡️ 3. Ciberseguridad (Cyber-Wisrovi Pack)
+🛡️ 3. Ciberseguridad (Cyber-Wisrovi Pack) - ✅ COMPLETADO (v0.37.0)
 
-    Fail2BanCheckStep: Verificar si una IP está bloqueada.
+    ✅ Fail2BanCheckStep: Verificar si una IP está bloqueada.
 
-    NmapScanStep: Escaneo rápido de puertos de un objetivo.
+    ✅ NmapScanStep: Escaneo rápido de puertos de un objetivo.
 
-    ShodanSearchStep: Buscar vulnerabilidades en Shodan.
+    ✅ ShodanSearchStep: Buscar vulnerabilidades en Shodan.
 
-    HashGeneratorStep: Creación de hashes (SHA256, MD5) para archivos.
+    ✅ HashGeneratorStep: Creación de hashes (SHA256, MD5) para archivos.
 
-    VaultSecretsStep: Recuperar credenciales de HashiCorp Vault.
+    ✅ VaultSecretsStep: Recuperar credenciales de HashiCorp Vault.
 
-    WafFilterStep: Limpieza de strings contra inyecciones SQL/XSS básica.
+    ✅ WafFilterStep: Limpieza de strings contra inyecciones SQL/XSS básica.
 
 ☁️ 4. Infraestructura y Cloud
 

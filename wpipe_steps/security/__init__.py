@@ -6,9 +6,9 @@ from .vault import VaultSecretsStep
 from .waf import WafFilterStep
 
 __all__ = [
-    "Fail2BanCheckStep", 
-    "NmapScanStep", 
-    "ShodanSearchStep", 
+    "Fail2BanCheckStep",
+    "NmapScanStep",
+    "ShodanSearchStep",
     "HashGeneratorStep",
     "VaultSecretsStep",
     "WafFilterStep"

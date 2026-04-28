@@ -7,24 +7,38 @@ sys.path.append(str(Path(__file__).parent.parent.parent))
 from wpipe import Pipeline
 from wpipe_steps.security import NmapScanStep
 
-def main():
-    pipeline = Pipeline(pipeline_name="Nmap_Security_Demo", verbose=True)
+def print_result(data):
+    """Step to print the Nmap scan result."""
+    scan = data.get("nmap_scan", {})
+    if scan.get("success"):
+        print(f"\n✅ Scan Complete!")
+        print(f"Target: {scan['target']}")
+        for result in scan.get("results", []):
+            print(f"Host: {result['host']} - State: {result['state']}")
+    else:
+        print(f"\n❌ Scan Failed: {scan.get('error')}")
+    return data
 
-    # Example: Scan localhost for common ports
-    scan_step = NmapScanStep.as_step(
-        name="Local_Port_Scan",
+def main():
+    # 1. Create the pipeline
+    pipeline = Pipeline(pipeline_name="Nmap_Scan_Demo", verbose=True)
+
+    # 2. Define steps
+    scan_target = NmapScanStep.as_step(
+        name="Scan_Target_Host",
         target="127.0.0.1",
-        ports="80,443,3306"
+        ports="22,80,443",
+        arguments="-sV"
     )
 
     pipeline.set_steps([
-        scan_step,
-        lambda d: print(f"\n🔍 Nmap Results for {d['nmap_scan']['target']}: {d['nmap_scan']['results']}") or d
+        scan_target,
+        print_result
     ])
 
-    print("🚀 Nmap Step defined. (Execution requires nmap installed)")
-    # Run
-    # pipeline.run({})
+    # 3. Run
+    print("🚀 Starting Nmap Scan Demo Pipeline...")
+    pipeline.run({})
 
 if __name__ == "__main__":
     main()

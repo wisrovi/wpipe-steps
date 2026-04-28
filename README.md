@@ -60,6 +60,42 @@ Complete inventory of Connectivity Steps available in `wpipe_steps.connectivity`
 
 ---
 
+## 🛡️ Security Steps Inventory
+
+Complete inventory of Security Steps available in `wpipe_steps.security`:
+
+### Fail2Ban (package: `wpipe_steps.security`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `fail2ban_check` | `from wpipe_steps.security import Fail2BanCheckStep` | Sync | [fail2ban_example.py](examples/security/fail2ban_example.py) | Check if IP is banned by Fail2Ban |
+
+### Nmap (package: `wpipe_steps.security`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `nmap_scan` | `from wpipe_steps.security import NmapScanStep` | Sync | [nmap_example.py](examples/security/nmap_example.py) | Perform Nmap port scans |
+
+### Shodan (package: `wpipe_steps.security`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `shodan_search` | `from wpipe_steps.security import ShodanSearchStep` | Sync | [shodan_example.py](examples/security/shodan_example.py) | Search host information on Shodan |
+
+### Hash (package: `wpipe_steps.security`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `hash_generator` | `from wpipe_steps.security import HashGeneratorStep` | Sync | [hash_example.py](examples/security/hash_example.py) | Generate cryptographic hashes of strings or files |
+
+### Vault (package: `wpipe_steps.security`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `vault_secrets` | `from wpipe_steps.security import VaultSecretsStep` | Sync | [vault_example.py](examples/security/vault_example.py) | Retrieve secrets from HashiCorp Vault |
+
+### WAF (package: `wpipe_steps.security`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `waf_filter` | `from wpipe_steps.security import WafFilterStep` | Sync | [waf_example.py](examples/security/waf_example.py) | Filter strings against SQL Injection and XSS patterns |
+
+---
+
 ## 📋 Database Steps Inventory
 
 Complete inventory of Database Steps available in `wpipe_steps.database`:

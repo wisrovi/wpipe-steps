@@ -1,15 +1,22 @@
 import os
 from typing import Any, Dict, Optional
+from wpipe import step, to_obj
 from wpipe_steps.core.base import BaseStep
 
+@step(
+    name="fail2ban_check",
+    version="v1.0",
+    description="Check if IP is banned by Fail2Ban",
+    tags=["security", "fail2ban", "sync"]
+)
 class Fail2BanCheckStep(BaseStep):
     """
     Step for checking if an IP is currently banned by Fail2Ban.
     Analyzes the fail2ban log file for 'Ban' events without 'Unban' counterparts.
     """
-    
+
     def __init__(
-        self, 
+        self,
         ip_to_check: str,
         log_path: str = "/var/log/fail2ban.log",
         response_key: str = "fail2ban_status",
@@ -21,7 +28,8 @@ class Fail2BanCheckStep(BaseStep):
         self.log_path = log_path
         self.response_key = response_key
 
-    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    @to_obj
+    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
         if not os.path.exists(self.log_path):
             data[self.response_key] = {
                 "success": False,
@@ -32,9 +40,9 @@ class Fail2BanCheckStep(BaseStep):
 
         try:
             is_banned = False
-            # Very basic log analysis: find last occurrence of the IP
             with open(self.log_path, 'r') as f:
-                for line in reversed(f.readlines()):
+                lines = f.readlines()
+                for line in reversed(lines):
                     if self.ip_to_check in line:
                         if "Ban" in line:
                             is_banned = True
@@ -42,7 +50,7 @@ class Fail2BanCheckStep(BaseStep):
                         if "Unban" in line:
                             is_banned = False
                             break
-            
+
             data[self.response_key] = {
                 "success": True,
                 "ip": self.ip_to_check,
@@ -50,7 +58,7 @@ class Fail2BanCheckStep(BaseStep):
                 "log_analyzed": self.log_path
             }
             return data
-            
+
         except Exception as e:
             data[self.response_key] = {"success": False, "error": str(e)}
             raise RuntimeError(f"Fail2Ban Check failed: {str(e)}")

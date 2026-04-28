@@ -4,6 +4,22 @@ All notable changes to WPipe will be documented in this file.
 
 ---
 
+## [0.37.0] - 2026-04-28
+
+### Added
+- **Security Pack**: Complete security steps support
+  - `fail2ban_check`: Check if IP is banned by Fail2Ban
+  - `nmap_scan`: Perform Nmap port scans
+  - `shodan_search`: Search host information on Shodan
+  - `hash_generator`: Generate cryptographic hashes of strings or files
+  - `vault_secrets`: Retrieve secrets from HashiCorp Vault
+  - `waf_filter`: Filter strings against SQL Injection and XSS patterns
+- Examples for security Steps in `examples/security/`
+- Updated README.md with Security Steps inventory
+- Updated TODO.txt marking Security pack as completed
+
+---
+
 ## [0.36.0] - 2026-04-28
 
 ### Added

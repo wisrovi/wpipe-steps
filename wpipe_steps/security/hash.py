@@ -1,19 +1,26 @@
 import hashlib
 import os
 from typing import Any, Dict, Optional, Literal
+from wpipe import step, to_obj
 from wpipe_steps.core.base import BaseStep
 
+@step(
+    name="hash_generator",
+    version="v1.0",
+    description="Generate cryptographic hashes of strings or files",
+    tags=["security", "hash", "sync"]
+)
 class HashGeneratorStep(BaseStep):
     """
     Step for generating cryptographic hashes of strings or files.
     Supports MD5, SHA1, SHA256, SHA512.
     """
-    
+
     def __init__(
-        self, 
+        self,
         algorithm: Literal["md5", "sha1", "sha256", "sha512"] = "sha256",
-        input_key: Optional[str] = None, # Key in 'data' containing the string
-        file_path: Optional[str] = None, # Path to the file to hash
+        input_key: Optional[str] = None,
+        file_path: Optional[str] = None,
         response_key: str = "hash_result",
         name: Optional[str] = None,
         version: str = "v1.0"
@@ -24,14 +31,14 @@ class HashGeneratorStep(BaseStep):
         self.file_path = file_path
         self.response_key = response_key
 
-    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    @to_obj
+    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
         h = hashlib.new(self.algorithm)
-        
+
         try:
             if self.file_path:
                 if not os.path.exists(self.file_path):
                     raise FileNotFoundError(f"File not found: {self.file_path}")
-                # Read file in chunks to avoid memory issues with large files
                 with open(self.file_path, "rb") as f:
                     for chunk in iter(lambda: f.read(4096), b""):
                         h.update(chunk)
@@ -47,7 +54,7 @@ class HashGeneratorStep(BaseStep):
                 "hash": h.hexdigest()
             }
             return data
-            
+
         except Exception as e:
             data[self.response_key] = {"success": False, "error": str(e)}
             raise RuntimeError(f"Hash Generation failed: {str(e)}")
