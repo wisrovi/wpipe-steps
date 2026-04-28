@@ -16,5 +16,8 @@ Demonstrates how to insert documents into MongoDB collections using `MongoInsert
 ### 4. SQLite Audit (`sqlite_example.py`)
 Demonstrates how to save local audit logs and data snapshots into a SQLite database using `SQLiteAuditStep`.
 
+### 5. ClickHouse Bulk (`clickhouse_example.py`)
+Demonstrates how to perform massive data insertions into ClickHouse using `ClickHouseBulkStep`.
+
 ---
 *Each example requires a running database instance to execute (except SQLite).*

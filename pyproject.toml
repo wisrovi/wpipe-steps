@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "wpipe-steps"
-version = "0.12.0"
+version = "0.13.0"
 authors = [
     { name = "William Steve Rodriguez Villamizar", email = "wisrovi.rodriguez@gmail.com" }
 ]
@@ -39,6 +39,7 @@ dependencies = [
     "wredis>=1.0.0",
     "wmysql>=1.0.0",
     "wmongo>=1.0.0",
+    "wclickhouse>=1.0.0",
 ]
 
 [project.optional-dependencies]

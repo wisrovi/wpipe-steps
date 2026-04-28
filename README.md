@@ -13,7 +13,7 @@ The library is organized into logical "Packs" based on functionality:
 | Pack | Namespace | Description |
 |------|-----------|-------------|
 | 🌐 **Connectivity** | `wpipe_steps.connectivity` | **HttpRequestStep**: REST client. <br> **GraphQLQueryStep**: GraphQL executor. <br> **WebhookTriggerStep**: Webhook notifier. <br> **SftpTransferStep**: SFTP transfer. <br> **RSSParserStep**: RSS parser. <br> **OAuth2AuthStep**: OAuth2 manager. |
-| 📊 **Database** | `wpipe_steps.database` | **MySQLQueryStep**: MySQL SQL executor. <br> **RedisCacheStep**: Redis manager. <br> **MongoInsertStep**: MongoDB document inserter. <br> **SQLiteAuditStep**: Local SQLite audit logger. |
+| 📊 **Database** | `wpipe_steps.database` | **MySQLQueryStep**: MySQL SQL executor. <br> **RedisCacheStep**: Redis manager. <br> **MongoInsertStep**: MongoDB document inserter. <br> **SQLiteAuditStep**: Local SQLite audit logger. <br> **ClickHouseBulkStep**: ClickHouse massive data inserter. |
 | 🛡️ **Security** | `wpipe_steps.security` | Nmap, Shodan, Vault, Inyection Filtering. |
 | ☁️ **Infrastructure** | `wpipe_steps.infrastructure` | AWS S3, Docker, Kubernetes, Terraform. |
 | 📧 **Communication** | `wpipe_steps.communication` | Telegram, Slack, Discord, SendGrid, Twilio. |
