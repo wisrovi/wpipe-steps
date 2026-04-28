@@ -10,5 +10,8 @@ Shows how to perform standard REST API calls (GET, POST, etc.) using `HttpReques
 ### 2. GraphQL Query (`graphql_example.py`)
 Demonstrates how to execute GraphQL queries with variables and headers using `GraphQLQueryStep`.
 
+### 3. Webhook Trigger (`webhook_example.py`)
+Demonstrates how to trigger external webhooks with custom payloads using `WebhookTriggerStep`.
+
 ---
 *Each example can be run directly from the terminal.*
