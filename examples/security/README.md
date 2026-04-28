@@ -13,5 +13,11 @@ Demonstrates how to perform port scans using Nmap (Requires `nmap` and `python-n
 ### 3. Shodan Search (`shodan_example.py`)
 Demonstrates how to retrieve network intelligence from Shodan (Requires `shodan`).
 
+### 4. Hash Generation (`hash_example.py`)
+Shows how to generate SHA256 hashes of strings or files.
+
+### 5. Vault Secrets (`vault_example.py`)
+Demonstrates how to retrieve sensitive credentials from HashiCorp Vault (Requires `hvac`).
+
 ---
 *Note: Some examples might require root access or specific system files.*
