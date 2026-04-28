@@ -1,16 +1,16 @@
-🌐 1. Conectividad y APIs (El "Web Master" Pack)
+🌐 1. Conectividad y APIs (El "Web Master" Pack) - ✅ COMPLETADO (v0.35.0)
 
-    HttpRequestStep: Un wrapper potente de requests con reintentos automáticos.
+    ✅ HttpRequestStep: REST client con reintentos automáticos.
 
-    GraphQLQueryStep: Para consultar endpoints modernos de GraphQL.
+    ✅ GraphQLQueryStep: Ejecutor de queries/mutations GraphQL.
 
-    WebhookTriggerStep: Para enviar datos a servicios externos.
+    ✅ WebhookTriggerStep: Notificador de webhooks.
 
-    SftpTransferStep: Subida y bajada de archivos segura.
+    ✅ SftpTransferStep: Transferencia segura de archivos (upload/download).
 
-    RSSParserStep: Monitor de noticias o feeds de blogs.
+    ✅ RSSParserStep: Parser de feeds RSS/Atom.
 
-    OAuth2AuthStep: Gestión automática de tokens de acceso.
+    ✅ OAuth2AuthStep: Gestor automático de tokens OAuth2.
 
 📊 2. Bases de Datos (Persistence Layer) - ✅ REDIS COMPLETADO (v0.34.0)
 

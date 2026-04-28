@@ -1,43 +1,63 @@
+"""
+GraphQL Query Step - Execute GraphQL queries and mutations.
+"""
+
 import requests
 from typing import Any, Dict, Optional
+from wpipe import step, to_obj
 from wpipe_steps.core.base import BaseStep
 
+
+class GraphQLContext(BaseModel):
+    """Context for GraphQL operations."""
+    url: str
+    query: str
+    variables: Optional[Dict[str, Any]] = None
+    headers: Optional[Dict[str, str]] = None
+    timeout: int = 15
+
+
+@step(
+    name="graphql_query",
+    version="v1.0",
+    description="GraphQL query executor",
+    tags=["connectivity", "graphql", "api", "sync"]
+)
 class GraphQLQueryStep(BaseStep):
-    """
-    Step for executing GraphQL queries and mutations.
-    """
-    
+    """Step for executing GraphQL queries and mutations."""
+
     def __init__(
-        self, 
-        url: str, 
-        query: str, 
-        variables: Optional[Dict[str, Any]] = None,
-        headers: Optional[Dict[str, str]] = None,
+        self,
         response_key: str = "graphql_response",
-        timeout: int = 15,
         name: Optional[str] = None,
         version: str = "v1.0"
     ):
-        super().__init__(name, version)
-        self.url = url
-        self.query = query
-        self.variables = variables or {}
-        self.headers = headers or {}
+        super().__init__()
         self.response_key = response_key
-        self.timeout = timeout
+        self.name = name or "graphql_query"
+        self.version = version
 
-    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    @to_obj(GraphQLContext)
+    def __call__(self, data: GraphQLContext) -> Dict[str, Any]:
+        """Execute the GraphQL query/mutation.
+        
+        Args:
+            data: Context containing url, query, variables, headers, timeout.
+            
+        Returns:
+            Dictionary with operation result.
+        """
         payload = {
-            "query": self.query,
-            "variables": self.variables
+            "query": data.query,
+            "variables": data.variables or {}
         }
         
         try:
             response = requests.post(
-                self.url,
+                data.url,
                 json=payload,
-                headers=self.headers,
-                timeout=self.timeout
+                headers=data.headers,
+                timeout=data.timeout
             )
             
             result = response.json()

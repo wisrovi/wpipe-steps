@@ -12,7 +12,7 @@ The library is organized into logical "Packs" based on functionality:
 
 | Pack | Namespace | Description |
 |------|-----------|-------------|
-| 🌐 **Connectivity** | `wpipe_steps.connectivity` | **HttpRequestStep**: REST client. <br> **GraphQLQueryStep**: GraphQL executor. <br> **WebhookTriggerStep**: Webhook notifier. <br> **SftpTransferStep**: SFTP transfer. <br> **RSSParserStep**: RSS parser. <br> **OAuth2AuthStep**: OAuth2 manager. |
+| 🌐 **Connectivity** | `wpipe_steps.connectivity` | **HttpRequestStep**: REST client with automatic retries. <br> **GraphQLQueryStep**: GraphQL executor. <br> **WebhookTriggerStep**: Webhook notifier. <br> **SftpTransferStep**: SFTP transfer (upload/download). <br> **RSSParserStep**: RSS/Atom feed parser. <br> **OAuth2AuthStep**: OAuth2 token manager. |
 | 📊 **Database** | `wpipe_steps.database` | **MySQLQueryStep**: MySQL SQL executor. <br> **Redis Steps**: Full Redis support via wredis (bitmaps, hash, sets, sorted sets, streams, pub/sub, queue, geo, hyperloglog, transactions, pipeline, cache decorators) - sync/async. <br> **MongoInsertStep**: MongoDB document inserter. <br> **SQLiteAuditStep**: Local SQLite audit logger. <br> **ClickHouseBulkStep**: ClickHouse massive data inserter. <br> **CassandraWriteStep**: Cassandra data writer. |
 | 🛡️ **Security** | `wpipe_steps.security` | **Fail2BanCheckStep**: IP ban status verifier. <br> **NmapScanStep**: Port scanning discovery. <br> **ShodanSearchStep**: Network intelligence search. <br> **HashGeneratorStep**: Hash generator. <br> **VaultSecretsStep**: Vault secrets retriever. <br> **WafFilterStep**: SQLi/XSS input filter. |
 | ☁️ **Infrastructure** | `wpipe_steps.infrastructure` | **S3BucketUploadStep**: AWS S3 file uploader. |
@@ -21,6 +21,42 @@ The library is organized into logical "Packs" based on functionality:
 | 🎙️ **Multimedia** | `wpipe_steps.multimedia` | Audio Normalization, Whisper AI, TTS. |
 | 🤖 **AI** | `wpipe_steps.ai` | OpenAI, HuggingFace, Sentiment Analysis. |
 | ⚙️ **System** | `wpipe_steps.system` | Resource Monitoring, Shell Exec, Health Checks. |
+
+---
+
+## 📋 Connectivity Steps Inventory
+
+Complete inventory of Connectivity Steps available in `wpipe_steps.connectivity`:
+
+### HttpRequestStep (package: `wpipe_steps.connectivity`)
+| Step Name | Type | Description |
+|-----------|------|-------------|
+| `http_request` | Sync | HTTP client with GET, POST, PUT, DELETE, PATCH |
+
+### GraphQLQueryStep (package: `wpipe_steps.connectivity`)
+| Step Name | Type | Description |
+|-----------|------|-------------|
+| `graphql_query` | Sync | Execute GraphQL queries and mutations |
+
+### WebhookTriggerStep (package: `wpipe_steps.connectivity`)
+| Step Name | Type | Description |
+|-----------|------|-------------|
+| `webhook_trigger` | Sync | Send data to external webhooks |
+
+### SftpTransferStep (package: `wpipe_steps.connectivity`)
+| Step Name | Type | Description |
+|-----------|------|-------------|
+| `sftp_transfer` | Sync | Upload/download files via SFTP |
+
+### RSSParserStep (package: `wpipe_steps.connectivity`)
+| Step Name | Type | Description |
+|-----------|------|-------------|
+| `rss_parser` | Sync | Parse RSS/Atom feeds and extract entries |
+
+### OAuth2AuthStep (package: `wpipe_steps.connectivity`)
+| Step Name | Type | Description |
+|-----------|------|-------------|
+| `oauth2_auth` | Sync | Retrieve and manage OAuth2 access tokens |
 
 ---
 

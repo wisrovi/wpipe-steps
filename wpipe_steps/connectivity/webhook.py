@@ -1,45 +1,68 @@
+"""
+Webhook Trigger Step - Send data to external services.
+"""
+
 import requests
 from typing import Any, Dict, Optional
+from wpipe import step, to_obj
 from wpipe_steps.core.base import BaseStep
 
+
+class WebhookContext(BaseModel):
+    """Context for webhook operations."""
+    webhook_url: str
+    payload_key: Optional[str] = None
+    custom_payload: Optional[Dict[str, Any]] = None
+    headers: Optional[Dict[str, str]] = None
+
+
+@step(
+    name="webhook_trigger",
+    version="v1.0",
+    description="Webhook notifier",
+    tags=["connectivity", "webhook", "notification", "sync"]
+)
 class WebhookTriggerStep(BaseStep):
-    """
-    Step for triggering external webhooks.
+    """Step for triggering external webhooks.
+    
     Optimized for simple "fire and forget" or basic confirmation notifications.
     """
-    
+
     def __init__(
-        self, 
-        webhook_url: str, 
-        payload_key: Optional[str] = None,
-        custom_payload: Optional[Dict[str, Any]] = None,
-        headers: Optional[Dict[str, str]] = None,
+        self,
         response_key: str = "webhook_status",
         name: Optional[str] = None,
         version: str = "v1.0"
     ):
-        super().__init__(name, version)
-        self.webhook_url = webhook_url
-        self.payload_key = payload_key
-        self.custom_payload = custom_payload
-        self.headers = headers or {"Content-Type": "application/json"}
+        super().__init__()
         self.response_key = response_key
+        self.name = name or "webhook_trigger"
+        self.version = version
 
-    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    @to_obj(WebhookContext)
+    def __call__(self, data: WebhookContext) -> Dict[str, Any]:
+        """Trigger the webhook with payload.
+        
+        Args:
+            data: Context containing webhook_url, payload_key, custom_payload, headers.
+            
+        Returns:
+            Dictionary with operation result.
+        """
         # Determine payload: specific key from data, custom payload, or entire data
-        if self.payload_key:
-            payload = data.get(self.payload_key, {})
-        elif self.custom_payload:
-            payload = self.custom_payload
+        if data.payload_key:
+            payload = data.get(data.payload_key, {})
+        elif data.custom_payload:
+            payload = data.custom_payload
         else:
             # Avoid circular references or massive objects if sending entire data
             payload = {k: v for k, v in data.items() if isinstance(v, (str, int, float, bool, dict, list))}
-
+        
         try:
             response = requests.post(
-                self.webhook_url,
+                data.webhook_url,
                 json=payload,
-                headers=self.headers,
+                headers=data.headers or {"Content-Type": "application/json"},
                 timeout=10
             )
             

@@ -1,46 +1,64 @@
+"""
+HTTP Request Step - RESTful API client with automatic retries.
+"""
+
 import requests
-from typing import Any, Dict, Optional, Union
+from typing import Any, Dict, Optional
+from wpipe import step, to_obj
 from wpipe_steps.core.base import BaseStep
 
+
+class HttpRequestContext(BaseModel):
+    """Context for HTTP request operations."""
+    url: str
+    method: str = "GET"
+    headers: Optional[Dict[str, str]] = None
+    params: Optional[Dict[str, Any]] = None
+    json_data: Optional[Dict[str, Any]] = None
+    timeout: int = 10
+
+
+@step(
+    name="http_request",
+    version="v1.0",
+    description="HTTP client with automatic retries",
+    tags=["connectivity", "http", "api", "sync"]
+)
 class HttpRequestStep(BaseStep):
-    """
-    A powerful HTTP client step based on the requests library.
+    """A powerful HTTP client step based on the requests library.
+    
     Supports GET, POST, PUT, DELETE, and PATCH methods.
     """
-    
+
     def __init__(
-        self, 
-        url: str, 
-        method: str = "GET", 
-        headers: Optional[Dict[str, str]] = None,
-        params: Optional[Dict[str, Any]] = None,
-        json_data: Optional[Dict[str, Any]] = None,
+        self,
         response_key: str = "http_response",
-        timeout: int = 10,
         name: Optional[str] = None,
         version: str = "v1.0"
     ):
-        super().__init__(name, version)
-        self.url = url
-        self.method = method.upper()
-        self.headers = headers or {}
-        self.params = params or {}
-        self.json_data = json_data or {}
+        super().__init__()
         self.response_key = response_key
-        self.timeout = timeout
+        self.name = name or "http_request"
+        self.version = version
 
-    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Executes the HTTP request and stores the response in the data dictionary.
+    @to_obj(HttpRequestContext)
+    def __call__(self, data: HttpRequestContext) -> Dict[str, Any]:
+        """Execute the HTTP request and store the response in the data dictionary.
+        
+        Args:
+            data: Context containing url, method, headers, params, json_data, timeout.
+            
+        Returns:
+            Dictionary with operation result.
         """
         try:
             response = requests.request(
-                method=self.method,
-                url=self.url,
-                headers=self.headers,
-                params=self.params,
-                json=self.json_data if self.method in ["POST", "PUT", "PATCH"] else None,
-                timeout=self.timeout
+                method=data.method,
+                url=data.url,
+                headers=data.headers,
+                params=data.params,
+                json=data.json_data if data.method in ["POST", "PUT", "PATCH"] else None,
+                timeout=data.timeout
             )
             
             # Attempt to parse as JSON, otherwise keep as text
@@ -48,11 +66,11 @@ class HttpRequestStep(BaseStep):
                 content = response.json()
             except ValueError:
                 content = response.text
-
+            
             data[self.response_key] = {
                 "status_code": response.status_code,
                 "content": content,
-                "url": response.url,
+                "url": str(response.url),
                 "success": response.ok
             }
             
