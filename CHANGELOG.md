@@ -4,6 +4,19 @@ All notable changes to WPipe will be documented in this file.
 
 ---
 
+## [0.23.0] - 2026-04-28
+
+### Added
+- **Redis Bitmaps Module**: Complete bitmap operations support
+  - `redis_bitmap_set_bit_sync` / `redis_bitmap_set_bit_async`: Set bit at offset
+  - `redis_bitmap_get_bit_sync` / `redis_bitmap_get_bit_async`: Get bit at offset
+  - `redis_bitmap_count_bits_sync` / `redis_bitmap_count_bits_async`: Count set bits
+  - `redis_bitmap_get_ttl_sync` / `redis_bitmap_get_ttl_async`: Get TTL
+  - `redis_bitmap_extend_ttl_sync` / `redis_bitmap_extend_ttl_async`: Extend TTL
+- Examples for bitmaps module in `examples/database/redis/bitmaps/`
+
+---
+
 ## [1.5.1] - 2026-04-10
 
 ### Fixed

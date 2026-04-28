@@ -9,18 +9,32 @@ Cada vez que se añada un nuevo **Estado (Step)**, se debe seguir este ciclo obl
 1.  **Implementación Quirúrgica**: 
     *   Desarrollar el nuevo Step en su subpaquete correspondiente dentro de `wpipe_steps/`.
     *   Heredar obligatoriamente de `BaseStep`.
+    *   Asegurarse de que el nuevo Step sea compatible con el Factory Pattern.
+    *   Asegurarse de que el nuevo Step sea compatible con el Type Hinting.
+    *   Asegurarse de que el nuevo Step no use librerias que no sean de la suit, es decir, en lugar de usar redis usar wredis, en lugar de postgresql usar wpostgresql, etc.
 2.  **Espejo de Ejemplo**:
     *   Crear un script de ejemplo en la carpeta homóloga dentro de `examples/`.
     *   El ejemplo debe ser funcional y auto-explicativo.
+    *   Junto al ejemplo se debe crear un archivo `requirements.txt` con las dependencias necesarias para ejecutar el ejemplo.
+    *   Junto al ejemplo se debe crear un archivo `README.md` con la descripción del ejemplo.
+    *   Seguir estrictamente la sección 📝u Creación de Estados (Steps) para estructura de  
+     Steps, incluyendo opcionalidad de timeouts y soporte para contextos Pydantic.
+    *   Todos los ejemplos deben ser funcionales
 3.  **Incremento de Versión Secuencial**:
     *   La versión se incrementará en el segundo dígito por cada nuevo estado.
-    *   Secuencia: `0.1.0` (Base) -> `0.2.0` (Estado 1) -> `0.3.0` (Estado 2) ... -> `0.100.0`.
-    *   Actualizar `pyproject.toml` y `setup.py`.
+    *   Secuencia: `0.1.0` (Base) -> `0.2.0` (Estado 1) -> `0.3.0` (Estado 2) ... -> `0.500.0`.
+    *   Actualizar `pyproject.toml`, `setup.py`, `README.md` y `wpipe_steps/__init__.py`.
 4.  **Actualización de Documentación**:
     *   Actualizar el `README.md` principal incluyendo el nuevo Step en las tablas de referencia.
     *   Añadir una breve descripción de su uso.
 5.  **Publicación a PyPI**:
     *   Una vez cumplidos los pasos anteriores, se debe realizar la publicación oficial.
+6.  **Actualización de Changelog**:
+    *   Actualizar el `CHANGELOG.md` con la nueva versión y los cambios realizados.
+7.  **Commit**:
+    *   Realizar un commit con todos los cambios realizadosn en perfecto ingles, iniciando con [FEATURE], [FIX], [CHORE], [DOCS], [TEST], [REFACTOR], [STYLE], [PERF], [BUILD], [CI], [UPGRADE], [DOWNGRADE], [MIGRATION], [BREAKING CHANGE].
+8.  **Push**:
+    *   Realizar un push a la rama `main`.
 
 ## 📂 Estructura de Carpetas Simétrica
 
@@ -39,6 +53,9 @@ wpipe_steps/                            examples/
 -   **BaseStep**: Todo estado debe ser una clase que herede de `wpipe_steps.core.base.BaseStep`.
 -   **Factory Pattern**: Se debe promover el uso de `.as_step()` para la integración en pipelines.
 -   **Type Hinting**: Uso estricto de tipos para garantizar la robustez.
+-   **No external libraries**: No se deben usar librerias que no sean de la suit, es decir, en lugar de usar redis usar wredis, en lugar de postgresql usar wpostgresql, etc.
+-   **Docstrings-google**: Todo estado debe tener docstrings en formato google.
+
 
 ---
 *Diseñado para mantener la excelencia técnica en cada iteración.*

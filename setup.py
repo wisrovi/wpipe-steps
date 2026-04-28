@@ -4,14 +4,18 @@ from setuptools import setup, find_packages
 
 # Read README for long description
 this_directory = Path(__file__).parent
-long_description = (this_directory / "README.md").read_text() if (this_directory / "README.md").exists() else ""
+long_description = (
+    (this_directory / "README.md").read_text()
+    if (this_directory / "README.md").exists()
+    else ""
+)
 
 setup(
     name="wpipe-steps",
-    version="0.22.0",
+    version="0.23.0",
     packages=find_packages(include=["wpipe_steps", "wpipe_steps.*"]),
     install_requires=[
-        "wpipe>=2.3.0",
+        "wpipe>=1.0.0",
         "pydantic>=2.0.0",
         "requests>=2.31.0",
     ],
