@@ -16,5 +16,8 @@ Demonstrates how to list and check status of Kubernetes Pods using `KubernetesPo
 ### 4. Terraform Apply (`terraform_example.py`)
 Demonstrates how to apply Terraform configurations using `TerraformApplyStep` (Requires `python-terraform`).
 
+### 5. Proxmox VM Management (`proxmox_example.py`)
+Demonstrates how to control Proxmox virtual machines via API using `ProxmoxVMStep` (Requires `proxmoxer`).
+
 ---
 *Note: Cloud examples require valid API keys or configuration files.*

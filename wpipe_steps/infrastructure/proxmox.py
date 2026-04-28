@@ -1,29 +1,22 @@
-from typing import Any, Dict, Optional
-from wpipe import step, to_obj
+from typing import Any, Dict, Optional, Literal
 from wpipe_steps.core.base import BaseStep
 
-@step(
-    name="proxmox_vm",
-    version="v1.0",
-    description="Control virtual machines in Proxmox",
-    tags=["infrastructure", "proxmox", "sync"]
-)
 class ProxmoxVMStep(BaseStep):
     """
-    Step for controlling Proxmox VMs.
-    Requires 'proxmoxer' library.
+    Step for managing Proxmox Virtual Machines.
+    Supports 'start', 'stop', 'shutdown', and 'status' operations.
     """
-
+    
     def __init__(
-        self,
+        self, 
         host: str,
         user: str,
         password: str,
+        vmid: int,
         node: str,
-        vm_id: int,
-        action: str = "status",  # start, stop, restart, status
+        operation: Literal["start", "stop", "shutdown", "status"] = "status",
         verify_ssl: bool = False,
-        response_key: str = "proxmox_vm_status",
+        response_key: str = "proxmox_status",
         name: Optional[str] = None,
         version: str = "v1.0"
     ):
@@ -31,45 +24,44 @@ class ProxmoxVMStep(BaseStep):
         self.host = host
         self.user = user
         self.password = password
+        self.vmid = vmid
         self.node = node
-        self.vm_id = vm_id
-        self.action = action
+        self.operation = operation
         self.verify_ssl = verify_ssl
         self.response_key = response_key
 
-    @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
         proxmoxer = self.ensure_dependency("proxmoxer")
-
+        from proxmoxer import ProxmoxAPI
+        
         try:
-            proxmox = proxmoxer.ProxmoxAPI(
-                self.host,
-                user=self.user,
-                password=self.password,
+            proxmox = ProxmoxAPI(
+                self.host, 
+                user=self.user, 
+                password=self.password, 
                 verify_ssl=self.verify_ssl
             )
-
-            vm = proxmox.nodes(self.node).qemu(self.vm_id)
-
-            if self.action == "start":
-                result = vm.status.start.post()
-            elif self.action == "stop":
-                result = vm.status.stop.post()
-            elif self.action == "restart":
+            
+            vm = proxmox.nodes(self.node).qemu(self.vmid)
+            
+            result_info = {}
+            if self.operation == "status":
+                result_info = vm.status.current.get()
+            elif self.operation == "start":
+                vm.status.start.post()
+                result_info = {"action": "start_initiated"}
+            elif self.operation == "stop":
                 vm.status.stop.post()
-                result = vm.status.start.post()
-            else:  # status
-                result = vm.status.current.get()
-
+                result_info = {"action": "stop_initiated"}
+            
             data[self.response_key] = {
                 "success": True,
-                "vm_id": self.vm_id,
-                "node": self.node,
-                "action": self.action,
-                "result": result
+                "vmid": self.vmid,
+                "operation": self.operation,
+                "info": result_info
             }
             return data
-
+            
         except Exception as e:
             data[self.response_key] = {"success": False, "error": str(e)}
-            raise RuntimeError(f"Proxmox VM operation failed: {str(e)}")
+            raise RuntimeError(f"Proxmox operation failed: {str(e)}")
