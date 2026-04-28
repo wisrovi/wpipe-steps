@@ -1,11 +1,10 @@
-import pymysql
-from typing import Any, Dict, Optional, List, Union
+from wmysql import Wmysql
+from typing import Any, Dict, Optional, Union
 from wpipe_steps.core.base import BaseStep
 
 class MySQLQueryStep(BaseStep):
     """
-    Step for executing SQL queries on MySQL/MariaDB databases.
-    Supports SELECT, INSERT, UPDATE, and DELETE.
+    Step for executing SQL queries on MySQL/MariaDB databases using wmysql.
     """
     
     def __init__(
@@ -20,16 +19,15 @@ class MySQLQueryStep(BaseStep):
         fetch_results: bool = True,
         response_key: str = "mysql_results",
         name: Optional[str] = None,
-        version: str = "v1.0"
+        version: str = "v2.0"
     ):
         super().__init__(name, version)
-        self.config = {
+        self.conn_params = {
             "host": host,
             "user": user,
             "password": password,
             "database": database,
-            "port": port,
-            "cursorclass": pymysql.cursors.DictCursor
+            "port": port
         }
         self.query = query
         self.params = params
@@ -37,30 +35,19 @@ class MySQLQueryStep(BaseStep):
         self.response_key = response_key
 
     def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        connection = pymysql.connect(**self.config)
         try:
-            with connection.cursor() as cursor:
-                cursor.execute(self.query, self.params)
-                
+            with Wmysql(**self.conn_params) as db:
                 if self.fetch_results:
-                    results = cursor.fetchall()
+                    # Assuming wmysql has a query method that returns dicts
+                    results = db.query(self.query, self.params)
                 else:
-                    results = {"affected_rows": cursor.rowcount}
-                
-                connection.commit()
-                
+                    results = db.execute(self.query, self.params)
+            
             data[self.response_key] = {
                 "success": True,
                 "data": results
             }
-            
             return data
-            
         except Exception as e:
-            data[self.response_key] = {
-                "success": False,
-                "error": str(e)
-            }
-            raise RuntimeError(f"MySQL Query failed: {str(e)}")
-        finally:
-            connection.close()
+            data[self.response_key] = {"success": False, "error": str(e)}
+            raise RuntimeError(f"Wmysql Query failed: {str(e)}")

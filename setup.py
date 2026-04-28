@@ -14,7 +14,7 @@ if requirements_file.exists():
 
 setup(
     name="wpipe-steps",
-    version="0.10.0",
+    version="0.12.0",
     packages=find_packages(include=["wpipe_steps", "wpipe_steps.*"]),
     install_requires=requirements or [
         "wpipe>=2.3.0",
@@ -22,11 +22,10 @@ setup(
         "pydantic>=2.0.0",
         "paramiko>=3.0.0",
         "feedparser>=6.0.0",
-        "pymysql>=1.1.0",
-        "redis>=5.0.0",
-        "pymongo>=4.0.0",
-    ],
-        "feedparser>=6.0.0",
+        "wsqlite>=1.2.1",
+        "wredis>=1.0.0",
+        "wmysql>=1.0.0",
+        "wmongo>=1.0.0",
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -35,7 +34,7 @@ setup(
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    description="A professional collection of pre-built steps and states for the WPipe orchestration engine.",
+    description="A professional collection of pre-built steps and states for the WPipe orchestration engine, powered by the Wisrovi ecosystem.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/wisrovi/wpipe-steps",

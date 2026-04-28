@@ -13,5 +13,8 @@ Demonstrates how to store and retrieve data from Redis using `RedisCacheStep`.
 ### 3. MongoDB Insert (`mongo_example.py`)
 Demonstrates how to insert documents into MongoDB collections using `MongoInsertStep`.
 
+### 4. SQLite Audit (`sqlite_example.py`)
+Demonstrates how to save local audit logs and data snapshots into a SQLite database using `SQLiteAuditStep`.
+
 ---
-*Each example requires a running database instance to execute.*
+*Each example requires a running database instance to execute (except SQLite).*
