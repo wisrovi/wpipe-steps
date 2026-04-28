@@ -1,4 +1,3 @@
-from wmongo import Wmongo
 from typing import Any, Dict, Optional, Union, List
 from wpipe_steps.core.base import BaseStep
 
@@ -27,8 +26,9 @@ class MongoInsertStep(BaseStep):
         self.response_key = response_key
 
     def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        wmongo = self.ensure_dependency("wmongo")
         try:
-            with Wmongo(self.uri, self.db_name, self.coll_name) as db:
+            with wmongo.Wmongo(self.uri, self.db_name, self.coll_name) as db:
                 doc = data.get(self.document_key) if self.document_key else self.custom_document
                 if doc is None:
                     doc = {k: v for k, v in data.items() if k != self.response_key}

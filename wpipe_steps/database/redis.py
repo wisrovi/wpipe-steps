@@ -1,4 +1,3 @@
-from wredis import Wredis
 from typing import Any, Dict, Optional, Literal
 from wpipe_steps.core.base import BaseStep
 
@@ -33,8 +32,11 @@ class RedisCacheStep(BaseStep):
         self.response_key = response_key
 
     def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        # Dynamic import
+        wredis = self.ensure_dependency("wredis")
+        
         try:
-            with Wredis(**self.config) as r:
+            with wredis.Wredis(**self.config) as r:
                 result = None
                 if self.operation == "set":
                     value = data.get(self.value_key) if self.value_key else None

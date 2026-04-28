@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from setuptools import setup, find_packages
 
@@ -5,28 +6,14 @@ from setuptools import setup, find_packages
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text() if (this_directory / "README.md").exists() else ""
 
-# Read requirements
-requirements_file = this_directory / "requirements.txt"
-requirements = []
-if requirements_file.exists():
-    with open(requirements_file, "r") as f:
-        requirements = [line.strip() for line in f if line.strip() and not line.startswith("#")]
-
 setup(
     name="wpipe-steps",
-    version="0.13.0",
+    version="0.14.0",
     packages=find_packages(include=["wpipe_steps", "wpipe_steps.*"]),
-    install_requires=requirements or [
+    install_requires=[
         "wpipe>=2.3.0",
-        "requests>=2.31.0",
         "pydantic>=2.0.0",
-        "paramiko>=3.0.0",
-        "feedparser>=6.0.0",
-        "wsqlite>=1.2.1",
-        "wredis>=1.0.0",
-        "wmysql>=1.0.0",
-        "wmongo>=1.0.0",
-        "wclickhouse>=1.0.0",
+        "requests>=2.31.0",
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -35,7 +22,7 @@ setup(
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    description="A professional collection of pre-built steps and states for the WPipe orchestration engine, powered by the Wisrovi ecosystem.",
+    description="A professional collection of pre-built steps and states for the WPipe orchestration engine. Lightweight and modular.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/wisrovi/wpipe-steps",

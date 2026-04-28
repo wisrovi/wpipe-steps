@@ -1,4 +1,3 @@
-from wclickhouse import Wclickhouse
 from typing import Any, Dict, Optional, List
 from wpipe_steps.core.base import BaseStep
 
@@ -15,7 +14,7 @@ class ClickHouseBulkStep(BaseStep):
         user: str = "default",
         password: str = "",
         port: int = 8123,
-        data_key: Optional[str] = None, # Key in 'data' to get list of dicts/tuples
+        data_key: Optional[str] = None,
         custom_data: Optional[List[Any]] = None,
         response_key: str = "clickhouse_status",
         name: Optional[str] = None,
@@ -35,15 +34,13 @@ class ClickHouseBulkStep(BaseStep):
         self.response_key = response_key
 
     def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        wclickhouse = self.ensure_dependency("wclickhouse")
         try:
-            with Wclickhouse(**self.config) as ch:
-                # Determine data to insert
+            with wclickhouse.Wclickhouse(**self.config) as ch:
                 records = data.get(self.data_key) if self.data_key else self.custom_data
                 if records is None:
                     raise ValueError("No data provided for ClickHouse bulk insert")
 
-                # Assuming wclickhouse has a bulk_insert or similar method
-                # We'll use the most common interface for your libraries
                 ch.insert(self.table, records)
                 
                 data[self.response_key] = {

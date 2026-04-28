@@ -1,4 +1,3 @@
-from wsqlite import Wsqlite
 from typing import Any, Dict, Optional
 from wpipe_steps.core.base import BaseStep
 import json
@@ -25,16 +24,14 @@ class SQLiteAuditStep(BaseStep):
         self.response_key = response_key
 
     def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        wsqlite = self.ensure_dependency("wsqlite")
         try:
-            with Wsqlite(db_name=self.db_path) as db:
-                # Prepare payload
+            with wsqlite.Wsqlite(db_name=self.db_path) as db:
                 if self.data_keys:
                     payload = {k: data.get(k) for k in self.data_keys}
                 else:
                     payload = {k: v for k, v in data.items() if isinstance(v, (str, int, float, bool, dict, list)) and k != self.response_key}
 
-                # wsqlite specific usage: setting input/details or direct execution
-                # For audit, we can use the 'details' field or a custom table
                 db.details = {
                     "timestamp": datetime.now().isoformat(),
                     "step_name": self.name,

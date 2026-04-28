@@ -1,4 +1,3 @@
-from wmysql import Wmysql
 from typing import Any, Dict, Optional, Union
 from wpipe_steps.core.base import BaseStep
 
@@ -35,10 +34,10 @@ class MySQLQueryStep(BaseStep):
         self.response_key = response_key
 
     def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        wmysql = self.ensure_dependency("wmysql")
         try:
-            with Wmysql(**self.conn_params) as db:
+            with wmysql.Wmysql(**self.conn_params) as db:
                 if self.fetch_results:
-                    # Assuming wmysql has a query method that returns dicts
                     results = db.query(self.query, self.params)
                 else:
                     results = db.execute(self.query, self.params)

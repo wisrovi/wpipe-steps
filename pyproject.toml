@@ -4,55 +4,34 @@ build-backend = "hatchling.build"
 
 [project]
 name = "wpipe-steps"
-version = "0.13.0"
+version = "0.14.0"
 authors = [
     { name = "William Steve Rodriguez Villamizar", email = "wisrovi.rodriguez@gmail.com" }
 ]
-description = "A professional collection of pre-built steps and states for the WPipe orchestration engine, powered by the Wisrovi ecosystem."
+description = "A professional collection of pre-built steps and states for the WPipe orchestration engine. Lightweight and modular."
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.9"
-keywords = [
-    "wpipe",
-    "pipeline",
-    "automation",
-    "workflow-steps",
-    "data-processing",
-]
+keywords = ["wpipe", "pipeline", "automation"]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Intended Audience :: Developers",
 ]
+# Only CORE dependencies here
 dependencies = [
     "wpipe>=2.3.0",
-    "requests>=2.31.0",
     "pydantic>=2.0.0",
-    "paramiko>=3.0.0",
-    "feedparser>=6.0.0",
-    "wsqlite>=1.2.1",
-    "wredis>=1.0.0",
-    "wmysql>=1.0.0",
-    "wmongo>=1.0.0",
-    "wclickhouse>=1.0.0",
+    "requests>=2.31.0",
 ]
 
 [project.optional-dependencies]
-dev = [
-    "pytest>=7.4.0",
-    "black>=23.0.0",
-    "ruff>=0.1.0",
-]
+dev = ["pytest>=7.4.0", "black>=23.0.0", "ruff>=0.1.0"]
 
 [project.urls]
 Homepage = "https://github.com/wisrovi/wpipe-steps"
 Repository = "https://github.com/wisrovi/wpipe-steps"
-Issues = "https://github.com/wisrovi/wpipe-steps/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["wpipe_steps"]
