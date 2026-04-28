@@ -16,5 +16,8 @@ Demonstrates how to trigger external webhooks with custom payloads using `Webhoo
 ### 4. SFTP Transfer (`sftp_example.py`)
 Demonstrates how to upload and download files securely using `SftpTransferStep` (Requires `paramiko`).
 
+### 5. RSS Parser (`rss_example.py`)
+Demonstrates how to parse RSS/Atom feeds to extract latest entries using `RSSParserStep` (Requires `feedparser`).
+
 ---
 *Each example can be run directly from the terminal.*
