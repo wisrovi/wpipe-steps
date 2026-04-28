@@ -1,12 +1,14 @@
 from typing import Any, Dict, Optional, List
 from wpipe_steps.core.base import BaseStep
+from wpipe_steps.core.decorators import step, to_obj
 
+@step
 class CassandraWriteStep(BaseStep):
     """
     Step for writing data into Apache Cassandra.
     Supports single row insertions.
     """
-    
+
     def __init__(
         self, 
         contact_points: List[str],
@@ -26,7 +28,8 @@ class CassandraWriteStep(BaseStep):
         self.data_key = data_key
         self.response_key = response_key
 
-    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    @to_obj
+    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
         # Dynamic import of cassandra-driver
         cassandra = self.ensure_dependency("cassandra", "cassandra-driver")
         from cassandra.cluster import Cluster
@@ -56,3 +59,5 @@ class CassandraWriteStep(BaseStep):
             raise RuntimeError(f"Cassandra Write failed: {str(e)}")
         finally:
             cluster.shutdown()
+
+cassandra_write = CassandraWriteStep()

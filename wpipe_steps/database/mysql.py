@@ -1,11 +1,13 @@
 from typing import Any, Dict, Optional, Union
 from wpipe_steps.core.base import BaseStep
+from wpipe_steps.core.decorators import step, to_obj
 
+@step
 class MySQLQueryStep(BaseStep):
     """
     Step for executing SQL queries on MySQL/MariaDB databases using wmysql.
     """
-    
+
     def __init__(
         self, 
         host: str,
@@ -33,7 +35,8 @@ class MySQLQueryStep(BaseStep):
         self.fetch_results = fetch_results
         self.response_key = response_key
 
-    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    @to_obj
+    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
         wmysql = self.ensure_dependency("wmysql")
         try:
             with wmysql.Wmysql(**self.conn_params) as db:
@@ -50,3 +53,5 @@ class MySQLQueryStep(BaseStep):
         except Exception as e:
             data[self.response_key] = {"success": False, "error": str(e)}
             raise RuntimeError(f"Wmysql Query failed: {str(e)}")
+
+mysql_query = MySQLQueryStep()

@@ -60,6 +60,37 @@ Complete inventory of Connectivity Steps available in `wpipe_steps.connectivity`
 
 ---
 
+## 📋 Database Steps Inventory
+
+Complete inventory of Database Steps available in `wpipe_steps.database`:
+
+### MySQL (package: `wpipe_steps.database`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `mysql_query` | `from wpipe_steps.database import MySQLQueryStep` | Sync | [example.py](examples/database/mysql/example.py) | Execute SQL queries on MySQL/MariaDB |
+
+### MongoDB (package: `wpipe_steps.database`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `mongo_insert` | `from wpipe_steps.database import MongoInsertStep` | Sync | [example.py](examples/database/mongo/example.py) | Insert documents into MongoDB |
+
+### SQLite (package: `wpipe_steps.database`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `sqlite_audit` | `from wpipe_steps.database import SQLiteAuditStep` | Sync | [example.py](examples/database/sqlite/example.py) | Save audit logs into SQLite |
+
+### ClickHouse (package: `wpipe_steps.database`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `clickhouse_bulk` | `from wpipe_steps.database import ClickHouseBulkStep` | Sync | [example.py](examples/database/clickhouse/example.py) | Bulk insert data into ClickHouse |
+
+### Cassandra (package: `wpipe_steps.database`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `cassandra_write` | `from wpipe_steps.database import CassandraWriteStep` | Sync | [example.py](examples/database/cassandra/example.py) | Write data into Apache Cassandra |
+
+---
+
 ## 📋 Redis Steps Inventory
 
 Complete inventory of Redis Steps available in `wpipe_steps.database.redis`:

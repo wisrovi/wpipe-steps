@@ -1,13 +1,15 @@
 from typing import Any, Dict, Optional
 from wpipe_steps.core.base import BaseStep
+from wpipe_steps.core.decorators import step, to_obj
 import json
 from datetime import datetime
 
+@step
 class SQLiteAuditStep(BaseStep):
     """
     Step for saving audit logs into SQLite using wsqlite.
     """
-    
+
     def __init__(
         self, 
         db_path: str = "audit.db",
@@ -23,7 +25,8 @@ class SQLiteAuditStep(BaseStep):
         self.data_keys = data_keys
         self.response_key = response_key
 
-    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    @to_obj
+    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
         wsqlite = self.ensure_dependency("wsqlite")
         try:
             with wsqlite.Wsqlite(db_name=self.db_path) as db:
@@ -47,3 +50,5 @@ class SQLiteAuditStep(BaseStep):
         except Exception as e:
             data[self.response_key] = {"success": False, "error": str(e)}
             raise RuntimeError(f"Wsqlite Audit failed: {str(e)}")
+
+sqlite_audit = SQLiteAuditStep()

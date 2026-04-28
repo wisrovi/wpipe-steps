@@ -4,6 +4,21 @@ All notable changes to WPipe will be documented in this file.
 
 ---
 
+## [0.36.0] - 2026-04-28
+
+### Added
+- **Database Pack**: Complete database steps support
+  - `mysql_query`: MySQL/MariaDB SQL query executor
+  - `mongo_insert`: MongoDB document inserter
+  - `sqlite_audit`: SQLite audit logger
+  - `clickhouse_bulk`: ClickHouse bulk data inserter
+  - `cassandra_write`: Apache Cassandra data writer
+- Pipeline examples for all database Steps in `examples/database/*/`
+- Updated README.md with Database Steps inventory
+- Updated TODO.txt marking Database pack as completed
+
+---
+
 ## [0.35.0] - 2026-04-28
 
 ### Added

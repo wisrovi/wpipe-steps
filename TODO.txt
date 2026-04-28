@@ -14,17 +14,17 @@
 
 📊 2. Bases de Datos (Persistence Layer) - ✅ REDIS COMPLETADO (v0.34.0)
 
-    MySQLQueryStep: Ejecución de scripts en MySQL.
+    MySQLQueryStep: Ejecución de scripts en MySQL. - ✅ (v0.36.0)
 
     ✅ Redis Steps: Completo con wredis (bitmaps, hash, sets, sorted sets, streams, pub/sub, queue, geo, hyperloglog, transactions, pipeline, cache) - sync/async. Publicado en PyPI v0.23.0-v0.34.0.
 
-    MongoInsertStep: Inserción de documentos NoSQL (usando tu wmongo).
+    MongoInsertStep: Inserción de documentos NoSQL (usando tu wmongo). - ✅ (v0.36.0)
 
-    SQLiteAuditStep: Volcado de logs locales (usando tu wsqlite).
+    SQLiteAuditStep: Volcado de logs locales (usando tu wsqlite). - ✅ (v0.36.0)
 
-    ClickHouseBulkStep: Inserción masiva para analítica (usando tu wclickhouse).
+    ClickHouseBulkStep: Inserción masiva para analítica (usando tu wclickhouse). - ✅ (v0.36.0)
 
-    CassandraWriteStep: Persistencia en bases de datos distribuidas.
+    CassandraWriteStep: Persistencia en bases de datos distribuidas. - ✅ (v0.36.0)
 
 🛡️ 3. Ciberseguridad (Cyber-Wisrovi Pack)
 

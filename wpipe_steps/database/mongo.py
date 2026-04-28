@@ -1,11 +1,13 @@
 from typing import Any, Dict, Optional, Union, List
 from wpipe_steps.core.base import BaseStep
+from wpipe_steps.core.decorators import step, to_obj
 
+@step
 class MongoInsertStep(BaseStep):
     """
     Step for inserting documents into MongoDB using wmongo.
     """
-    
+
     def __init__(
         self, 
         uri: str,
@@ -25,7 +27,8 @@ class MongoInsertStep(BaseStep):
         self.custom_document = custom_document
         self.response_key = response_key
 
-    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    @to_obj
+    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
         wmongo = self.ensure_dependency("wmongo")
         try:
             with wmongo.Wmongo(self.uri, self.db_name, self.coll_name) as db:
@@ -49,3 +52,5 @@ class MongoInsertStep(BaseStep):
         except Exception as e:
             data[self.response_key] = {"success": False, "error": str(e)}
             raise RuntimeError(f"Wmongo Insert failed: {str(e)}")
+
+mongo_insert = MongoInsertStep()

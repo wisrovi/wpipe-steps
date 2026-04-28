@@ -1,11 +1,13 @@
 from typing import Any, Dict, Optional, List
 from wpipe_steps.core.base import BaseStep
+from wpipe_steps.core.decorators import step, to_obj
 
+@step
 class ClickHouseBulkStep(BaseStep):
     """
     Step for bulk inserting data into ClickHouse using wclickhouse.
     """
-    
+
     def __init__(
         self, 
         host: str,
@@ -33,7 +35,8 @@ class ClickHouseBulkStep(BaseStep):
         self.custom_data = custom_data
         self.response_key = response_key
 
-    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    @to_obj
+    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
         wclickhouse = self.ensure_dependency("wclickhouse")
         try:
             with wclickhouse.Wclickhouse(**self.config) as ch:
@@ -52,3 +55,5 @@ class ClickHouseBulkStep(BaseStep):
         except Exception as e:
             data[self.response_key] = {"success": False, "error": str(e)}
             raise RuntimeError(f"Wclickhouse Bulk Insert failed: {str(e)}")
+
+clickhouse_bulk = ClickHouseBulkStep()
