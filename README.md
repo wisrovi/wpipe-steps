@@ -12,7 +12,7 @@ The library is organized into logical "Packs" based on functionality:
 
 | Pack | Namespace | Description |
 |------|-----------|-------------|
-| 🌐 **Connectivity** | `wpipe_steps.connectivity` | **HttpRequestStep**: REST/APIs client. <br> **GraphQLQueryStep**: GraphQL executor. <br> **WebhookTriggerStep**: External webhook notifier. |
+| 🌐 **Connectivity** | `wpipe_steps.connectivity` | **HttpRequestStep**: REST/APIs client. <br> **GraphQLQueryStep**: GraphQL executor. <br> **WebhookTriggerStep**: Webhook notifier. <br> **SftpTransferStep**: Secure file transfer (upload/download). |
 | 📊 **Database** | `wpipe_steps.database` | MySQL, Redis, MongoDB, ClickHouse, SQLite. |
 | 🛡️ **Security** | `wpipe_steps.security` | Nmap, Shodan, Vault, Inyection Filtering. |
 | ☁️ **Infrastructure** | `wpipe_steps.infrastructure` | AWS S3, Docker, Kubernetes, Terraform. |

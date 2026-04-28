@@ -14,12 +14,13 @@ if requirements_file.exists():
 
 setup(
     name="wpipe-steps",
-    version="0.4.0",
+    version="0.5.0",
     packages=find_packages(include=["wpipe_steps", "wpipe_steps.*"]),
     install_requires=requirements or [
         "wpipe>=2.3.0",
         "requests>=2.31.0",
         "pydantic>=2.0.0",
+        "paramiko>=3.0.0",
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
