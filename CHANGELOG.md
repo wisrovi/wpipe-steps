@@ -4,6 +4,16 @@ All notable changes to WPipe will be documented in this file.
 
 ---
 
+## [0.25.0] - 2026-04-28
+
+### Added
+- **Redis Pub/Sub Module**: Complete pub/sub operations support
+  - `redis_pubsub_publish_sync` / `redis_pubsub_publish_async`: Publish messages
+  - `redis_pubsub_on_message_sync` / `redis_pubsub_on_message_async`: Subscribe to channels
+- Examples for pubsub module in `examples/database/redis/pubsub/`
+
+---
+
 ## [0.24.0] - 2026-04-28
 
 ### Added
