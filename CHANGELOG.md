@@ -4,6 +4,21 @@ All notable changes to WPipe will be documented in this file.
 
 ---
 
+## [0.24.0] - 2026-04-28
+
+### Added
+- **Redis Hash Module**: Complete hash operations support
+  - `redis_hash_create_sync` / `redis_hash_create_async`: Create hash field
+  - `redis_hash_read_sync` / `redis_hash_read_async`: Read hash field
+  - `redis_hash_read_all_sync` / `redis_hash_read_all_async`: Read all hash fields
+  - `redis_hash_update_sync` / `redis_hash_update_async`: Update hash field
+  - `redis_hash_delete_sync` / `redis_hash_delete_async`: Delete hash field
+  - `redis_hash_get_ttl_sync` / `redis_hash_get_ttl_async`: Get TTL
+  - `redis_hash_extend_ttl_sync` / `redis_hash_extend_ttl_async`: Extend TTL
+- Examples for hash module in `examples/database/redis/hash/`
+
+---
+
 ## [0.23.0] - 2026-04-28
 
 ### Added
