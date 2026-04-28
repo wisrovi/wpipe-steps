@@ -19,5 +19,8 @@ Demonstrates how to save local audit logs and data snapshots into a SQLite datab
 ### 5. ClickHouse Bulk (`clickhouse_example.py`)
 Demonstrates how to perform massive data insertions into ClickHouse using `ClickHouseBulkStep`.
 
+### 6. Cassandra Write (`cassandra_example.py`)
+Demonstrates how to write data into Apache Cassandra clusters using `CassandraWriteStep`.
+
 ---
 *Each example requires a running database instance to execute (except SQLite).*
