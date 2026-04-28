@@ -1,67 +1,67 @@
-from typing import Any, Dict, Optional
-from wpipe import step, to_obj
+from typing import Any, Dict, Optional, Literal
 from wpipe_steps.core.base import BaseStep
 
-@step(
-    name="digitalocean_droplet",
-    version="v1.0",
-    description="Manage DigitalOcean droplets via API",
-    tags=["infrastructure", "digitalocean", "sync"]
-)
 class DigitalOceanDropletStep(BaseStep):
     """
-    Step for managing DigitalOcean droplets.
-    Requires 'python-digitalocean' library and API token.
+    Step for managing DigitalOcean Droplets.
+    Supports 'create', 'list', and 'destroy' operations.
     """
-
+    
     def __init__(
-        self,
+        self, 
         token: str,
-        droplet_id: Optional[int] = None,
-        action: str = "list",  # list, create, delete, reboot, shutdown
-        response_key: str = "do_droplet_status",
+        operation: Literal["create", "list", "destroy"] = "list",
         name: Optional[str] = None,
+        region: str = "nyc1",
+        size: str = "s-1vcpu-1gb",
+        image: str = "ubuntu-20-04-x64",
+        droplet_id: Optional[int] = None,
+        response_key: str = "digitalocean_status",
+        step_name: Optional[str] = None,
         version: str = "v1.0"
     ):
-        super().__init__(name, version)
+        super().__init__(step_name, version)
         self.token = token
+        self.operation = operation
+        self.droplet_name = name
+        self.region = region
+        self.size = size
+        self.image = image
         self.droplet_id = droplet_id
-        self.action = action
         self.response_key = response_key
 
-    @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        digitalocean = self.ensure_dependency("digitalocean")
-
+    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        do = self.ensure_dependency("digitalocean", "python-digitalocean")
+        manager = do.Manager(token=self.token)
+        
         try:
-            digitalocean.Droplet.BEARER = self.token
-
-            if self.action == "list":
-                droplets = digitalocean.Droplet().load_all()
-                result = [{"id": d.id, "name": d.name, "status": d.status} for d in droplets]
-            elif self.action == "create":
-                droplet = digitalocean.Droplet()
-                # Configuration from data
-                droplet.name = data.get("droplet_name", "wpipe-droplet")
-                droplet.region = data.get("region", "nyc3")
-                droplet.size = data.get("size", "s-1vcpu-1gb")
-                droplet.image = data.get("image", "ubuntu-20-04-x64")
+            result_info = {}
+            if self.operation == "list":
+                droplets = manager.get_all_droplets()
+                result_info = [{"id": d.id, "name": d.name, "ip": d.ip_address} for d in droplets]
+            elif self.operation == "create":
+                droplet = do.Droplet(
+                    token=self.token,
+                    name=self.droplet_name,
+                    region=self.region,
+                    image=self.image,
+                    size_slug=self.size,
+                    backups=False
+                )
                 droplet.create()
-                result = {"id": droplet.id, "name": droplet.name, "status": "creating"}
-            elif self.action == "delete" and self.droplet_id:
-                droplet = digitalocean.Droplet(id=self.droplet_id)
+                result_info = {"id": droplet.id, "status": "creating"}
+            elif self.operation == "destroy":
+                droplet = manager.get_droplet(self.droplet_id)
                 droplet.destroy()
-                result = {"id": self.droplet_id, "status": "deleted"}
-            else:
-                raise ValueError(f"Invalid action or missing droplet_id")
-
+                result_info = {"status": "destroyed"}
+            
             data[self.response_key] = {
                 "success": True,
-                "action": self.action,
-                "result": result
+                "operation": self.operation,
+                "data": result_info
             }
             return data
-
+            
         except Exception as e:
             data[self.response_key] = {"success": False, "error": str(e)}
-            raise RuntimeError(f"DigitalOcean Droplet operation failed: {str(e)}")
+            raise RuntimeError(f"DigitalOcean operation failed: {str(e)}")

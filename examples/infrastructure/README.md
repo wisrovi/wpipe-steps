@@ -19,5 +19,8 @@ Demonstrates how to apply Terraform configurations using `TerraformApplyStep` (R
 ### 5. Proxmox VM Management (`proxmox_example.py`)
 Demonstrates how to control Proxmox virtual machines via API using `ProxmoxVMStep` (Requires `proxmoxer`).
 
+### 6. DigitalOcean Droplets (`digitalocean_example.py`)
+Demonstrates how to manage DigitalOcean infrastructure using `DigitalOceanDropletStep` (Requires `python-digitalocean`).
+
 ---
 *Note: Cloud examples require valid API keys or configuration files.*
