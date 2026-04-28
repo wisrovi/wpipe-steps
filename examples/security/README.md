@@ -19,5 +19,8 @@ Shows how to generate SHA256 hashes of strings or files.
 ### 5. Vault Secrets (`vault_example.py`)
 Demonstrates how to retrieve sensitive credentials from HashiCorp Vault (Requires `hvac`).
 
+### 6. WAF Filtering (`waf_example.py`)
+Demonstrates how to detect and filter SQL Injection and XSS patterns in string data.
+
 ---
 *Note: Some examples might require root access or specific system files.*
