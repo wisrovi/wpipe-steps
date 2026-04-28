@@ -29,34 +29,34 @@ The library is organized into logical "Packs" based on functionality:
 Complete inventory of Connectivity Steps available in `wpipe_steps.connectivity`:
 
 ### HttpRequestStep (package: `wpipe_steps.connectivity`)
-| Step Name | Type | Description |
-|-----------|------|-------------|
-| `http_request` | Sync | HTTP client with GET, POST, PUT, DELETE, PATCH |
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `http_request` | `from wpipe_steps.connectivity import HttpRequestStep` | Sync | [http_example.py](examples/connectivity/http_example.py) | HTTP client with GET, POST, PUT, DELETE, PATCH |
 
 ### GraphQLQueryStep (package: `wpipe_steps.connectivity`)
-| Step Name | Type | Description |
-|-----------|------|-------------|
-| `graphql_query` | Sync | Execute GraphQL queries and mutations |
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `graphql_query` | `from wpipe_steps.connectivity import GraphQLQueryStep` | Sync | [graphql_example.py](examples/connectivity/graphql_example.py) | Execute GraphQL queries and mutations |
 
 ### WebhookTriggerStep (package: `wpipe_steps.connectivity`)
-| Step Name | Type | Description |
-|-----------|------|-------------|
-| `webhook_trigger` | Sync | Send data to external webhooks |
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `webhook_trigger` | `from wpipe_steps.connectivity import WebhookTriggerStep` | Sync | [webhook_example.py](examples/connectivity/webhook_example.py) | Send data to external webhooks |
 
 ### SftpTransferStep (package: `wpipe_steps.connectivity`)
-| Step Name | Type | Description |
-|-----------|------|-------------|
-| `sftp_transfer` | Sync | Upload/download files via SFTP |
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `sftp_transfer` | `from wpipe_steps.connectivity import SftpTransferStep` | Sync | [sftp_example.py](examples/connectivity/sftp_example.py) | Upload/download files via SFTP |
 
 ### RSSParserStep (package: `wpipe_steps.connectivity`)
-| Step Name | Type | Description |
-|-----------|------|-------------|
-| `rss_parser` | Sync | Parse RSS/Atom feeds and extract entries |
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `rss_parser` | `from wpipe_steps.connectivity import RSSParserStep` | Sync | [rss_example.py](examples/connectivity/rss_example.py) | Parse RSS/Atom feeds and extract entries |
 
 ### OAuth2AuthStep (package: `wpipe_steps.connectivity`)
-| Step Name | Type | Description |
-|-----------|------|-------------|
-| `oauth2_auth` | Sync | Retrieve and manage OAuth2 access tokens |
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `oauth2_auth` | `from wpipe_steps.connectivity import OAuth2AuthStep` | Sync | [oauth2_example.py](examples/connectivity/oauth2_example.py) | Retrieve and manage OAuth2 access tokens |
 
 ---
 
@@ -65,147 +65,147 @@ Complete inventory of Connectivity Steps available in `wpipe_steps.connectivity`
 Complete inventory of Redis Steps available in `wpipe_steps.database.redis`:
 
 ### Bitmaps (package: `wpipe_steps.database.redis.bitmaps`)
-| Step Name | Type | Description |
-|-----------|------|-------------|
-| `redis_bitmap_set_bit_sync` | Sync | Set a bit at offset in bitmap |
-| `redis_bitmap_set_bit_async` | Async | Set a bit at offset in bitmap (async) |
-| `redis_bitmap_get_bit_sync` | Sync | Get bit value at offset |
-| `redis_bitmap_get_bit_async` | Async | Get bit value at offset (async) |
-| `redis_bitmap_count_bits_sync` | Sync | Count set bits in bitmap |
-| `redis_bitmap_count_bits_async` | Async | Count set bits in bitmap (async) |
-| `redis_bitmap_get_ttl_sync` | Sync | Get TTL of bitmap key |
-| `redis_bitmap_get_ttl_async` | Async | Get TTL of bitmap key (async) |
-| `redis_bitmap_extend_ttl_sync` | Sync | Extend TTL of bitmap key |
-| `redis_bitmap_extend_ttl_async` | Async | Extend TTL of bitmap key (async) |
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `redis_bitmap_set_bit_sync` | `from wpipe_steps.database.redis.bitmaps import redis_bitmap_set_bit_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/bitmaps/pipeline_sync_example.py) | Set a bit at offset in bitmap |
+| `redis_bitmap_set_bit_async` | `from wpipe_steps.database.redis.bitmaps import redis_bitmap_set_bit_async` | Async | [pipeline_async_example.py](examples/database/redis/bitmaps/pipeline_async_example.py) | Set a bit at offset in bitmap (async) |
+| `redis_bitmap_get_bit_sync` | `from wpipe_steps.database.redis.bitmaps import redis_bitmap_get_bit_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/bitmaps/pipeline_sync_example.py) | Get bit value at offset |
+| `redis_bitmap_get_bit_async` | `from wpipe_steps.database.redis.bitmaps import redis_bitmap_get_bit_async` | Async | [pipeline_async_example.py](examples/database/redis/bitmaps/pipeline_async_example.py) | Get bit value at offset (async) |
+| `redis_bitmap_count_bits_sync` | `from wpipe_steps.database.redis.bitmaps import redis_bitmap_count_bits_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/bitmaps/pipeline_sync_example.py) | Count set bits in bitmap |
+| `redis_bitmap_count_bits_async` | `from wpipe_steps.database.redis.bitmaps import redis_bitmap_count_bits_async` | Async | [pipeline_async_example.py](examples/database/redis/bitmaps/pipeline_async_example.py) | Count set bits in bitmap (async) |
+| `redis_bitmap_get_ttl_sync` | `from wpipe_steps.database.redis.bitmaps import redis_bitmap_get_ttl_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/bitmaps/pipeline_sync_example.py) | Get TTL of bitmap key |
+| `redis_bitmap_get_ttl_async` | `from wpipe_steps.database.redis.bitmaps import redis_bitmap_get_ttl_async` | Async | [pipeline_async_example.py](examples/database/redis/bitmaps/pipeline_async_example.py) | Get TTL of bitmap key (async) |
+| `redis_bitmap_extend_ttl_sync` | `from wpipe_steps.database.redis.bitmaps import redis_bitmap_extend_ttl_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/bitmaps/pipeline_sync_example.py) | Extend TTL of bitmap key |
+| `redis_bitmap_extend_ttl_async` | `from wpipe_steps.database.redis.bitmaps import redis_bitmap_extend_ttl_async` | Async | [pipeline_async_example.py](examples/database/redis/bitmaps/pipeline_async_example.py) | Extend TTL of bitmap key (async) |
 
 ### Hash (package: `wpipe_steps.database.redis.hash`)
-| Step Name | Type | Description |
-|-----------|------|-------------|
-| `redis_hash_create_sync` | Sync | Create hash field |
-| `redis_hash_create_async` | Async | Create hash field (async) |
-| `redis_hash_read_sync` | Sync | Read hash field |
-| `redis_hash_read_async` | Async | Read hash field (async) |
-| `redis_hash_read_all_sync` | Sync | Read all hash fields |
-| `redis_hash_read_all_async` | Async | Read all hash fields (async) |
-| `redis_hash_update_sync` | Sync | Update hash field |
-| `redis_hash_update_async` | Async | Update hash field (async) |
-| `redis_hash_delete_sync` | Sync | Delete hash field |
-| `redis_hash_delete_async` | Async | Delete hash field (async) |
-| `redis_hash_get_ttl_sync` | Sync | Get TTL of hash |
-| `redis_hash_get_ttl_async` | Async | Get TTL of hash (async) |
-| `redis_hash_extend_ttl_sync` | Sync | Extend TTL of hash |
-| `redis_hash_extend_ttl_async` | Async | Extend TTL of hash (async) |
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `redis_hash_create_sync` | `from wpipe_steps.database.redis.hash import redis_hash_create_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/hash/pipeline_sync_example.py) | Create hash field |
+| `redis_hash_create_async` | `from wpipe_steps.database.redis.hash import redis_hash_create_async` | Async | [pipeline_async_example.py](examples/database/redis/hash/pipeline_async_example.py) | Create hash field (async) |
+| `redis_hash_read_sync` | `from wpipe_steps.database.redis.hash import redis_hash_read_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/hash/pipeline_sync_example.py) | Read hash field |
+| `redis_hash_read_async` | `from wpipe_steps.database.redis.hash import redis_hash_read_async` | Async | [pipeline_async_example.py](examples/database/redis/hash/pipeline_async_example.py) | Read hash field (async) |
+| `redis_hash_read_all_sync` | `from wpipe_steps.database.redis.hash import redis_hash_read_all_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/hash/pipeline_sync_example.py) | Read all hash fields |
+| `redis_hash_read_all_async` | `from wpipe_steps.database.redis.hash import redis_hash_read_all_async` | Async | [pipeline_async_example.py](examples/database/redis/hash/pipeline_async_example.py) | Read all hash fields (async) |
+| `redis_hash_update_sync` | `from wpipe_steps.database.redis.hash import redis_hash_update_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/hash/pipeline_sync_example.py) | Update hash field |
+| `redis_hash_update_async` | `from wpipe_steps.database.redis.hash import redis_hash_update_async` | Async | [pipeline_async_example.py](examples/database/redis/hash/pipeline_async_example.py) | Update hash field (async) |
+| `redis_hash_delete_sync` | `from wpipe_steps.database.redis.hash import redis_hash_delete_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/hash/pipeline_sync_example.py) | Delete hash field |
+| `redis_hash_delete_async` | `from wpipe_steps.database.redis.hash import redis_hash_delete_async` | Async | [pipeline_async_example.py](examples/database/redis/hash/pipeline_async_example.py) | Delete hash field (async) |
+| `redis_hash_get_ttl_sync` | `from wpipe_steps.database.redis.hash import redis_hash_get_ttl_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/hash/pipeline_sync_example.py) | Get TTL of hash |
+| `redis_hash_get_ttl_async` | `from wpipe_steps.database.redis.hash import redis_hash_get_ttl_async` | Async | [pipeline_async_example.py](examples/database/redis/hash/pipeline_async_example.py) | Get TTL of hash (async) |
+| `redis_hash_extend_ttl_sync` | `from wpipe_steps.database.redis.hash import redis_hash_extend_ttl_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/hash/pipeline_sync_example.py) | Extend TTL of hash |
+| `redis_hash_extend_ttl_async` | `from wpipe_steps.database.redis.hash import redis_hash_extend_ttl_async` | Async | [pipeline_async_example.py](examples/database/redis/hash/pipeline_async_example.py) | Extend TTL of hash (async) |
 
 ### Pub/Sub (package: `wpipe_steps.database.redis.pubsub`)
-| Step Name | Type | Description |
-|-----------|------|-------------|
-| `redis_pubsub_publish_sync` | Sync | Publish message to channel |
-| `redis_pubsub_publish_async` | Async | Publish message to channel (async) |
-| `redis_pubsub_on_message_sync` | Sync | Subscribe to channel (returns decorator) |
-| `redis_pubsub_on_message_async` | Async | Subscribe to channel (async, returns decorator) |
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `redis_pubsub_publish_sync` | `from wpipe_steps.database.redis.pubsub import redis_pubsub_publish_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/pubsub/pipeline_sync_example.py) | Publish message to channel |
+| `redis_pubsub_publish_async` | `from wpipe_steps.database.redis.pubsub import redis_pubsub_publish_async` | Async | [pipeline_async_example.py](examples/database/redis/pubsub/pipeline_async_example.py) | Publish message to channel (async) |
+| `redis_pubsub_on_message_sync` | `from wpipe_steps.database.redis.pubsub import redis_pubsub_on_message_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/pubsub/pipeline_sync_example.py) | Subscribe to channel (returns decorator) |
+| `redis_pubsub_on_message_async` | `from wpipe_steps.database.redis.pubsub import redis_pubsub_on_message_async` | Async | [pipeline_async_example.py](examples/database/redis/pubsub/pipeline_async_example.py) | Subscribe to channel (async, returns decorator) |
 
 ### Queue (package: `wpipe_steps.database.redis.queue`)
-| Step Name | Type | Description |
-|-----------|------|-------------|
-| `redis_queue_publish_sync` | Sync | Publish message to queue |
-| `redis_queue_publish_async` | Async | Publish message to queue (async) |
-| `redis_queue_on_message_sync` | Sync | Subscribe to queue (returns decorator) |
-| `redis_queue_on_message_async` | Async | Subscribe to queue (async, returns decorator) |
-| `redis_queue_get_length_sync` | Sync | Get queue length |
-| `redis_queue_get_length_async` | Async | Get queue length (async) |
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `redis_queue_publish_sync` | `from wpipe_steps.database.redis.queue import redis_queue_publish_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/queue/pipeline_sync_example.py) | Publish message to queue |
+| `redis_queue_publish_async` | `from wpipe_steps.database.redis.queue import redis_queue_publish_async` | Async | [pipeline_async_example.py](examples/database/redis/queue/pipeline_async_example.py) | Publish message to queue (async) |
+| `redis_queue_on_message_sync` | `from wpipe_steps.database.redis.queue import redis_queue_on_message_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/queue/pipeline_sync_example.py) | Subscribe to queue (returns decorator) |
+| `redis_queue_on_message_async` | `from wpipe_steps.database.redis.queue import redis_queue_on_message_async` | Async | [pipeline_async_example.py](examples/database/redis/queue/pipeline_async_example.py) | Subscribe to queue (async, returns decorator) |
+| `redis_queue_get_length_sync` | `from wpipe_steps.database.redis.queue import redis_queue_get_length_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/queue/pipeline_sync_example.py) | Get queue length |
+| `redis_queue_get_length_async` | `from wpipe_steps.database.redis.queue import redis_queue_get_length_async` | Async | [pipeline_async_example.py](examples/database/redis/queue/pipeline_async_example.py) | Get queue length (async) |
 
 ### Sets (package: `wpipe_steps.database.redis.sets`)
-| Step Name | Type | Description |
-|-----------|------|-------------|
-| `redis_set_add_sync` | Sync | Add members to set |
-| `redis_set_add_async` | Async | Add members to set (async) |
-| `redis_set_get_members_sync` | Sync | Get all members from set |
-| `redis_set_get_members_async` | Async | Get all members from set (async) |
-| `redis_set_is_member_sync` | Sync | Check membership in set |
-| `redis_set_is_member_async` | Async | Check membership in set (async) |
-| `redis_set_remove_sync` | Sync | Remove members from set |
-| `redis_set_remove_async` | Async | Remove members from set (async) |
-| `redis_set_get_ttl_sync` | Sync | Get TTL of set |
-| `redis_set_get_ttl_async` | Async | Get TTL of set (async) |
-| `redis_set_extend_ttl_sync` | Sync | Extend TTL of set |
-| `redis_set_extend_ttl_async` | Async | Extend TTL of set (async) |
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `redis_set_add_sync` | `from wpipe_steps.database.redis.sets import redis_set_add_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/sets/pipeline_sync_example.py) | Add members to set |
+| `redis_set_add_async` | `from wpipe_steps.database.redis.sets import redis_set_add_async` | Async | [pipeline_async_example.py](examples/database/redis/sets/pipeline_async_example.py) | Add members to set (async) |
+| `redis_set_get_members_sync` | `from wpipe_steps.database.redis.sets import redis_set_get_members_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/sets/pipeline_sync_example.py) | Get all members from set |
+| `redis_set_get_members_async` | `from wpipe_steps.database.redis.sets import redis_set_get_members_async` | Async | [pipeline_async_example.py](examples/database/redis/sets/pipeline_async_example.py) | Get all members from set (async) |
+| `redis_set_is_member_sync` | `from wpipe_steps.database.redis.sets import redis_set_is_member_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/sets/pipeline_sync_example.py) | Check membership in set |
+| `redis_set_is_member_async` | `from wpipe_steps.database.redis.sets import redis_set_is_member_async` | Async | [pipeline_async_example.py](examples/database/redis/sets/pipeline_async_example.py) | Check membership in set (async) |
+| `redis_set_remove_sync` | `from wpipe_steps.database.redis.sets import redis_set_remove_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/sets/pipeline_sync_example.py) | Remove members from set |
+| `redis_set_remove_async` | `from wpipe_steps.database.redis.sets import redis_set_remove_async` | Async | [pipeline_async_example.py](examples/database/redis/sets/pipeline_async_example.py) | Remove members from set (async) |
+| `redis_set_get_ttl_sync` | `from wpipe_steps.database.redis.sets import redis_set_get_ttl_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/sets/pipeline_sync_example.py) | Get TTL of set |
+| `redis_set_get_ttl_async` | `from wpipe_steps.database.redis.sets import redis_set_get_ttl_async` | Async | [pipeline_async_example.py](examples/database/redis/sets/pipeline_async_example.py) | Get TTL of set (async) |
+| `redis_set_extend_ttl_sync` | `from wpipe_steps.database.redis.sets import redis_set_extend_ttl_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/sets/pipeline_sync_example.py) | Extend TTL of set |
+| `redis_set_extend_ttl_async` | `from wpipe_steps.database.redis.sets import redis_set_extend_ttl_async` | Async | [pipeline_async_example.py](examples/database/redis/sets/pipeline_async_example.py) | Extend TTL of set (async) |
 
 ### Sorted Sets (package: `wpipe_steps.database.redis.sortsets`)
-| Step Name | Type | Description |
-|-----------|------|-------------|
-| `redis_sortsets_add_sync` | Sync | Add member to sorted set |
-| `redis_sortsets_add_async` | Async | Add member to sorted set (async) |
-| `redis_sortsets_get_sync` | Sync | Get members (ascending) |
-| `redis_sortsets_get_async` | Async | Get members (ascending, async) |
-| `redis_sortsets_get_reverse_sync` | Sync | Get members (descending) |
-| `redis_sortsets_get_reverse_async` | Async | Get members (descending, async) |
-| `redis_sortsets_remove_sync` | Sync | Remove member from sorted set |
-| `redis_sortsets_remove_async` | Async | Remove member from sorted set (async) |
-| `redis_sortsets_get_rank_sync` | Sync | Get rank of member |
-| `redis_sortsets_get_rank_async` | Async | Get rank of member (async) |
-| `redis_sortsets_get_score_sync` | Sync | Get score of member |
-| `redis_sortsets_get_score_async` | Async | Get score of member (async) |
-| `redis_sortsets_increment_score_sync` | Sync | Increment score of member |
-| `redis_sortsets_increment_score_async` | Async | Increment score of member (async) |
-| `redis_sortsets_get_by_score_sync` | Sync | Get members by score range |
-| `redis_sortsets_get_by_score_async` | Async | Get members by score range (async) |
-| `redis_sortsets_delete_sync` | Sync | Delete sorted set |
-| `redis_sortsets_delete_async` | Async | Delete sorted set (async) |
-| `redis_sortsets_set_ttl_sync` | Sync | Set TTL of sorted set |
-| `redis_sortsets_set_ttl_async` | Async | Set TTL of sorted set (async) |
-| `redis_sortsets_get_ttl_sync` | Sync | Get TTL of sorted set |
-| `redis_sortsets_get_ttl_async` | Async | Get TTL of sorted set (async) |
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `redis_sortsets_add_sync` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_add_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/sortsets/pipeline_sync_example.py) | Add member to sorted set |
+| `redis_sortsets_add_async` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_add_async` | Async | [pipeline_async_example.py](examples/database/redis/sortsets/pipeline_async_example.py) | Add member to sorted set (async) |
+| `redis_sortsets_get_sync` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_get_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/sortsets/pipeline_sync_example.py) | Get members (ascending) |
+| `redis_sortsets_get_async` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_get_async` | Async | [pipeline_async_example.py](examples/database/redis/sortsets/pipeline_async_example.py) | Get members (ascending, async) |
+| `redis_sortsets_get_reverse_sync` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_get_reverse_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/sortsets/pipeline_sync_example.py) | Get members (descending) |
+| `redis_sortsets_get_reverse_async` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_get_reverse_async` | Async | [pipeline_async_example.py](examples/database/redis/sortsets/pipeline_async_example.py) | Get members (descending, async) |
+| `redis_sortsets_remove_sync` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_remove_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/sortsets/pipeline_sync_example.py) | Remove member from sorted set |
+| `redis_sortsets_remove_async` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_remove_async` | Async | [pipeline_async_example.py](examples/database/redis/sortsets/pipeline_async_example.py) | Remove member from sorted set (async) |
+| `redis_sortsets_get_rank_sync` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_get_rank_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/sortsets/pipeline_sync_example.py) | Get rank of member |
+| `redis_sortsets_get_rank_async` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_get_rank_async` | Async | [pipeline_async_example.py](examples/database/redis/sortsets/pipeline_async_example.py) | Get rank of member (async) |
+| `redis_sortsets_get_score_sync` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_get_score_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/sortsets/pipeline_sync_example.py) | Get score of member |
+| `redis_sortsets_get_score_async` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_get_score_async` | Async | [pipeline_async_example.py](examples/database/redis/sortsets/pipeline_async_example.py) | Get score of member (async) |
+| `redis_sortsets_increment_score_sync` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_increment_score_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/sortsets/pipeline_sync_example.py) | Increment score of member |
+| `redis_sortsets_increment_score_async` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_increment_score_async` | Async | [pipeline_async_example.py](examples/database/redis/sortsets/pipeline_async_example.py) | Increment score of member (async) |
+| `redis_sortsets_get_by_score_sync` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_get_by_score_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/sortsets/pipeline_sync_example.py) | Get members by score range |
+| `redis_sortsets_get_by_score_async` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_get_by_score_async` | Async | [pipeline_async_example.py](examples/database/redis/sortsets/pipeline_async_example.py) | Get members by score range (async) |
+| `redis_sortsets_delete_sync` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_delete_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/sortsets/pipeline_sync_example.py) | Delete sorted set |
+| `redis_sortsets_delete_async` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_delete_async` | Async | [pipeline_async_example.py](examples/database/redis/sortsets/pipeline_async_example.py) | Delete sorted set (async) |
+| `redis_sortsets_set_ttl_sync` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_set_ttl_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/sortsets/pipeline_sync_example.py) | Set TTL of sorted set |
+| `redis_sortsets_set_ttl_async` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_set_ttl_async` | Async | [pipeline_async_example.py](examples/database/redis/sortsets/pipeline_async_example.py) | Set TTL of sorted set (async) |
+| `redis_sortsets_get_ttl_sync` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_get_ttl_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/sortsets/pipeline_sync_example.py) | Get TTL of sorted set |
+| `redis_sortsets_get_ttl_async` | `from wpipe_steps.database.redis.sortsets import redis_sortsets_get_ttl_async` | Async | [pipeline_async_example.py](examples/database/redis/sortsets/pipeline_async_example.py) | Get TTL of sorted set (async) |
 
 ### Streams (package: `wpipe_steps.database.redis.streams`)
-| Step Name | Type | Description |
-|-----------|------|-------------|
-| `redis_stream_add_sync` | Sync | Add message to stream |
-| `redis_stream_add_async` | Async | Add message to stream (async) |
-| `redis_stream_read_sync` | Sync | Read messages from stream |
-| `redis_stream_read_async` | Async | Read messages from stream (async) |
-| `redis_stream_on_message_sync` | Sync | Consume messages with consumer group (returns decorator) |
-| `redis_stream_on_message_async` | Async | Consume messages with consumer group (async, returns decorator) |
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `redis_stream_add_sync` | `from wpipe_steps.database.redis.streams import redis_stream_add_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/streams/pipeline_sync_example.py) | Add message to stream |
+| `redis_stream_add_async` | `from wpipe_steps.database.redis.streams import redis_stream_add_async` | Async | [pipeline_async_example.py](examples/database/redis/streams/pipeline_async_example.py) | Add message to stream (async) |
+| `redis_stream_read_sync` | `from wpipe_steps.database.redis.streams import redis_stream_read_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/streams/pipeline_sync_example.py) | Read messages from stream |
+| `redis_stream_read_async` | `from wpipe_steps.database.redis.streams import redis_stream_read_async` | Async | [pipeline_async_example.py](examples/database/redis/streams/pipeline_async_example.py) | Read messages from stream (async) |
+| `redis_stream_on_message_sync` | `from wpipe_steps.database.redis.streams import redis_stream_on_message_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/streams/pipeline_sync_example.py) | Consume messages with consumer group (returns decorator) |
+| `redis_stream_on_message_async` | `from wpipe_steps.database.redis.streams import redis_stream_on_message_async` | Async | [pipeline_async_example.py](examples/database/redis/streams/pipeline_async_example.py) | Consume messages with consumer group (async, returns decorator) |
 
 ### Geo (package: `wpipe_steps.database.redis.geo`)
-| Step Name | Type | Description |
-|-----------|------|-------------|
-| `redis_geo_add_sync` | Sync | Add location to geo set |
-| `redis_geo_add_async` | Async | Add location to geo set (async) |
-| `redis_geo_get_distance_sync` | Sync | Get distance between members |
-| `redis_geo_get_distance_async` | Async | Get distance between members (async) |
-| `redis_geo_get_positions_sync` | Sync | Get positions of members |
-| `redis_geo_get_positions_async` | Async | Get positions of members (async) |
-| `redis_geo_search_nearby_sync` | Sync | Search nearby members |
-| `redis_geo_search_nearby_async` | Async | Search nearby members (async) |
-| `redis_geo_search_nearby_dist_sync` | Sync | Search nearby with distance |
-| `redis_geo_search_nearby_dist_async` | Async | Search nearby with distance (async) |
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `redis_geo_add_sync` | `from wpipe_steps.database.redis.geo import redis_geo_add_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/geo/pipeline_sync_example.py) | Add location to geo set |
+| `redis_geo_add_async` | `from wpipe_steps.database.redis.geo import redis_geo_add_async` | Async | [pipeline_async_example.py](examples/database/redis/geo/pipeline_async_example.py) | Add location to geo set (async) |
+| `redis_geo_get_distance_sync` | `from wpipe_steps.database.redis.geo import redis_geo_get_distance_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/geo/pipeline_sync_example.py) | Get distance between members |
+| `redis_geo_get_distance_async` | `from wpipe_steps.database.redis.geo import redis_geo_get_distance_async` | Async | [pipeline_async_example.py](examples/database/redis/geo/pipeline_async_example.py) | Get distance between members (async) |
+| `redis_geo_get_positions_sync` | `from wpipe_steps.database.redis.geo import redis_geo_get_positions_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/geo/pipeline_sync_example.py) | Get positions of members |
+| `redis_geo_get_positions_async` | `from wpipe_steps.database.redis.geo import redis_geo_get_positions_async` | Async | [pipeline_async_example.py](examples/database/redis/geo/pipeline_async_example.py) | Get positions of members (async) |
+| `redis_geo_search_nearby_sync` | `from wpipe_steps.database.redis.geo import redis_geo_search_nearby_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/geo/pipeline_sync_example.py) | Search nearby members |
+| `redis_geo_search_nearby_async` | `from wpipe_steps.database.redis.geo import redis_geo_search_nearby_async` | Async | [pipeline_async_example.py](examples/database/redis/geo/pipeline_async_example.py) | Search nearby members (async) |
+| `redis_geo_search_nearby_dist_sync` | `from wpipe_steps.database.redis.geo import redis_geo_search_nearby_dist_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/geo/pipeline_sync_example.py) | Search nearby with distance |
+| `redis_geo_search_nearby_dist_async` | `from wpipe_steps.database.redis.geo import redis_geo_search_nearby_dist_async` | Async | [pipeline_async_example.py](examples/database/redis/geo/pipeline_async_example.py) | Search nearby with distance (async) |
 
 ### HyperLogLog (package: `wpipe_steps.database.redis.hyperloglog`)
-| Step Name | Type | Description |
-|-----------|------|-------------|
-| `redis_hll_add_sync` | Sync | Add elements to HyperLogLog |
-| `redis_hll_add_async` | Async | Add elements to HyperLogLog (async) |
-| `redis_hll_count_sync` | Sync | Count unique elements |
-| `redis_hll_count_async` | Async | Count unique elements (async) |
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `redis_hll_add_sync` | `from wpipe_steps.database.redis.hyperloglog import redis_hll_add_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/hyperloglog/pipeline_sync_example.py) | Add elements to HyperLogLog |
+| `redis_hll_add_async` | `from wpipe_steps.database.redis.hyperloglog import redis_hll_add_async` | Async | [pipeline_async_example.py](examples/database/redis/hyperloglog/pipeline_async_example.py) | Add elements to HyperLogLog (async) |
+| `redis_hll_count_sync` | `from wpipe_steps.database.redis.hyperloglog import redis_hll_count_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/hyperloglog/pipeline_sync_example.py) | Count unique elements |
+| `redis_hll_count_async` | `from wpipe_steps.database.redis.hyperloglog import redis_hll_count_async` | Async | [pipeline_async_example.py](examples/database/redis/hyperloglog/pipeline_async_example.py) | Count unique elements (async) |
 
 ### Transactions (package: `wpipe_steps.database.redis.transactions`)
-| Step Name | Type | Description |
-|-----------|------|-------------|
-| `redis_transaction_execute_sync` | Sync | Execute transaction with multiple commands |
-| `redis_transaction_execute_async` | Async | Execute transaction with multiple commands (async) |
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `redis_transaction_execute_sync` | `from wpipe_steps.database.redis.transactions import redis_transaction_execute_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/transactions/pipeline_sync_example.py) | Execute transaction with multiple commands |
+| `redis_transaction_execute_async` | `from wpipe_steps.database.redis.transactions import redis_transaction_execute_async` | Async | [pipeline_async_example.py](examples/database/redis/transactions/pipeline_async_example.py) | Execute transaction with multiple commands (async) |
 
 ### Pipeline (package: `wpipe_steps.database.redis.pipeline`)
-| Step Name | Type | Description |
-|-----------|------|-------------|
-| `redis_pipeline_execute_sync` | Sync | Execute pipeline with multiple commands |
-| `redis_pipeline_execute_async` | Async | Execute pipeline with multiple commands (async) |
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `redis_pipeline_execute_sync` | `from wpipe_steps.database.redis.pipeline import redis_pipeline_execute_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/pipeline/pipeline_sync_example.py) | Execute pipeline with multiple commands |
+| `redis_pipeline_execute_async` | `from wpipe_steps.database.redis.pipeline import redis_pipeline_execute_async` | Async | [pipeline_async_example.py](examples/database/redis/pipeline/pipeline_async_example.py) | Execute pipeline with multiple commands (async) |
 
 ### Cache Decorators (package: `wpipe_steps.database.redis.cache`)
-| Step Name | Type | Description |
-|-----------|------|-------------|
-| `redis_cache_decorator_sync` | Sync | Get cache decorator with TTL |
-| `redis_async_cache_decorator` | Async | Get async cache decorator with TTL |
-| `redis_retry_decorator_sync` | Sync | Get retry decorator with backoff |
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `redis_cache_decorator_sync` | `from wpipe_steps.database.redis.cache import redis_cache_decorator_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/cache/pipeline_sync_example.py) | Get cache decorator with TTL |
+| `redis_async_cache_decorator` | `from wpipe_steps.database.redis.cache import redis_async_cache_decorator` | Async | [pipeline_async_example.py](examples/database/redis/cache/pipeline_async_example.py) | Get async cache decorator with TTL |
+| `redis_retry_decorator_sync` | `from wpipe_steps.database.redis.cache import redis_retry_decorator_sync` | Sync | [pipeline_sync_example.py](examples/database/redis/cache/pipeline_sync_example.py) | Get retry decorator with backoff |
 
 ---
 
