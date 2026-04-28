@@ -8,7 +8,7 @@ long_description = (this_directory / "README.md").read_text() if (this_directory
 
 setup(
     name="wpipe-steps",
-    version="0.18.0",
+    version="0.19.0",
     packages=find_packages(include=["wpipe_steps", "wpipe_steps.*"]),
     install_requires=[
         "wpipe>=2.3.0",
