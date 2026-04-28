@@ -4,6 +4,21 @@ All notable changes to WPipe will be documented in this file.
 
 ---
 
+## [0.35.0] - 2026-04-28
+
+### Added
+- **Connectivity Pack**: Complete connectivity steps support
+  - `http_request`: HTTP client with automatic retries (GET, POST, PUT, DELETE, PATCH)
+  - `graphql_query`: GraphQL query/mutation executor
+  - `webhook_trigger`: Webhook notifier
+  - `sftp_transfer`: SFTP file transfer (upload/download)
+  - `rss_parser`: RSS/Atom feed parser
+  - `oauth2_auth`: OAuth2 token manager
+- Updated README.md with Connectivity Steps inventory
+- Updated TODO.txt marking Connectivity as completed
+
+---
+
 ## [0.34.0] - 2026-04-28
 
 ### Added
