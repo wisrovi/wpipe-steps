@@ -4,6 +4,113 @@ All notable changes to WPipe will be documented in this file.
 
 ---
 
+## [0.34.0] - 2026-04-28
+
+### Added
+- **Redis Cache Module**: Complete cache decorators support
+  - `redis_cache_decorator_sync`: Get cache decorator with TTL
+  - `redis_async_cache_decorator`: Get async cache decorator with TTL
+  - `redis_retry_decorator_sync`: Get retry decorator with backoff
+- Examples for cache module in `examples/database/redis/cache/`
+
+---
+
+## [0.33.0] - 2026-04-28
+
+### Added
+- **Redis Pipeline Module**: Complete pipeline operations support
+  - `redis_pipeline_execute_sync` / `redis_pipeline_execute_async`: Execute pipeline with multiple commands
+- Examples for pipeline module in `examples/database/redis/pipeline/`
+
+---
+
+## [0.32.0] - 2026-04-28
+
+### Added
+- **Redis Transactions Module**: Complete transaction operations support
+  - `redis_transaction_execute_sync` / `redis_transaction_execute_async`: Execute transaction with multiple commands
+- Examples for transactions module in `examples/database/redis/transactions/`
+
+---
+
+## [0.31.0] - 2026-04-28
+
+### Added
+- **Redis HyperLogLog Module**: Complete HyperLogLog operations support
+  - `redis_hll_add_sync` / `redis_hll_add_async`: Add elements to HyperLogLog
+  - `redis_hll_count_sync` / `redis_hll_count_async`: Count unique elements
+- Examples for hyperloglog module in `examples/database/redis/hyperloglog/`
+
+---
+
+## [0.30.0] - 2026-04-28
+
+### Added
+- **Redis Geo Module**: Complete geo operations support
+  - `redis_geo_add_sync` / `redis_geo_add_async`: Add location to geo set
+  - `redis_geo_get_distance_sync` / `redis_geo_get_distance_async`: Get distance between members
+  - `redis_geo_get_positions_sync` / `redis_geo_get_positions_async`: Get positions of members
+  - `redis_geo_search_nearby_sync` / `redis_geo_search_nearby_async`: Search nearby members
+  - `redis_geo_search_nearby_dist_sync` / `redis_geo_search_nearby_dist_async`: Search nearby with distance
+- Examples for geo module in `examples/database/redis/geo/`
+
+---
+
+## [0.29.0] - 2026-04-28
+
+### Added
+- **Redis Streams Module**: Complete streams operations support
+  - `redis_stream_add_sync` / `redis_stream_add_async`: Add message to stream
+  - `redis_stream_read_sync` / `redis_stream_read_async`: Read messages from stream
+  - `redis_stream_on_message_sync` / `redis_stream_on_message_async`: Consume messages with consumer groups
+- Examples for streams module in `examples/database/redis/streams/`
+
+---
+
+## [0.28.0] - 2026-04-28
+
+### Added
+- **Redis Sorted Sets Module**: Complete sorted sets operations support
+  - `redis_sortsets_add_sync` / `redis_sortsets_add_async`: Add member to sorted set
+  - `redis_sortsets_get_sync` / `redis_sortsets_get_async`: Get members (ascending)
+  - `redis_sortsets_get_reverse_sync` / `redis_sortsets_get_reverse_async`: Get members (descending)
+  - `redis_sortsets_remove_sync` / `redis_sortsets_remove_async`: Remove member
+  - `redis_sortsets_get_rank_sync` / `redis_sortsets_get_rank_async`: Get rank of member
+  - `redis_sortsets_get_score_sync` / `redis_sortsets_get_score_async`: Get score of member
+  - `redis_sortsets_increment_score_sync` / `redis_sortsets_increment_score_async`: Increment score
+  - `redis_sortsets_get_by_score_sync` / `redis_sortsets_get_by_score_async`: Get by score range
+  - `redis_sortsets_delete_sync` / `redis_sortsets_delete_async`: Delete sorted set
+  - `redis_sortsets_set_ttl_sync` / `redis_sortsets_set_ttl_async`: Set TTL
+  - `redis_sortsets_get_ttl_sync` / `redis_sortsets_get_ttl_async`: Get TTL
+- Examples for sortsets module in `examples/database/redis/sortsets/`
+
+---
+
+## [0.27.0] - 2026-04-28
+
+### Added
+- **Redis Sets Module**: Complete sets operations support
+  - `redis_set_add_sync` / `redis_set_add_async`: Add members to set
+  - `redis_set_get_members_sync` / `redis_set_get_members_async`: Get all members
+  - `redis_set_is_member_sync` / `redis_set_is_member_async`: Check membership
+  - `redis_set_remove_sync` / `redis_set_remove_async`: Remove members
+  - `redis_set_get_ttl_sync` / `redis_set_get_ttl_async`: Get TTL
+  - `redis_set_extend_ttl_sync` / `redis_set_extend_ttl_async`: Extend TTL
+- Examples for sets module in `examples/database/redis/sets/`
+
+---
+
+## [0.26.0] - 2026-04-28
+
+### Added
+- **Redis Queue Module**: Complete queue operations support
+  - `redis_queue_publish_sync` / `redis_queue_publish_async`: Publish message to queue
+  - `redis_queue_on_message_sync` / `redis_queue_on_message_async`: Subscribe to queue
+  - `redis_queue_get_length_sync` / `redis_queue_get_length_async`: Get queue length
+- Examples for queue module in `examples/database/redis/queue/`
+
+---
+
 ## [0.25.0] - 2026-04-28
 
 ### Added
@@ -39,6 +146,7 @@ All notable changes to WPipe will be documented in this file.
   - `redis_bitmap_get_ttl_sync` / `redis_bitmap_get_ttl_async`: Get TTL
   - `redis_bitmap_extend_ttl_sync` / `redis_bitmap_extend_ttl_async`: Extend TTL
 - Examples for bitmaps module in `examples/database/redis/bitmaps/`
+- Updated README.md with Redis Steps description
 
 ---
 
@@ -73,7 +181,7 @@ All notable changes to WPipe will be documented in this file.
 - **Condition**: Conditional branching based on data
 - **Retry**: Automatic retry with backoff
 - **APIClient**: External API integration
-- **SQLite/Wsqlite**: Data persistence
+- **SQLite/WSQLite**: Data persistence
 - **Error handling**: Custom exceptions with codes
 - **YAML config**: Load configurations from YAML
 - **Nested pipelines**: Compose complex workflows

@@ -7,8 +7,8 @@ Thank you for your interest in contributing to wpipe!
 1. Fork the repository
 2. Clone your fork:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/wpipe.git
-   cd wpipe
+   git clone https://github.com/wisrovi/wpipe-plugins.git
+   cd wpipe-plugins
    ```
 3. Install dependencies:
    ```bash
