@@ -4,6 +4,69 @@ All notable changes to WPipe will be documented in this file.
 
 ---
 
+## [0.104.0] - 2026-04-29
+
+### Added
+- **HuggingFace Pack Complete**: All 50 steps implemented (Steps 1-50/50)
+- **Text NLP** (10 steps - v0.55.0 to v0.64.0):
+  - `HFTextClassificationStep` (v0.55.0), `HFSentimentAnalysisStep` (v0.56.0)
+  - `HFZeroShotClassificationStep` (v0.57.0), `HFNerStep` (v0.58.0)
+  - `HFFillMaskStep` (v0.59.0), `HFQuestionAnsweringStep` (v0.60.0)
+  - `HFSummarizationStep` (v0.61.0), `HFTranslationStep` (v0.62.0)
+  - `HFTextGenerationStep` (v0.63.0), `HFConversationalStep` (v0.64.0)
+- **Text/Embeddings** (10 steps - v0.65.0 to v0.74.0):
+  - `HFText2TextGenerationStep` (v0.65.0), `HFMultipleChoiceStep` (v0.66.0)
+  - `HFTableQuestionAnsweringStep` (v0.67.0), `HFFeatureExtractionStep` (v0.68.0)
+  - `HFSentenceEmbeddingsStep` (v0.69.0), `HFSentenceSimilarityStep` (v0.70.0)
+  - `HFRerankingStep` (v0.71.0), `HFSemanticSearchStep` (v0.72.0)
+  - `HFDocumentQuestionAnsweringStep` (v0.73.0), `HFLanguageIdentificationStep` (v0.74.0)
+- **Audio/Speech** (8 steps - v0.75.0 to v0.82.0):
+  - `HFAutomaticSpeechRecognitionStep` (v0.75.0), `HFAudioClassificationStep` (v0.76.0)
+  - `HFTextToSpeechStep` (v0.77.0), `HFVoiceActivityDetectionStep` (v0.78.0)
+  - `HFAudioToAudioStep` (v0.79.0), `HFAudioEmotionRecognitionStep` (v0.80.0)
+  - `HFSpeechToSpeechStep` (v0.81.0), `HFSpeakerDiarizationStep` (v0.82.0)
+- **Vision** (15 steps - v0.83.0 to v0.97.0):
+  - `HFImageClassificationStep` (v0.83.0), `HFObjectDetectionStep` (v0.84.0)
+  - `HFImageSegmentationStep` (v0.85.0), `HFImageToTextStep` (v0.86.0)
+  - `HFVisualQuestionAnsweringStep` (v0.87.0), `HFZeroShotImageClassificationStep` (v0.88.0)
+  - `HFDepthEstimationStep` (v0.89.0), `HFImageToImageStep` (v0.90.0)
+  - `HFInpaintingStep` (v0.91.0), `HFImageColorizationStep` (v0.92.0)
+  - `HFImageSuperResolutionStep` (v0.93.0), `HFImageStyleTransferStep` (v0.94.0)
+  - `HFOcrStep` (v0.95.0), `HFFaceDetectionStep` (v0.96.0)
+  - `HFImageBackgroundRemovalStep` (v0.97.0)
+- **Video & Multimodal** (7 steps - v0.98.0 to v0.104.0):
+  - `HFVideoClassificationStep` (v0.98.0), `HFVideoFrameInterpolationStep` (v0.99.0)
+  - `HFDocumentVisualQuestionAnsweringStep` (v0.100.0), `HFImageTextToTextStep` (v0.101.0)
+  - `HFAnyToAnyStep` (v0.102.0), `HFTableDetectionStep` (v0.103.0)
+  - `HFTableDetectionStep` (v0.104.0)
+- **Total: 50 HuggingFace steps** (100% local, no API key required)
+- All steps use `transformers.pipeline()` with `local_files_only=True`
+- Updated README.md with complete inventory of 50 steps
+- Updated TODO.md marking all 50 steps as completed
+- Updated CHANGELOG.md with all version increments
+
+---
+
+## [0.63.0] - 2026-04-29
+
+### Added
+- **HuggingFace Pack**: Steps 1-9/50 completed (v0.55.0-v0.63.0)
+  - `HFTextClassificationStep`: Text classification (BERT) - v0.55.0
+  - `HFSentimentAnalysisStep`: Sentiment analysis (DistilBERT) - v0.56.0
+  - `HFZeroShotClassificationStep`: Zero-shot classification (BART) - v0.57.0
+  - `HFNerStep`: Named Entity Recognition (BERT-NER) - v0.58.0
+  - `HFFillMaskStep`: Fill masked tokens (BERT) - v0.59.0
+  - `HFQuestionAnsweringStep`: QA based on context (BERT-SQuAD) - v0.60.0
+  - `HFSummarizationStep`: Text summarization (BART-CNN) - v0.61.0
+  - `HFTranslationStep`: Translate text (T5) - v0.62.0
+  - `HFTextGenerationStep`: Generate text (GPT-2) - v0.63.0
+  - `HFConversationalStep`: Chat with memory (BlenderBot) - v0.63.0
+- All steps use `transformers.pipeline()` with `local_files_only=True`
+- No API key required - 100% local execution
+- Updated README.md with 9 steps in inventory
+
+---
+
 ## [0.55.0] - 2026-04-29
 
 ### Added

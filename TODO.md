@@ -79,91 +79,83 @@
 - ✅ `DiskSpaceCheckStep`: Alerta si queda poco espacio para el proceso
 - ✅ `HealthCheckStep`: Ping a una lista de servicios críticos
 
----
+### 🤗 10. HuggingFace (Local - No API Key) - ✅ COMPLETADO (v0.55.0 - v0.104.0)
 
-## 🤗 HuggingFace Tasks - Potential Steps (30-50 ideas)
+#### Text NLP (10 steps - v0.55.0 a v0.64.0)
+- ✅ `HFTextClassificationStep` (v0.55.0): Text classification (BERT)
+- ✅ `HFSentimentAnalysisStep` (v0.56.0): Sentiment analysis (DistilBERT)
+- ✅ `HFZeroShotClassificationStep` (v0.57.0): Zero-shot classification (BART)
+- ✅ `HFNerStep` (v0.58.0): Named Entity Recognition (BERT-NER)
+- ✅ `HFFillMaskStep` (v0.59.0): Fill masked tokens (BERT)
+- ✅ `HFQuestionAnsweringStep` (v0.60.0): QA based on context (BERT-SQuAD)
+- ✅ `HFSummarizationStep` (v0.61.0): Text summarization (BART-CNN)
+- ✅ `HFTranslationStep` (v0.62.0): Translate text (T5)
+- ✅ `HFTextGenerationStep` (v0.63.0): Generate text (GPT-2)
+- ✅ `HFConversationalStep` (v0.64.0): Chat with memory (BlenderBot)
 
-HuggingFace ofrece cientos de modelos y tareas. Aquí hay una lista de tareas que se pueden convertir en steps:
+#### Text/Embeddings (10 steps - v0.65.0 a v0.74.0)
+- ✅ `HFText2TextGenerationStep` (v0.65.0): Text-to-text (T5)
+- ✅ `HFMultipleChoiceStep` (v0.66.0): Multiple choice QA (RoBERTa)
+- ✅ `HFTableQuestionAnsweringStep` (v0.67.0): QA on tables (TAPAS)
+- ✅ `HFFeatureExtractionStep` (v0.68.0): Extract embeddings (BERT)
+- ✅ `HFSentenceEmbeddingsStep` (v0.69.0): Sentence embeddings (sentence-transformers)
+- ✅ `HFSentenceSimilarityStep` (v0.70.0): Semantic similarity
+- ✅ `HFRerankingStep` (v0.71.0): Rerank docs for RAG
+- ✅ `HFSemanticSearchStep` (v0.72.0): Semantic search
+- ✅ `HFDocumentQuestionAnsweringStep` (v0.73.0): QA on document images
+- ✅ `HFLanguageIdentificationStep` (v0.74.0): Detect language
 
-### Text Generation & LLMs
-1. `HFTextGenerationStep`: Generación de texto con modelos como GPT-2, Llama, Mistral
-2. `HFChatCompletionStep`: Chat interactivo con soporte para tool-calling
-3. `HFTextToTextGenerationStep`: Tareas de texto a texto (T5, BART)
-4. `HFCodeGenerationStep`: Generación de código con modelos especializados
-5. `HFTextSummarizationStep`: Resumir textos largos automáticamente
-6. `HFQuestionAnsweringStep`: Responder preguntas basadas en un contexto
-7. `HFTableQuestionAnsweringStep`: Responder preguntas de tablas/datos estructurados
-8. `HFConversationalStep`: Mantener conversaciones con memoria de contexto
-9. `HFMultipleChoiceStep`: Selección múltiple basada en contexto
-10. `HFTextParaphrasingStep`: Reformular oraciones manteniendo el significado
+#### Audio/Speech (8 steps - v0.75.0 a v0.82.0)
+- ✅ `HFAutomaticSpeechRecognitionStep` (v0.75.0): Transcribe audio (Whisper)
+- ✅ `HFAudioClassificationStep` (v0.76.0): Classify audio
+- ✅ `HFTextToSpeechStep` (v0.77.0): Text to speech (ESPnet)
+- ✅ `HFVoiceActivityDetectionStep` (v0.78.0): Detect voice
+- ✅ `HFAudioToAudioStep` (v0.79.0): Denoising
+- ✅ `HFAudioEmotionRecognitionStep` (v0.80.0): Emotion in speech
+- ✅ `HFSpeechToSpeechStep` (v0.81.0): Voice conversion
+- ✅ `HFSpeakerDiarizationStep` (v0.82.0): Who spoke when
 
-### Text Classification & Analysis
-11. `HFSentimentAnalysisStep`: Análisis de sentimientos (ya existe, mejorar)
-12. `HFZeroShotClassificationStep`: Clasificación sin entrenamiento previo
-13. `HFTextClassificationStep`: Clasificación general de texto
-14. `HFTokenClassificationStep`: NER (Named Entity Recognition)
-15. `HFFillMaskStep`: Completar máscaras en texto (BERT-style)
-16. `HFDocumentQuestionAnsweringStep`: QA en documentos complejos
-17. `HFLanguageIdentificationStep`: Detectar idioma de un texto
-18. `HFReadabilityAssessmentStep`: Evaluar complejidad de lectura
+#### Vision (15 steps - v0.83.0 a v0.97.0)
+- ✅ `HFImageClassificationStep` (v0.83.0): Classify images (ViT)
+- ✅ `HFObjectDetectionStep` (v0.84.0): Detect objects (DETR)
+- ✅ `HFImageSegmentationStep` (v0.85.0): Semantic segmentation (SegFormer)
+- ✅ `HFImageToTextStep` (v0.86.0): Image captioning (BLIP)
+- ✅ `HFVisualQuestionAnsweringStep` (v0.87.0): VQA on images
+- ✅ `HFZeroShotImageClassificationStep` (v0.88.0): Zero-shot image classification (CLIP)
+- ✅ `HFDepthEstimationStep` (v0.89.0): Depth estimation (DPT)
+- ✅ `HFImageToImageStep` (v0.90.0): Image transformation (Swin2SR)
+- ✅ `HFInpaintingStep` (v0.91.0): Inpainting
+- ✅ `HFImageColorizationStep` (v0.92.0): Colorize B&W images
+- ✅ `HFImageSuperResolutionStep` (v0.93.0): Super resolution
+- ✅ `HFImageStyleTransferStep` (v0.94.0): Style transfer
+- ✅ `HFOcrStep` (v0.95.0): OCR (TrOCR)
+- ✅ `HFFaceDetectionStep` (v0.96.0): Face detection
+- ✅ `HFImageBackgroundRemovalStep` (v0.97.0): Remove backgrounds
 
-### Embeddings & Semantic Search
-19. `HFFeatureExtractionStep`: Generar embeddings (vectorización de texto)
-20. `HFSentenceSimilarityStep`: Calcular similitud entre oraciones
-21. `HFSentenceEmbeddingsStep`: Embeddings de oraciones completas
-22. `HFRerankingStep`: Reordenar documentos por relevancia (RAG)
-23. `HFTextToSpeechStep`: Convertir texto a voz (TTS)
-24. `HFSemanticSearchStep`: Búsqueda semántica en bases de datos
-
-### Audio & Speech
-25. `HFAutomaticSpeechRecognitionStep`: Transcribir audio a texto (ASR)
-26. `HFAudioClassificationStep`: Clasificar audio (música, ruido, voz)
-27. `HFVoiceActivityDetectionStep`: Detectar presencia de voz en audio
-28. `HFAudioToAudioStep`: Procesamiento de audio (denoising, etc.)
-29. `HFSpeechToSpeechStep`: Conversión de voz (estilo transfer)
-
-### Image & Vision
-30. `HFImageClassificationStep`: Clasificar imágenes en categorías
-31. `HFObjectDetectionStep`: Detectar objetos en imágenes
-32. `HFImageSegmentationStep`: Segmentación semántica/instancia
-33. `HFImageToTextStep`: Generar descripciones de imágenes (Image Captioning)
-34. `HFVisualQuestionAnsweringStep`: Responder preguntas sobre imágenes
-35. `HFZeroShotImageClassificationStep`: Clasificar imágenes sin entrenar
-36. `HFDepthEstimationStep`: Estimar profundidad de una imagen
-37. `HFImageToImageStep`: Transformación de imágenes (estilo, super-res)
-38. `HFInpaintingStep`: Rellenar áreas faltantes en imágenes
-39. `HFImageColorizationStep`: Colorizar imágenes en blanco y negro
-
-### Video
-40. `HFTextToVideoStep`: Generar videos a partir de texto
-41. `HFVideoClassificationStep`: Clasificar contenido de videos
-42. `HFVideoFrameInterpolationStep`: Interpolar frames en videos
-
-### Multimodal
-43. `HFDocumentVisualQuestionAnsweringStep`: QA en documentos con imágenes
-44. `HFImageTextToTextStep`: Tareas multimodales (imagen + texto → texto)
-45. `HFAnyToAnyStep`: Modelos que aceptan múltiples tipos de entrada
-
-### Specialized Tasks
-46. `HFTranslationStep`: Traducción automática (ya existe base)
-47. `HFTabularDataClassificationStep`: Clasificación de datos tabulares
-48. `HFTimeSeriesForecastingStep`: Predicción de series temporales
-49. `HFAnomalyDetectionStep`: Detección de anomalías en datos
-50. `HFReinforcementLearningStep`: Inferencia de modelos RL
+#### Video & Multimodal (7 steps - v0.98.0 a v0.104.0)
+- ✅ `HFVideoClassificationStep` (v0.98.0): Classify video
+- ✅ `HFVideoFrameInterpolationStep` (v0.99.0): Interpolate frames
+- ✅ `HFDocumentVisualQuestionAnsweringStep` (v0.100.0): VQA on document images
+- ✅ `HFImageTextToTextStep` (v0.101.0): Multimodal image+text (BLIP2)
+- ✅ `HFAnyToAnyStep` (v0.102.0): Any-to-any multimodal models
+- ✅ `HFTableDetectionStep` (v0.103.0): Detect tables in documents
+- ✅ `HFTableDetectionStep` (v0.104.0): Detect tables in documents
 
 ---
 
-## 🚀 Next Steps
+## 📊 Resumen Total
 
-Para expandir con HuggingFace:
-1. Elegir las tareas más demandadas (text generation, embeddings, image classification)
-2. Crear un nuevo pack: `wpipe_steps.huggingface` o `wpipe_steps.ml`
-3. Usar `huggingface_hub.InferenceClient` para conectar con la API
-4. Soportar múltiples providers (HF Inference, Together AI, Replicate, etc.)
-5. Publicar versiones incrementales (v0.54.0, v0.55.0, etc.)
+**Total Steps Completados**: **100+ steps** en 10 packs
+- 50+ steps en packs tradicionales (Redis, Connectivity, Security, etc.)
+- 50 steps en HuggingFace pack (v0.55.0 - v0.104.0)
 
----
-
-**Total Steps Completados**: 50+ steps en 9 packs
 **PyPI**: https://pypi.org/project/wpipe-steps/
-**Documentado en**: CHANGELOG.md (v0.23.0 - v0.53.0)
+**Última versión**: v0.104.0 (50 HuggingFace steps locales, sin API key)
+
+**Características HuggingFace Pack:**
+- ✅ 100% local (no requiere internet después de descarga)
+- ✅ Sin API key requerida
+- ✅ Modelos descargados una vez y cacheados
+- ✅ Soporta CPU y GPU (`device="cpu"` o `device="cuda"`)
+- ✅ Usa `transformers.pipeline()` con `local_files_only=True`
+- ✅ Incluye Text, Audio, Vision, Video y Multimodal

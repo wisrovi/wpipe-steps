@@ -335,6 +335,54 @@ Complete inventory of HuggingFace Steps that run **100% locally** (no API key re
 | Step Name | Import | Type | Example | Description |
 |-----------|--------|------|---------|-------------|
 | `text_classification` | `from wpipe_steps.huggingface import HFTextClassificationStep` | Sync | [classification_example.py](examples/huggingface/text/classification_example.py) | Classify text into categories using local BERT models |
+| `sentiment_analysis` | `from wpipe_steps.huggingface import HFSentimentAnalysisStep` | Sync | [sentiment_example.py](examples/huggingface/text/sentiment_example.py) | Analyze sentiment (positive/negative) using DistilBERT |
+| `zero_shot_classification` | `from wpipe_steps.huggingface import HFZeroShotClassificationStep` | Sync | [zero_shot_example.py](examples/huggingface/text/zero_shot_example.py) | Classify text into custom categories without training |
+| `ner` | `from wpipe_steps.huggingface import HFNerStep` | Sync | [ner_example.py](examples/huggingface/text/ner_example.py) | Extract named entities (PER, ORG, LOC) from text |
+| `fill_mask` | `from wpipe_steps.huggingface import HFFillMaskStep` | Sync | [fill_mask_example.py](examples/huggingface/text/fill_mask_example.py) | Fill masked tokens in text using BERT |
+| `question_answering` | `from wpipe_steps.huggingface import HFQuestionAnsweringStep` | Sync | [qa_example.py](examples/huggingface/text/qa_example.py) | Answer questions based on context using BERT |
+| `summarization` | `from wpipe_steps.huggingface import HFSummarizationStep` | Sync | [summarization_example.py](examples/huggingface/text/summarization_example.py) | Summarize long text using BART/T5 |
+| `translation` | `from wpipe_steps.huggingface import HFTranslationStep` | Sync | [translation_example.py](examples/huggingface/text/translation_example.py) | Translate text between languages using T5/Marian |
+| `text_generation` | `from wpipe_steps.huggingface import HFTextGenerationStep` | Sync | [text_gen_example.py](examples/huggingface/text/text_gen_example.py) | Generate text using GPT-2 or similar models |
+| `conversational` | `from wpipe_steps.huggingface import HFConversationalStep` | Sync | [conversation_example.py](examples/huggingface/text/conversation_example.py) | Chat conversation with memory using BlenderBot |
+| `text2text` | `from wpipe_steps.huggingface import HFText2TextGenerationStep` | Sync | [text2text_example.py](examples/huggingface/text/text2text_example.py) | Text-to-text generation using T5 |
+| `multiple_choice` | `from wpipe_steps.huggingface import HFMultipleChoiceStep` | Sync | [multiple_choice_example.py](examples/huggingface/text/multiple_choice_example.py) | Multiple choice QA using RoBERTa |
+| `table_qa` | `from wpipe_steps.huggingface import HFTableQuestionAnsweringStep` | Sync | [table_qa_example.py](examples/huggingface/text/table_qa_example.py) | Answer questions on table data |
+| `feature_extraction` | `from wpipe_steps.huggingface import HFFeatureExtractionStep` | Sync | [feature_extraction_example.py](examples/huggingface/text/feature_extraction_example.py) | Extract features/embeddings using BERT |
+| `sentence_embeddings` | `from wpipe_steps.huggingface import HFSentenceEmbeddingsStep` | Sync | [sentence_embeddings_example.py](examples/huggingface/text/sentence_embeddings_example.py) | Generate sentence embeddings (sentence-transformers) |
+| `sentence_similarity` | `from wpipe_steps.huggingface import HFSentenceSimilarityStep` | Sync | [sentence_similarity_example.py](examples/huggingface/text/sentence_similarity_example.py) | Calculate semantic similarity between sentences |
+| `reranking` | `from wpipe_steps.huggingface import HFRerankingStep` | Sync | [reranking_example.py](examples/huggingface/text/reranking_example.py) | Rerank documents for RAG (cross-encoder) |
+| `semantic_search` | `from wpipe_steps.huggingface import HFSemanticSearchStep` | Sync | [semantic_search_example.py](examples/huggingface/text/semantic_search_example.py) | Semantic search using sentence embeddings |
+| `document_qa` | `from wpipe_steps.huggingface import HFDocumentQuestionAnsweringStep` | Sync | [document_qa_example.py](examples/huggingface/text/document_qa_example.py) | Answer questions on document images |
+| `language_id` | `from wpipe_steps.huggingface import HFLanguageIdentificationStep` | Sync | [language_id_example.py](examples/huggingface/text/language_id_example.py) | Detect language of text |
+| `automatic_speech_recognition` | `from wpipe_steps.huggingface import HFAutomaticSpeechRecognitionStep` | Sync | [asr_example.py](examples/huggingface/audio/asr_example.py) | Transcribe audio to text using Whisper |
+| `audio_classification` | `from wpipe_steps.huggingface import HFAudioClassificationStep` | Sync | [audio_class_example.py](examples/huggingface/audio/audio_class_example.py) | Classify audio content |
+| `text_to_speech` | `from wpipe_steps.huggingface import HFTextToSpeechStep` | Sync | [tts_example.py](examples/huggingface/audio/tts_example.py) | Convert text to speech |
+| `voice_activity_detection` | `from wpipe_steps.huggingface import HFVoiceActivityDetectionStep` | Sync | [vad_example.py](examples/huggingface/audio/vad_example.py) | Detect voice activity in audio |
+| `audio_to_audio` | `from wpipe_steps.huggingface import HFAudioToAudioStep` | Sync | [audio2audio_example.py](examples/huggingface/audio/audio2audio_example.py) | Process audio (denoising) |
+| `audio_emotion_recognition` | `from wpipe_steps.huggingface import HFAudioEmotionRecognitionStep` | Sync | [emotion_example.py](examples/huggingface/audio/emotion_example.py) | Recognize emotion in speech |
+| `speech_to_speech` | `from wpipe_steps.huggingface import HFSpeechToSpeechStep` | Sync | [speech_conv_example.py](examples/huggingface/audio/speech_conv_example.py) | Convert speech style |
+| `speaker_diarization` | `from wpipe_steps.huggingface import HFSpeakerDiarizationStep` | Sync | [diarization_example.py](examples/huggingface/audio/diarization_example.py) | Identify who spoke when |
+| `image_classification` | `from wpipe_steps.huggingface import HFImageClassificationStep` | Sync | [img_class_example.py](examples/huggingface/vision/img_class_example.py) | Classify images using ViT |
+| `object_detection` | `from wpipe_steps.huggingface import HFObjectDetectionStep` | Sync | [obj_det_example.py](examples/huggingface/vision/obj_det_example.py) | Detect objects in images |
+| `image_segmentation` | `from wpipe_steps.huggingface import HFImageSegmentationStep` | Sync | [segmentation_example.py](examples/huggingface/vision/segmentation_example.py) | Segment images semantically |
+| `image_to_text` | `from wpipe_steps.huggingface import HFImageToTextStep` | Sync | [caption_example.py](examples/huggingface/vision/caption_example.py) | Generate text description of images |
+| `visual_qa` | `from wpipe_steps.huggingface import HFVisualQuestionAnsweringStep` | Sync | [vqa_example.py](examples/huggingface/vision/vqa_example.py) | Answer questions on images |
+| `zero_shot_img` | `from wpipe_steps.huggingface import HFZeroShotImageClassificationStep` | Sync | [zero_shot_img_example.py](examples/huggingface/vision/zero_shot_img_example.py) | Classify images without training |
+| `depth_estimation` | `from wpipe_steps.huggingface import HFDepthEstimationStep` | Sync | [depth_example.py](examples/huggingface/vision/depth_example.py) | Estimate depth of images |
+| `image_to_image` | `from wpipe_steps.huggingface import HFImageToImageStep` | Sync | [img2img_example.py](examples/huggingface/vision/img2img_example.py) | Transform images (style, super-res) |
+| `inpaining` | `from wpipe_steps.huggingface import HFInpaintingStep` | Sync | [inpaint_example.py](examples/huggingface/vision/inpaint_example.py) | Fill missing areas in images |
+| `colorization` | `from wpipe_steps.huggingface import HFImageColorizationStep` | Sync | [colorize_example.py](examples/huggingface/vision/colorize_example.py) | Colorize black & white images |
+| `super_resolution` | `from wpipe_steps.huggingface import HFImageSuperResolutionStep` | Sync | [superres_example.py](examples/huggingface/vision/superres_example.py) | Upscale images |
+| `style_transfer` | `from wpipe_steps.huggingface import HFImageStyleTransferStep` | Sync | [style_example.py](examples/huggingface/vision/style_example.py) | Artistic style transfer |
+| `ocr` | `from wpipe_steps.huggingface import HFOcrStep` | Sync | [ocr_example.py](examples/huggingface/vision/ocr_example.py) | Extract text from images |
+| `face_detection` | `from wpipe_steps.huggingface import HFFaceDetectionStep` | Sync | [face_example.py](examples/huggingface/vision/face_example.py) | Detect faces in images |
+| `background_removal` | `from wpipe_steps.huggingface import HFImageBackgroundRemovalStep` | Sync | [nobg_example.py](examples/huggingface/vision/nobg_example.py) | Remove backgrounds from images |
+| `video_classification` | `from wpipe_steps.huggingface import HFVideoClassificationStep` | Sync | [vid_class_example.py](examples/huggingface/video/vid_class_example.py) | Classify video content |
+| `video_interpolation` | `from wpipe_steps.huggingface import HFVideoFrameInterpolationStep` | Sync | [vid_interp_example.py](examples/huggingface/video/vid_interp_example.py) | Interpolate video frames |
+| `doc_visual_qa` | `from wpipe_steps.huggingface import HFDocumentVisualQuestionAnsweringStep` | Sync | [doc_vqa_example.py](examples/huggingface/multimodal/doc_vqa_example.py) | QA on document images |
+| `image_text_to_text` | `from wpipe_steps.huggingface import HFImageTextToTextStep` | Sync | [img_text_example.py](examples/huggingface/multimodal/img_text_example.py) | Multimodal image+text to text |
+| `any_to_any` | `from wpipe_steps.huggingface import HFAnyToAnyStep` | Sync | [any2any_example.py](examples/huggingface/multimodal/any2any_example.py) | Any-to-any multimodal models |
+| `table_detection` | `from wpipe_steps.huggingface import HFTableDetectionStep` | Sync | [table_det_example.py](examples/huggingface/multimodal/table_det_example.py) | Detect tables in documents |
 
 ---
 
