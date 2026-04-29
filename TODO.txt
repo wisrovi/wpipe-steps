@@ -108,7 +108,7 @@
 
     ✅ CpuMonitorStep: Obtener carga del sistema antes de procesos pesados.
 
-    ShellExecStep: Ejecución controlada de comandos Bash/PowerShell.
+    ✅ ShellExecStep: Ejecución controlada de comandos Bash/PowerShell.
 
     CronSchedulerStep: Programar la siguiente ejecución del pipeline.
 
