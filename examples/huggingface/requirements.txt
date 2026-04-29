@@ -1,0 +1,24 @@
+# HuggingFace examples requirements
+# Install wpipe-steps first: pip install wpipe-steps==0.104.0
+
+# Core dependencies
+transformers>=4.36.0
+torch>=2.0.0
+pillow>=10.0.0
+numpy>=1.24.0
+
+# Audio processing (for audio examples)
+librosa>=0.10.0
+soundfile>=0.12.0
+torchaudio>=2.0.0
+
+# Vision processing (for vision examples)
+opencv-python>=4.8.0
+accelerate>=0.24.0
+
+# Optional: For better performance
+# pip install "transformers[torch]"
+
+# Note: Models will be downloaded automatically on first run
+# Total model download size: ~500MB-2GB per model
+# Models are cached in ~/.cache/huggingface/hub/
