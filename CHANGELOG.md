@@ -19,6 +19,61 @@ All notable changes to WPipe will be documented in this file.
 
 ---
 
+## [0.52.0] - 2026-04-29
+
+### Added
+- **AI Pack**: Complete artificial intelligence steps
+  - `OpenAiPromptStep`: Direct queries to GPT-4/o1 models
+  - `HuggingFaceInferenceStep`: Use open-source ML models from HuggingFace
+  - `SentimentAnalysisStep`: Analyze tone in user comments
+- Examples for all AI steps in `examples/ai/`
+- Updated README.md with AI Steps inventory
+
+---
+
+## [0.51.0] - 2026-04-29
+
+### Added
+- **Multimedia Pack**: Complete multimedia processing steps
+  - `AudioNormalizerStep`: Normalize audio volume levels
+  - `ImageResizerStep`: Resize images for web optimization
+  - `WhisperTranscribeStep`: Transcribe audio to text using Whisper AI
+  - `TtsGenerateStep`: Text to speech with natural voices
+  - `VideoFrameExtractStep`: Extract frames from video files
+- Examples for all Multimedia steps in `examples/multimedia/`
+- Updated README.md with Multimedia Steps inventory
+
+---
+
+## [0.50.0] - 2026-04-29
+
+### Added
+- **Data Pack**: Complete data processing steps
+  - `CsvToJsonStep`: Convert CSV files to JSON format
+  - `ExcelParseStep`: Read data from heavy .xlsx files
+  - `PdfGeneratorStep`: Create PDF reports from templates
+  - `ZipCompressorStep`: Compress folders for logs or backups
+  - `TextTranslatorStep`: Integration with Google/DeepL Translate
+- Examples for all Data steps in `examples/data/`
+- Updated README.md with Data Steps inventory
+
+---
+
+## [0.49.0] - 2026-04-29
+
+### Added
+- **Communication Pack**: Complete communication and notification steps
+  - `TelegramNotifyStep`: Send messages/alerts via Telegram
+  - `SlackAlertStep`: Send notifications to Slack channels
+  - `DiscordBotStep`: Send embeds to Discord servers
+  - `SendGridMailStep`: Send transactional emails via SendGrid
+  - `TwilioSmsStep`: Send SMS alerts via Twilio
+  - `TwitterPostStep`: Automated post updates to Twitter
+- Examples for all Communication steps in `examples/communication/`
+- Updated README.md with Communication Steps inventory
+
+---
+
 ## [0.38.0] - 2026-04-28
 
 ### Added
