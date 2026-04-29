@@ -1,6 +1,5 @@
 """Text classification step using HuggingFace transformers."""
 from typing import Any, Dict, Optional
-from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
 
@@ -28,32 +27,89 @@ class HFTextClassificationStep(BaseStep):
         self.device = device
         self.top_k = top_k
         self.response_key = response_key
-        self._pipeline = None
 
-    def _get_pipeline(self):
-        if self._pipeline is None:
-            from transformers import pipeline
-            self._pipeline = pipeline(
+    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        """Execute the step - required by BaseStep."""
+        # Handle both dict and SimpleNamespace
+        if hasattr(data, 'text'):
+            text = data.text
+        elif isinstance(data, dict):
+            text = data.get("text", "")
+        else:
+            text = ""
+        
+        if not text:
+            result = {"error": "No text provided"}
+            if isinstance(data, dict):
+                data[self.response_key] = result
+            else:
+                setattr(data, self.response_key, result)
+            return data
+
+        # Lazy-load pipeline (avoid pickling issues)
+        from transformers import pipeline
+        try:
+            # Try local files first
+            pipe = pipeline(
                 task="text-classification",
                 model=self.model_name,
                 device=self.device,
                 local_files_only=True,
             )
-        return self._pipeline
+        except Exception:
+            # If not cached, download from HuggingFace
+            print(f"Downloading model {self.model_name} (first time)...")
+            pipe = pipeline(
+                task="text-classification",
+                model=self.model_name,
+                device=self.device,
+                local_files_only=False,
+            )
+        
+        results = pipe(text, top_k=self.top_k)
+        result = {"text": text, "predictions": results}
+        
+        if isinstance(data, dict):
+            data[self.response_key] = result
+        else:
+            setattr(data, self.response_key, result)
+        return data
 
-    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        """Execute the step - required by BaseStep."""
-        return self._execute_impl(data)
-
-    @to_obj
-    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        """Implementation with to_obj decorator."""
-        text = data.get("text", "")
-        if not text:
-            data[self.response_key] = {"error": "No text provided"}
-            return data
+        # Lazy-load pipeline (avoid pickling issues)
+        from transformers import pipeline
+        try:
+            # Try local files first
+            pipe = pipeline(
+                task="text-classification",
+                model=self.model_name,
+                device=self.device,
+                local_files_only=True,
+            )
+        except Exception:
+            # If not cached, download from HuggingFace
+            print(f"Downloading model {self.model_name} (first time)...")
+            pipe = pipeline(
+                task="text-classification",
+                model=self.model_name,
+                device=self.device,
+                local_files_only=False,
+            )
+        
+        results = pipe(text, top_k=self.top_k)
+        result = {"text": text, "predictions": results}
+        
+        if isinstance(data, dict):
+            data[self.response_key] = result
+        else:
+            setattr(data, self.response_key, result)
+        return data
 
         pipeline = self._get_pipeline()
         results = pipeline(text, top_k=self.top_k)
-        data[self.response_key] = {"text": text, "predictions": results}
+        
+        result = {"text": text, "predictions": results}
+        if isinstance(data, dict):
+            data[self.response_key] = result
+        else:
+            setattr(data, self.response_key, result)
         return data
