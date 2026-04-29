@@ -94,15 +94,15 @@
 
     ✅ VideoFrameExtractStep: Sacar capturas de un archivo de video.
 
-🤖 8. Inteligencia Artificial y Lógica
+🤖 8. Inteligencia Artificial y Lógica - ✅ COMPLETADO (v0.52.0)
 
-    OpenAiPromptStep: Consultas directas a GPT-4/o1.
+    ✅ OpenAiPromptStep: Consultas directas a GPT-4/o1.
 
-    HuggingFaceInferenceStep: Uso de modelos de ML de código abierto.
+    ✅ HuggingFaceInferenceStep: Uso de modelos de ML de código abierto.
 
-    AnomalousDataStep: Detección de outliers en un set de datos.
+    ✅ AnomalousDataStep: Detección de outliers en un set de datos.
 
-    SentimentAnalysisStep: Análisis de tono en comentarios de usuarios.
+    ✅ SentimentAnalysisStep: Análisis de tono en comentarios de usuarios.
 
 ⚙️ 9. Sistema y Utilidades
 

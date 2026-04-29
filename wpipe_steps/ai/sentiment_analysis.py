@@ -46,7 +46,7 @@ class SentimentAnalysisStep(BaseStep):
             
             data[self.response_key] = {
                 "success": True,
-                "text": text[:100],
+                "text": text[:100],  # First 100 chars
                 "polarity": polarity,
                 "subjectivity": blob.sentiment.subjectivity,
                 "sentiment": sentiment
