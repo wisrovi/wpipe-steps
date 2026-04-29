@@ -12,6 +12,14 @@ wpipe\_steps.system.cpu\_monitor module
    :show-inheritance:
    :undoc-members:
 
+wpipe\_steps.system.disk\_space\_check module
+---------------------------------------------
+
+.. automodule:: wpipe_steps.system.disk_space_check
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 wpipe\_steps.system.shell\_exec module
 --------------------------------------
 

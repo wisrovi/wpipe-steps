@@ -112,6 +112,6 @@
 
     CronSchedulerStep: Programar la siguiente ejecución del pipeline.
 
-    DiskSpaceCheckStep: Alerta si queda poco espacio para el proceso.
+    ✅ DiskSpaceCheckStep: Alerta si queda poco espacio para el proceso.
 
     HealthCheckStep: Ping a una lista de servicios críticos.
