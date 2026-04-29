@@ -8,15 +8,14 @@ class HFFeatureExtractionStep(BaseStep):
         self.model_name = model_name
         self.device = device
         self.response_key = response_key
-        self._pipeline = None
     def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        if self._pipeline is None:
+        if pipe is None:
             from transformers import pipeline
-            self._pipeline = pipeline(task="feature-extraction", model=self.model_name, device=self.device, local_files_only=True)
+            pipe = pipeline(task="feature-extraction", model=self.model_name, device=self.device, local_files_only=True)
         text = data.get("text", "")
         if not text:
             data[self.response_key] = {"error": "No text"}
             return data
-        result = self._pipeline(text)
+        result = pipe(text)
         data[self.response_key] = {"text": text, "features_shape": [len(result), len(result[0]), len(result[0][0])]}
         return data

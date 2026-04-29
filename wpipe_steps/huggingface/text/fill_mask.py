@@ -9,15 +9,14 @@ class HFFillMaskStep(BaseStep):
         self.device = device
         self.top_k = top_k
         self.response_key = response_key
-        self._pipeline = None
     def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        if self._pipeline is None:
+        if pipe is None:
             from transformers import pipeline
-            self._pipeline = pipeline(task="fill-mask", model=self.model_name, device=self.device, local_files_only=True)
+            pipe = pipeline(task="fill-mask", model=self.model_name, device=self.device, local_files_only=True)
         text = data.get("text", "")
         if not text:
             data[self.response_key] = {"error": "No text"}
             return data
-        results = self._pipeline(text, top_k=self.top_k)
+        results = pipe(text, top_k=self.top_k)
         data[self.response_key] = {"text": text, "predictions": results}
         return data

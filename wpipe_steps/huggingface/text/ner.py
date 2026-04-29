@@ -9,15 +9,14 @@ class HFNerStep(BaseStep):
         self.device = device
         self.aggregation_strategy = aggregation_strategy
         self.response_key = response_key
-        self._pipeline = None
     def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        if self._pipeline is None:
+        if pipe is None:
             from transformers import pipeline
-            self._pipeline = pipeline(task="ner", model=self.model_name, device=self.device, local_files_only=True, aggregation_strategy=self.aggregation_strategy)
+            pipe = pipeline(task="ner", model=self.model_name, device=self.device, local_files_only=True, aggregation_strategy=self.aggregation_strategy)
         text = data.get("text", "")
         if not text:
             data[self.response_key] = {"error": "No text"}
             return data
-        entities = self._pipeline(text)
+        entities = pipe(text)
         data[self.response_key] = {"text": text, "entities": entities}
         return data

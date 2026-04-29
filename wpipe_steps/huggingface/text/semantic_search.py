@@ -23,8 +23,6 @@ class HFSemanticSearchStep(BaseStep):
         self.model_name = model_name
         self.top_k = top_k
         self.response_key = response_key
-        self._pipeline = None
-
     def _get_pipeline(self):
         if self._pipeline is None:
             from transformers import pipeline

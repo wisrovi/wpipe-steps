@@ -8,17 +8,16 @@ class HFConversationalStep(BaseStep):
         self.model_name = model_name
         self.device = device
         self.response_key = response_key
-        self._pipeline = None
     def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        if self._pipeline is None:
+        if pipe is None:
             from transformers import pipeline
-            self._pipeline = pipeline(task="conversational", model=self.model_name, device=self.device, local_files_only=True)
+            pipe = pipeline(task="conversational", model=self.model_name, device=self.device, local_files_only=True)
         text = data.get("text", "")
         if not text:
             data[self.response_key] = {"error": "No text"}
             return data
         from transformers import Conversation
         conv = Conversation(text)
-        result = self._pipeline(conv)
+        result = pipe(conv)
         data[self.response_key] = {"input": text, "response": result.generated_responses[-1]}
         return data

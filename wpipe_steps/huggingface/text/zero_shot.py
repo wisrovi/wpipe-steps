@@ -9,15 +9,14 @@ class HFZeroShotClassificationStep(BaseStep):
         self.model_name = model_name
         self.device = device
         self.response_key = response_key
-        self._pipeline = None
     def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        if self._pipeline is None:
+        if pipe is None:
             from transformers import pipeline
-            self._pipeline = pipeline(task="zero-shot-classification", model=self.model_name, device=self.device, local_files_only=True)
+            pipe = pipeline(task="zero-shot-classification", model=self.model_name, device=self.device, local_files_only=True)
         text = data.get("text", "")
         if not text:
             data[self.response_key] = {"error": "No text"}
             return data
-        results = self._pipeline(text, candidate_labels=self.candidate_labels)
+        results = pipe(text, candidate_labels=self.candidate_labels)
         data[self.response_key] = {"text": text, "results": results}
         return data

@@ -8,15 +8,14 @@ class HFImageClassificationStep(BaseStep):
         self.model_name = model_name
         self.device = device
         self.response_key = response_key
-        self._pipeline = None
     def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        if self._pipeline is None:
+        if pipe is None:
             from transformers import pipeline
-            self._pipeline = pipeline(task="image-classification", model=self.model_name, device=self.device, local_files_only=True)
+            pipe = pipeline(task="image-classification", model=self.model_name, device=self.device, local_files_only=True)
         image = data.get("image", "")
         if not image:
             data[self.response_key] = {"error": "image required"}
             return data
-        result = self._pipeline(image)
+        result = pipe(image)
         data[self.response_key] = {"image": image, "predictions": result[:5]}
         return data

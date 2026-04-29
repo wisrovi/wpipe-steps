@@ -8,16 +8,15 @@ class HFVisualQuestionAnsweringStep(BaseStep):
         self.model_name = model_name
         self.device = device
         self.response_key = response_key
-        self._pipeline = None
     def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        if self._pipeline is None:
+        if pipe is None:
             from transformers import pipeline
-            self._pipeline = pipeline(task="visual-question-answering", model=self.model_name, device=self.device, local_files_only=True)
+            pipe = pipeline(task="visual-question-answering", model=self.model_name, device=self.device, local_files_only=True)
         image = data.get("image", "")
         question = data.get("question", "")
         if not image or not question:
             data[self.response_key] = {"error": "image and question required"}
             return data
-        result = self._pipeline(image=image, question=question)
+        result = pipe(image=image, question=question)
         data[self.response_key] = {"question": question, "answer": result}
         return data

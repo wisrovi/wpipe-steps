@@ -72,6 +72,6 @@ class HFSentimentAnalysisStep(BaseStep):
             setattr(data, self.response_key, result)
         return data
 
-        results = self._pipeline(text)
+        results = pipe(text)
         data[self.response_key] = {"text": text, "sentiment": results[0]}
         return data

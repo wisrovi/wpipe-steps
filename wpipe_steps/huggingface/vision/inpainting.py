@@ -8,16 +8,15 @@ class HFInpaintingStep(BaseStep):
         self.model_name = model_name
         self.device = device
         self.response_key = response_key
-        self._pipeline = None
     def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        if self._pipeline is None:
+        if pipe is None:
             from transformers import pipeline
-            self._pipeline = pipeline(task="image-to-image", model=self.model_name, device=self.device, local_files_only=True)
+            pipe = pipeline(task="image-to-image", model=self.model_name, device=self.device, local_files_only=True)
         image = data.get("image", "")
         mask = data.get("mask", "")
         if not image or not mask:
             data[self.response_key] = {"error": "image and mask required"}
             return data
-        result = self._pipeline(image=image, mask_image=mask)
+        result = pipe(image=image, mask_image=mask)
         data[self.response_key] = {"output_shape": list(result.shape)}
         return data

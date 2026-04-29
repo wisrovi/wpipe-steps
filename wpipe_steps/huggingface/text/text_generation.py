@@ -10,15 +10,14 @@ class HFTextGenerationStep(BaseStep):
         self.max_length = max_length
         self.temperature = temperature
         self.response_key = response_key
-        self._pipeline = None
     def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        if self._pipeline is None:
+        if pipe is None:
             from transformers import pipeline
-            self._pipeline = pipeline(task="text-generation", model=self.model_name, device=self.device, local_files_only=True)
+            pipe = pipeline(task="text-generation", model=self.model_name, device=self.device, local_files_only=True)
         prompt = data.get("prompt", "")
         if not prompt:
             data[self.response_key] = {"error": "No prompt"}
             return data
-        result = self._pipeline(prompt, max_length=self.max_length, temperature=self.temperature)
+        result = pipe(prompt, max_length=self.max_length, temperature=self.temperature)
         data[self.response_key] = {"prompt": prompt, "generated": result[0]["generated_text"]}
         return data

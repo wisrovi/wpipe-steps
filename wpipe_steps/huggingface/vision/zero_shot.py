@@ -8,16 +8,15 @@ class HFZeroShotImageClassificationStep(BaseStep):
         self.model_name = model_name
         self.device = device
         self.response_key = response_key
-        self._pipeline = None
     def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        if self._pipeline is None:
+        if pipe is None:
             from transformers import pipeline
-            self._pipeline = pipeline(task="zero-shot-image-classification", model=self.model_name, device=self.device, local_files_only=True)
+            pipe = pipeline(task="zero-shot-image-classification", model=self.model_name, device=self.device, local_files_only=True)
         image = data.get("image", "")
         labels = data.get("labels", [])
         if not image or not labels:
             data[self.response_key] = {"error": "image and labels required"}
             return data
-        result = self._pipeline(image, candidate_labels=labels)
+        result = pipe(image, candidate_labels=labels)
         data[self.response_key] = {"image": image, "results": result}
         return data
