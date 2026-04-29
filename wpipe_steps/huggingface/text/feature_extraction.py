@@ -1,5 +1,4 @@
 from typing import Any, Dict, Optional
-from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
 
@@ -10,9 +9,7 @@ class HFFeatureExtractionStep(BaseStep):
         self.device = device
         self.response_key = response_key
         self._pipeline = None
-
-    @to_obj
-    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
         if self._pipeline is None:
             from transformers import pipeline
             self._pipeline = pipeline(task="feature-extraction", model=self.model_name, device=self.device, local_files_only=True)
@@ -23,7 +20,3 @@ class HFFeatureExtractionStep(BaseStep):
         result = self._pipeline(text)
         data[self.response_key] = {"text": text, "features_shape": [len(result), len(result[0]), len(result[0][0])]}
         return data
-
-    def execute(self, data):
-        """Execute the step - required by BaseStep."""
-        return self._execute_impl(data)

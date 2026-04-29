@@ -1,6 +1,5 @@
 """Sentence embeddings step using HuggingFace transformers."""
 from typing import Any, Dict, Optional
-from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
 class HFSentenceEmbeddingsStep(BaseStep):
@@ -32,9 +31,7 @@ class HFSentenceEmbeddingsStep(BaseStep):
                 local_files_only=True
             )
         return self._pipeline
-
-    @to_obj
-    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
         text = data.get("text", "")
         if not text:
             return data
@@ -46,7 +43,3 @@ class HFSentenceEmbeddingsStep(BaseStep):
         response_key = self.response_key or "embeddings"
         data[response_key] = embeddings
         return data
-
-    def execute(self, data):
-        """Execute the step - required by BaseStep."""
-        return self._execute_impl(data)

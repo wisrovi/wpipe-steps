@@ -1,6 +1,5 @@
 """Sentiment analysis step using HuggingFace transformers."""
 from typing import Any, Dict, Optional
-from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
 
@@ -25,30 +24,54 @@ class HFSentimentAnalysisStep(BaseStep):
         self.model_name = model_name
         self.device = device
         self.response_key = response_key
-        self._pipeline = None
 
-    @to_obj
-    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        """Run sentiment analysis on data['text']."""
-        if self._pipeline is None:
-            from transformers import pipeline
+    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        """Execute the step - required by BaseStep."""
+        # Handle both dict and SimpleNamespace
+        if hasattr(data, 'text'):
+            text = data.text
+        elif isinstance(data, dict):
+            text = data.get("text", "")
+        else:
+            text = ""
 
-            self._pipeline = pipeline(
+        if not text:
+            result = {"error": "No text provided"}
+            if isinstance(data, dict):
+                data[self.response_key] = result
+            else:
+                setattr(data, self.response_key, result)
+            return data
+
+        # Lazy-load pipeline (avoid pickling issues)
+        from transformers import pipeline
+        try:
+            # Try local files first
+            pipe = pipeline(
                 task="sentiment-analysis",
                 model=self.model_name,
                 device=self.device,
                 local_files_only=True,
             )
+        except Exception:
+            # If not cached, download from HuggingFace
+            print(f"Downloading model {self.model_name} (first time)...")
+            pipe = pipeline(
+                task="sentiment-analysis",
+                model=self.model_name,
+                device=self.device,
+                local_files_only=False,
+            )
 
-        text = data.get("text", "")
-        if not text:
-            data[self.response_key] = {"error": "No text provided"}
-            return data
+        results = pipe(text)
+        result = {"text": text, "sentiment": results[0]}
+
+        if isinstance(data, dict):
+            data[self.response_key] = result
+        else:
+            setattr(data, self.response_key, result)
+        return data
 
         results = self._pipeline(text)
         data[self.response_key] = {"text": text, "sentiment": results[0]}
         return data
-
-    def execute(self, data):
-        """Execute the step - required by BaseStep."""
-        return self._execute_impl(data)

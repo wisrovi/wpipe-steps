@@ -1,6 +1,5 @@
 """Document question answering step using HuggingFace transformers."""
 from typing import Any, Dict, Optional
-from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
 class HFDocumentQuestionAnsweringStep(BaseStep):
@@ -32,9 +31,7 @@ class HFDocumentQuestionAnsweringStep(BaseStep):
                 local_files_only=True
             )
         return self._pipeline
-
-    @to_obj
-    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
         image = data.get("image", "")
         question = data.get("question", "")
         if not image or not question:
@@ -46,7 +43,3 @@ class HFDocumentQuestionAnsweringStep(BaseStep):
         response_key = self.response_key or "doc_answer"
         data[response_key] = result
         return data
-
-    def execute(self, data):
-        """Execute the step - required by BaseStep."""
-        return self._execute_impl(data)

@@ -1,5 +1,4 @@
 from typing import Any, Dict, Optional
-from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
 
@@ -12,9 +11,7 @@ class HFSummarizationStep(BaseStep):
         self.min_length = min_length
         self.response_key = response_key
         self._pipeline = None
-
-    @to_obj
-    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
         if self._pipeline is None:
             from transformers import pipeline
             self._pipeline = pipeline(task="summarization", model=self.model_name, device=self.device, local_files_only=True)
@@ -25,7 +22,3 @@ class HFSummarizationStep(BaseStep):
         result = self._pipeline(text, max_length=self.max_length, min_length=self.min_length)
         data[self.response_key] = {"original": text, "summary": result[0]["summary_text"]}
         return data
-
-    def execute(self, data):
-        """Execute the step - required by BaseStep."""
-        return self._execute_impl(data)
