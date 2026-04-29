@@ -20,6 +20,14 @@ wpipe\_steps.system.disk\_space\_check module
    :show-inheritance:
    :undoc-members:
 
+wpipe\_steps.system.health\_check module
+----------------------------------------
+
+.. automodule:: wpipe_steps.system.health_check
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 wpipe\_steps.system.shell\_exec module
 --------------------------------------
 

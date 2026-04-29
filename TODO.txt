@@ -114,4 +114,4 @@
 
     ✅ DiskSpaceCheckStep: Alerta si queda poco espacio para el proceso.
 
-    HealthCheckStep: Ping a una lista de servicios críticos.
+    ✅ HealthCheckStep: Ping a una lista de servicios críticos.
