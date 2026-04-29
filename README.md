@@ -364,3 +364,4 @@ Check the [TODO.txt](./TODO.txt) for the full list of planned steps for each pac
 ---
 
 Diseñado con ❤️ por **William Rodriguez** (wisrovi) para ingenieros que buscan máxima productividad.
+### System (package: `wpipe_steps.system`)| Step Name | Import | Type | Example | Description ||-----------|--------|------|---------|-------------|| `cpu_monitor` | `from wpipe_steps.system import CpuMonitorStep` | Sync | [cpu_monitor_example.py](examples/system/cpu_monitor/cpu_monitor_example.py) | Obtener carga del sistema antes de procesos pesados. |

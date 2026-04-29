@@ -106,7 +106,7 @@
 
 ⚙️ 9. Sistema y Utilidades
 
-    CpuMonitorStep: Obtener carga del sistema antes de procesos pesados.
+    ✅ CpuMonitorStep: Obtener carga del sistema antes de procesos pesados.
 
     ShellExecStep: Ejecución controlada de comandos Bash/PowerShell.
 
