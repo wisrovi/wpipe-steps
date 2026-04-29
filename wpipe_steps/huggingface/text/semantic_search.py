@@ -1,9 +1,8 @@
 """Semantic search step using HuggingFace transformers."""
 from typing import Any, Dict, Optional
-from wpipe import step, to_obj
+from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
-@step
 class HFSemanticSearchStep(BaseStep):
     """Perform semantic search over documents using local HuggingFace models.
 
@@ -38,7 +37,7 @@ class HFSemanticSearchStep(BaseStep):
         return self._pipeline
 
     @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
         query = data.get("query", "")
         documents = data.get("documents", [])
         if not query or not documents:
@@ -60,3 +59,7 @@ class HFSemanticSearchStep(BaseStep):
         response_key = self.response_key or "search_results"
         data[response_key] = [{"document": doc, "score": score} for doc, score in top_results]
         return data
+
+    def execute(self, data):
+        """Execute the step - required by BaseStep."""
+        return self._execute_impl(data)

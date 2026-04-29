@@ -1,9 +1,8 @@
 """Sentence similarity step using HuggingFace transformers."""
 from typing import Any, Dict, Optional
-from wpipe import step, to_obj
+from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
-@step
 class HFSentenceSimilarityStep(BaseStep):
     """Calculate similarity between sentences using local HuggingFace models.
 
@@ -35,7 +34,7 @@ class HFSentenceSimilarityStep(BaseStep):
         return self._pipeline
 
     @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
         text1 = data.get("text1", "")
         text2 = data.get("text2", "")
         if not text1 or not text2:
@@ -52,3 +51,7 @@ class HFSentenceSimilarityStep(BaseStep):
         response_key = self.response_key or "similarity_score"
         data[response_key] = similarity
         return data
+
+    def execute(self, data):
+        """Execute the step - required by BaseStep."""
+        return self._execute_impl(data)

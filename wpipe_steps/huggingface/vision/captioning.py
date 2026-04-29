@@ -1,9 +1,8 @@
 from typing import Any, Dict, Optional
-from wpipe import step, to_obj
+from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
 
-@step
 class HFImageToTextStep(BaseStep):
     """Generate text description of image."""
     def __init__(self, name=None, version="v1.0", model_name="Salesforce/blip-image-captioning-base", device="cpu", response_key="caption"):
@@ -14,7 +13,7 @@ class HFImageToTextStep(BaseStep):
         self._pipeline = None
 
     @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
         if self._pipeline is None:
             from transformers import pipeline
             self._pipeline = pipeline(task="image-to-text", model=self.model_name, device=self.device, local_files_only=True)
@@ -25,3 +24,7 @@ class HFImageToTextStep(BaseStep):
         result = self._pipeline(image)
         data[self.response_key] = {"image": image, "caption": result[0]["generated_text"]}
         return data
+
+    def execute(self, data):
+        """Execute the step - required by BaseStep."""
+        return self._execute_impl(data)

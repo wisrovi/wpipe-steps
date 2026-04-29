@@ -1,9 +1,8 @@
 """Document reranking step using HuggingFace transformers."""
 from typing import Any, Dict, Optional
-from wpipe import step, to_obj
+from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
-@step
 class HFRerankingStep(BaseStep):
     """Rerank documents based on relevance to a query using local HuggingFace models.
 
@@ -35,7 +34,7 @@ class HFRerankingStep(BaseStep):
         return self._pipeline
 
     @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
         query = data.get("query", "")
         documents = data.get("documents", [])
         if not query or not documents:
@@ -51,3 +50,7 @@ class HFRerankingStep(BaseStep):
         response_key = self.response_key or "ranked_docs"
         data[response_key] = [doc for doc, score in scores]
         return data
+
+    def execute(self, data):
+        """Execute the step - required by BaseStep."""
+        return self._execute_impl(data)

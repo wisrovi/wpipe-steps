@@ -1,10 +1,9 @@
 """Sentiment analysis step using HuggingFace transformers."""
 from typing import Any, Dict, Optional
-from wpipe import step, to_obj
+from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
 
-@step
 class HFSentimentAnalysisStep(BaseStep):
     """Analyze sentiment of text (positive/negative) using local models.
 
@@ -29,7 +28,7 @@ class HFSentimentAnalysisStep(BaseStep):
         self._pipeline = None
 
     @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
         """Run sentiment analysis on data['text']."""
         if self._pipeline is None:
             from transformers import pipeline
@@ -49,3 +48,7 @@ class HFSentimentAnalysisStep(BaseStep):
         results = self._pipeline(text)
         data[self.response_key] = {"text": text, "sentiment": results[0]}
         return data
+
+    def execute(self, data):
+        """Execute the step - required by BaseStep."""
+        return self._execute_impl(data)

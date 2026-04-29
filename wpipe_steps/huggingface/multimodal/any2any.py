@@ -1,9 +1,8 @@
 from typing import Any, Dict, Optional
-from wpipe import step, to_obj
+from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
 
-@step
 class HFAnyToAnyStep(BaseStep):
     """Any-to-any multimodal models."""
     def __init__(self, name=None, version="v1.0", model_name="your-any2any-model", device="cpu", response_key="any2any"):
@@ -14,7 +13,7 @@ class HFAnyToAnyStep(BaseStep):
         self._pipeline = None
 
     @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
         if self._pipeline is None:
             from transformers import pipeline
             self._pipeline = pipeline(task="image-to-text", model=self.model_name, device=self.device, local_files_only=True)
@@ -25,3 +24,7 @@ class HFAnyToAnyStep(BaseStep):
         result = self._pipeline(input_data)
         data[self.response_key] = {"output": result}
         return data
+
+    def execute(self, data):
+        """Execute the step - required by BaseStep."""
+        return self._execute_impl(data)

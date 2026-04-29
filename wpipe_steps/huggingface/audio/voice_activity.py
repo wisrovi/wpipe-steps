@@ -1,9 +1,8 @@
 from typing import Any, Dict, Optional
-from wpipe import step, to_obj
+from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
 
-@step
 class HFVoiceActivityDetectionStep(BaseStep):
     def __init__(self, name=None, version="v1.0", model_name="speechbrain/vad-crdnn-libriparty", device="cpu", response_key="vad"):
         super().__init__(name, version)
@@ -13,7 +12,7 @@ class HFVoiceActivityDetectionStep(BaseStep):
         self._model = None
 
     @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
         if self._model is None:
             from speechbrain.pretrained import VAD
             self._model = VAD.from_hparams(self.model_name)
@@ -24,3 +23,7 @@ class HFVoiceActivityDetectionStep(BaseStep):
         result = self._model(audio)
         data[self.response_key] = {"audio": audio, "speech_detected": bool(result)}
         return data
+
+    def execute(self, data):
+        """Execute the step - required by BaseStep."""
+        return self._execute_impl(data)

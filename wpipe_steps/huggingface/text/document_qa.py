@@ -1,9 +1,8 @@
 """Document question answering step using HuggingFace transformers."""
 from typing import Any, Dict, Optional
-from wpipe import step, to_obj
+from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
-@step
 class HFDocumentQuestionAnsweringStep(BaseStep):
     """Answer questions from document images using local HuggingFace models.
 
@@ -35,7 +34,7 @@ class HFDocumentQuestionAnsweringStep(BaseStep):
         return self._pipeline
 
     @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
         image = data.get("image", "")
         question = data.get("question", "")
         if not image or not question:
@@ -47,3 +46,7 @@ class HFDocumentQuestionAnsweringStep(BaseStep):
         response_key = self.response_key or "doc_answer"
         data[response_key] = result
         return data
+
+    def execute(self, data):
+        """Execute the step - required by BaseStep."""
+        return self._execute_impl(data)

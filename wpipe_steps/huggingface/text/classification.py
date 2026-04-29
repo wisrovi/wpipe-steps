@@ -1,10 +1,9 @@
 """Text classification step using HuggingFace transformers."""
 from typing import Any, Dict, Optional
-from wpipe import step, to_obj
+from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
 
-@step
 class HFTextClassificationStep(BaseStep):
     """Classify text into predefined categories using local HuggingFace models.
 
@@ -31,24 +30,30 @@ class HFTextClassificationStep(BaseStep):
         self.response_key = response_key
         self._pipeline = None
 
-    @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        """Run text classification on data['text']."""
+    def _get_pipeline(self):
         if self._pipeline is None:
             from transformers import pipeline
-
             self._pipeline = pipeline(
                 task="text-classification",
                 model=self.model_name,
                 device=self.device,
                 local_files_only=True,
             )
+        return self._pipeline
 
+    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        """Execute the step - required by BaseStep."""
+        return self._execute_impl(data)
+
+    @to_obj
+    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        """Implementation with to_obj decorator."""
         text = data.get("text", "")
         if not text:
             data[self.response_key] = {"error": "No text provided"}
             return data
 
-        results = self._pipeline(text, top_k=self.top_k)
+        pipeline = self._get_pipeline()
+        results = pipeline(text, top_k=self.top_k)
         data[self.response_key] = {"text": text, "predictions": results}
         return data

@@ -1,9 +1,8 @@
 from typing import Any, Dict, Optional
-from wpipe import step, to_obj
+from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
 
-@step
 class HFVideoFrameInterpolationStep(BaseStep):
     def __init__(self, name=None, version="v1.0", model_name="your-vfi-model", device="cpu", response_key="interpolated"):
         super().__init__(name, version)
@@ -13,7 +12,7 @@ class HFVideoFrameInterpolationStep(BaseStep):
         self._pipeline = None
 
     @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
         if self._pipeline is None:
             from transformers import pipeline
             self._pipeline = pipeline(task="image-to-image", model=self.model_name, device=self.device, local_files_only=True)
@@ -24,3 +23,7 @@ class HFVideoFrameInterpolationStep(BaseStep):
         result = self._pipeline(video)
         data[self.response_key] = {"interpolated": True, "frames_added": True}
         return data
+
+    def execute(self, data):
+        """Execute the step - required by BaseStep."""
+        return self._execute_impl(data)

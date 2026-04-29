@@ -1,9 +1,8 @@
 from typing import Any, Dict, Optional
-from wpipe import step, to_obj
+from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
 
-@step
 class HFImageClassificationStep(BaseStep):
     def __init__(self, name=None, version="v1.0", model_name="google/vit-base-patch16-224", device="cpu", response_key="img_class"):
         super().__init__(name, version)
@@ -13,7 +12,7 @@ class HFImageClassificationStep(BaseStep):
         self._pipeline = None
 
     @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
         if self._pipeline is None:
             from transformers import pipeline
             self._pipeline = pipeline(task="image-classification", model=self.model_name, device=self.device, local_files_only=True)
@@ -24,3 +23,7 @@ class HFImageClassificationStep(BaseStep):
         result = self._pipeline(image)
         data[self.response_key] = {"image": image, "predictions": result[:5]}
         return data
+
+    def execute(self, data):
+        """Execute the step - required by BaseStep."""
+        return self._execute_impl(data)

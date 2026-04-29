@@ -1,9 +1,8 @@
 from typing import Any, Dict, Optional
-from wpipe import step, to_obj
+from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
 
-@step
 class HFQuestionAnsweringStep(BaseStep):
     def __init__(self, name=None, version="v1.0", model_name="bert-large-uncased-whole-word-masking-finetuned-squad", device="cpu", response_key="qa_answer"):
         super().__init__(name, version)
@@ -13,7 +12,7 @@ class HFQuestionAnsweringStep(BaseStep):
         self._pipeline = None
 
     @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
         if self._pipeline is None:
             from transformers import pipeline
             self._pipeline = pipeline(task="question-answering", model=self.model_name, device=self.device, local_files_only=True)
@@ -25,3 +24,7 @@ class HFQuestionAnsweringStep(BaseStep):
         result = self._pipeline(question=question, context=context)
         data[self.response_key] = {"question": question, "answer": result}
         return data
+
+    def execute(self, data):
+        """Execute the step - required by BaseStep."""
+        return self._execute_impl(data)

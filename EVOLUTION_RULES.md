@@ -18,12 +18,17 @@ Cada vez que se añada un nuevo **Estado (Step)**, se debe seguir este ciclo obl
     *   Junto al ejemplo se debe crear un archivo `requirements.txt` con las dependencias necesarias para ejecutar el ejemplo.
     *   Junto al ejemplo se debe crear un archivo `README.md` con la descripción del ejemplo.
     *   Seguir estrictamente la sección 📝u Creación de Estados (Steps) para estructura de  
-     Steps, incluyendo opcionalidad de timeouts y soporte para contextos Pydantic.
+        Steps, incluyendo opcionalidad de timeouts y soporte para contextos Pydantic.
     *   Todos los ejemplos deben ser funcionales
 3.  **Incremento de Versión Secuencial**:
-    *   La versión se incrementará en el segundo dígito por cada nuevo estado.
-    *   Secuencia: `0.1.0` (Base) -> `0.2.0` (Estado 1) -> `0.3.0` (Estado 2) ... -> `0.500.0`.
+    *   **REGLAS CLARAS**:
+        - **UN NUEVO ESTADO = UN INCREMENTO EN EL SEGUNDO DÍGITO**
+        - Ejemplo: Estado 1 → v0.55.0, Estado 2 → v0.56.0, ..., Estado 50 → v0.104.0
+        - **PROHIBIDO** agrupar múltiples estados en una sola versión (ej: 7 estados en v0.57.0 es INCORRECTO)
+        - Si se requiere hacer una actualización mayor (breaking change), incrementar el PRIMER dígito: v1.0.0
     *   Actualizar `pyproject.toml`, `setup.py`, `README.md` y `wpipe_steps/__init__.py`.
+    *   **Ejemplo de secuencia correcta**:
+        - `0.1.0` (Base) → `0.2.0` (Estado 1) → `0.3.0` (Estado 2) → ... → `0.500.0` (Estado 499)
 4.  **Actualización de Documentación**:
     *   Actualizar el `README.md` principal incluyendo el nuevo Step en las tablas de referencia.
     *   Añadir una breve descripción de su uso.

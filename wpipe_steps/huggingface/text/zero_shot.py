@@ -1,9 +1,8 @@
 from typing import Any, Dict, Optional
-from wpipe import step, to_obj
+from wpipe import to_obj
 from wpipe_steps.core.base import BaseStep
 
 
-@step
 class HFZeroShotClassificationStep(BaseStep):
     def __init__(self, candidate_labels, name=None, version="v1.0", model_name="facebook/bart-large-mnli", device="cpu", response_key="zero_shot"):
         super().__init__(name, version)
@@ -14,7 +13,7 @@ class HFZeroShotClassificationStep(BaseStep):
         self._pipeline = None
 
     @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def _execute_impl(self, data: Dict[str, Any]) -> Dict[str, Any]:
         if self._pipeline is None:
             from transformers import pipeline
             self._pipeline = pipeline(task="zero-shot-classification", model=self.model_name, device=self.device, local_files_only=True)
@@ -25,3 +24,7 @@ class HFZeroShotClassificationStep(BaseStep):
         results = self._pipeline(text, candidate_labels=self.candidate_labels)
         data[self.response_key] = {"text": text, "results": results}
         return data
+
+    def execute(self, data):
+        """Execute the step - required by BaseStep."""
+        return self._execute_impl(data)
