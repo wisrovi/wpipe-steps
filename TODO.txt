@@ -82,17 +82,17 @@
 
     ✅ TextTranslatorStep: Integración con Google/DeepL Translate.
 
-🎙️ 7. Multimedia (Basado en tu Audio Suite)
+🎙️ 7. Multimedia (Basado en tu Audio Suite) - ✅ COMPLETADO (v0.51.0)
 
-    AudioNormalizeStep: Normalizar el volumen de un archivo.
+    ✅ AudioNormalizerStep: Normalizar el volumen de un archivo.
 
-    WhisperTranscribeStep: Transcripción de audio a texto (IA).
+    ✅ WhisperTranscribeStep: Transcripción de audio a texto (IA).
 
-    AudioNoiseReductionStep: Limpieza de ruido de fondo.
+    ✅ AudioNoiseReductionStep: Limpieza de ruido de fondo.
 
-    TtsGenerateStep: Texto a voz con voces naturales.
+    ✅ TtsGenerateStep: Texto a voz con voces naturales.
 
-    VideoFrameExtractStep: Sacar capturas de un archivo de video.
+    ✅ VideoFrameExtractStep: Sacar capturas de un archivo de video.
 
 🤖 8. Inteligencia Artificial y Lógica
 
