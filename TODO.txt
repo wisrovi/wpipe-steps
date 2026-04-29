@@ -110,7 +110,7 @@
 
     ✅ ShellExecStep: Ejecución controlada de comandos Bash/PowerShell.
 
-    CronSchedulerStep: Programar la siguiente ejecución del pipeline.
+    ✅ CronSchedulerStep: Programar la siguiente ejecución del pipeline.
 
     ✅ DiskSpaceCheckStep: Alerta si queda poco espacio para el proceso.
 

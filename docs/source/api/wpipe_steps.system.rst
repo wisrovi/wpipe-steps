@@ -12,6 +12,14 @@ wpipe\_steps.system.cpu\_monitor module
    :show-inheritance:
    :undoc-members:
 
+wpipe\_steps.system.cron\_scheduler module
+------------------------------------------
+
+.. automodule:: wpipe_steps.system.cron_scheduler
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 wpipe\_steps.system.disk\_space\_check module
 ---------------------------------------------
 

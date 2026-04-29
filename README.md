@@ -368,3 +368,4 @@ Diseñado con ❤️ por **William Rodriguez** (wisrovi) para ingenieros que bus
 | `shell_exec` | `from wpipe_steps.system import ShellExecStep` | Sync | [shell_exec_example.py](examples/system/shell_exec/shell_exec_example.py) | Ejecución controlada de comandos Bash/PowerShell. |
 | `disk_space_check` | `from wpipe_steps.system import DiskSpaceCheckStep` | Sync | [disk_space_check_example.py](examples/system/disk_space_check/disk_space_check_example.py) | Alerta si queda poco espacio para el proceso. |
 | `health_check` | `from wpipe_steps.system import HealthCheckStep` | Sync | [health_check_example.py](examples/system/health_check/health_check_example.py) | Ping a una lista de servicios críticos. |
+| `cron_scheduler` | `from wpipe_steps.system import CronSchedulerStep` | Sync | [cron_scheduler_example.py](examples/system/cron_scheduler/cron_scheduler_example.py) | Programar la siguiente ejecución del pipeline. |
