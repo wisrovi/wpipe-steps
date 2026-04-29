@@ -4,6 +4,24 @@ All notable changes to WPipe will be documented in this file.
 
 ---
 
+## [0.55.0] - 2026-04-29
+
+### Added
+- **HuggingFace Pack**: Started local inference steps (no API key required)
+  - `HFTextClassificationStep`: Classify text using local BERT models (distilbert)
+  - Uses `transformers.pipeline()` with `local_files_only=True`
+  - Example in `examples/huggingface/text/classification_example.py`
+- Updated README.md with HuggingFace Steps inventory section
+
+---
+
+## [0.54.0] - 2026-04-29
+
+### Added
+- Placeholder for future steps
+
+---
+
 ## [0.53.0] - 2026-04-29
 
 ### Added

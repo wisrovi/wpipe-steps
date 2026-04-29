@@ -327,6 +327,17 @@ Complete inventory of System Steps available in `wpipe_steps.system`:
 
 ---
 
+## 🤗 HuggingFace Steps Inventory (Local - No API Key)
+
+Complete inventory of HuggingFace Steps that run **100% locally** (no API key required). Models are downloaded once and cached.
+
+### Text Classification (package: `wpipe_steps.huggingface`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `text_classification` | `from wpipe_steps.huggingface import HFTextClassificationStep` | Sync | [classification_example.py](examples/huggingface/text/classification_example.py) | Classify text into categories using local BERT models |
+
+---
+
 ## 🚀 Quick Start
 
 ### Installation
