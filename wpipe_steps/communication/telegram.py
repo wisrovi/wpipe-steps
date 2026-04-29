@@ -1,9 +1,16 @@
 from typing import Any, Dict, Optional
+from wpipe import step, to_obj
 from wpipe_steps.core.base import BaseStep
 
+@step(
+    name="telegram_notify",
+    version="v1.0",
+    description="Send messages/alerts via Telegram",
+    tags=["communication", "telegram", "sync"]
+)
 class TelegramNotifyStep(BaseStep):
     """
-    Step for sending notifications via Telegram using wconnect.
+    Step for sending notifications via Telegram using wconnect or direct API.
     """
     
     def __init__(
@@ -11,7 +18,7 @@ class TelegramNotifyStep(BaseStep):
         bot_token: str,
         chat_id: str,
         message: Optional[str] = None,
-        message_key: Optional[str] = None, # Key in 'data' containing the msg
+        message_key: Optional[str] = None,
         response_key: str = "telegram_status",
         name: Optional[str] = None,
         version: str = "v1.0"
@@ -23,26 +30,25 @@ class TelegramNotifyStep(BaseStep):
         self.message_key = message_key
         self.response_key = response_key
 
-    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        wconnect = self.ensure_dependency("wconnect")
-        
-        # Determine message
-        text = self.message or data.get(self.message_key, "WPipe Notification")
-        
+    @to_obj
+    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
         try:
-            # Assuming wconnect has a Telegram class or sender
-            # Using basic requests implementation as fallback if wconnect is not generic
             import requests
+            
+            text = self.message or data.get(self.message_key, "WPipe Notification")
+            
             url = f"https://api.telegram.org/bot{self.bot_token}/sendMessage"
             payload = {
                 "chat_id": self.chat_id,
                 "text": text,
                 "parse_mode": "HTML"
             }
+            
             response = requests.post(url, json=payload, timeout=10)
+            result = response.json()
             
             data[self.response_key] = {
-                "success": response.ok,
+                "success": result.get("ok", False),
                 "status_code": response.status_code,
                 "message_sent": text
             }

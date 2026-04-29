@@ -12,7 +12,7 @@ long_description = (
 
 setup(
     name="wpipe-steps",
-    version="0.38.0",
+    version="0.49.0",
     packages=find_packages(include=["wpipe_steps", "wpipe_steps.*"]),
     install_requires=[
         "wpipe>=1.0.0",
@@ -26,7 +26,7 @@ setup(
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    description="A professional collection of pre-built steps and states for the WPipe orchestration engine. Lightweight and modular.",
+    description="A professional collection of pre-built steps and states for the wpipe orchestration engine. Lightweight and modular.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/wisrovi/wpipe-steps",

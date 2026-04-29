@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wpipe-steps v0.48.0 | Production-Ready Steps for wpipe</title>
+    
+    <!-- SEO & Meta Tags -->
+    <meta name="description" content="wpipe-steps v0.48.0: A comprehensive collection of pre-built, production-ready steps for the wpipe orchestration engine. 50+ steps for Connectivity, Database, Security, Infrastructure, and more.">
+    <meta name="keywords" content="python, wpipe, steps, pipeline, ETL, workflow, orchestration, Redis, MySQL, MongoDB, Security, AWS, wisrovi, wpipe-steps">
+    <meta name="author" content="William Steve Rodriguez Villamizar (wisrovi)">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="wpipe-steps v0.48.0 | Enterprise Pipeline Components">
+    <meta property="og:description" content="Stop reinventing the wheel. Use pre-built steps for APIs, Databases, Security, and Cloud in your wpipe pipelines.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/wisrovi/wpipe-steps">
+    <meta property="og:image" content="https://raw.githubusercontent.com/wisrovi/wpipe-steps/main/logo.png">
+    <meta property="og:site_name" content="wpipe-steps">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@wisrovi">
+    <meta name="twitter:title" content="wpipe-steps v0.48.0 | Python Pipeline Steps">
+    
+    <!-- Favicon (Procedural SVG) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%2300f2fe'/><stop offset='100%' style='stop-color:%234facfe'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='65' font-family='Arial' font-size='50' fill='white' text-anchor='middle'>S</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Colors - Ultra Modern Cyber Palette */
+            --primary: #00f2fe;
+            --primary-glow: rgba(0, 242, 254, 0.4);
+            --secondary: #4facfe;
+            --secondary-glow: rgba(79, 172, 254, 0.4);
+            --accent: #f59e0b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --bg-deep: #020617;
+            --bg-card: rgba(15, 23, 42, 0.6);
+            --bg-card-hover: rgba(30, 41, 59, 0.8);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --text-muted: #64748b;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-highlight: rgba(0, 242, 254, 0.3);
+            
+            /* Gradients */
+            --gradient-linear: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+            --gradient-mesh: radial-gradient(at 0% 0%, hsla(180, 100%, 50%, 0.15) 0, transparent 50%), 
+                             radial-gradient(at 100% 100%, hsla(210, 100%, 50%, 0.15) 0, transparent 50%);
+            --gradient-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+            
+            /* Shadows */
+            --shadow-neo: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.5);
+            --shadow-glow: 0 0 30px var(--primary-glow);
+            
+            /* Config */
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --container-max: 1200px;
+        }
+
+        /* Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: var(--gradient-mesh);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Layout */
+        .container { max-width: var(--container-max); margin: 0 auto; padding: 0 2rem; }
+        section { padding: 100px 0; position: relative; }
+
+        /* Typography */
+        h1, h2, h3, h4 { font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
+        .gradient-text {
+            background: var(--gradient-linear);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: var(--transition);
+            border-bottom: 1px solid transparent;
+        }
+        nav.scrolled {
+            background: rgba(2, 6, 23, 0.85);
+            backdrop-filter: blur(15px);
+            padding: 1rem 0;
+            border-color: var(--border);
+        }
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+        .logo i {
+            background: var(--gradient-linear);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dim);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--primary); }
+        .btn-nav {
+            background: var(--gradient-linear);
+            color: var(--bg-deep) !important;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        .hero-bg-fx {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(0, 242, 254, 0.05) 0%, transparent 70%);
+            z-index: -1;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid var(--border-highlight);
+            padding: 0.5rem 1.25rem;
+            border-radius: 100px;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            animation: fadeInUp 0.8s ease;
+        }
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease 0.1s both;
+        }
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: var(--text-dim);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            animation: fadeInUp 1.2s ease 0.2s both;
+        }
+        .hero-btns {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            animation: fadeInUp 1.4s ease 0.3s both;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.2rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+        .btn-main {
+            background: var(--gradient-linear);
+            color: var(--bg-deep);
+            box-shadow: var(--shadow-glow);
+        }
+        .btn-main:hover { transform: translateY(-5px); box-shadow: 0 0 40px var(--primary-glow); }
+        .btn-outline {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border);
+        }
+        .btn-outline:hover { background: rgba(255,255,255,0.05); border-color: var(--primary); transform: translateY(-3px); }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 3rem 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+        .stat-item h3 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+            font-weight: 800;
+        }
+        .stat-item p {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        /* Features */
+        .section-header { text-align: center; margin-bottom: 5rem; }
+        .section-header h2 { font-size: 3.5rem; margin-bottom: 1.5rem; }
+        .section-header p { color: var(--text-dim); font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 3rem;
+            border-radius: 24px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--gradient-surface);
+            pointer-events: none;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--border-highlight);
+            background: var(--bg-card-hover);
+            box-shadow: var(--shadow-neo);
+        }
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(0, 242, 254, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+        .feature-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .feature-card p { color: var(--text-dim); margin-bottom: 1.5rem; }
+
+        /* Steps Pack Section */
+        .steps-section { background: rgba(0, 242, 254, 0.02); }
+        .pack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .pack-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .pack-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-highlight);
+        }
+        .pack-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .pack-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .pack-card p { color: var(--text-dim); margin-bottom: 1.5rem; font-size: 0.95rem; }
+        .pack-card ul {
+            list-style: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .pack-card li { margin-bottom: 0.5rem; }
+        .pack-card li i { color: var(--success); margin-right: 8px; }
+
+        /* Code Section */
+        .code-showcase {
+            background: #010409;
+            border-radius: 32px;
+            border: 1px solid var(--border);
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .code-content h2 { margin-bottom: 2rem; }
+        .code-content p { color: var(--text-dim); margin-bottom: 2rem; font-size: 1.1rem; }
+        .code-window {
+            background: #0d1117;
+            border-radius: 16px;
+            padding: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: #e6edf3;
+            box-shadow: var(--shadow-neo);
+            border: 1px solid #30363d;
+            position: relative;
+        }
+        .code-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+        }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+
+        /* Ecosystem */
+        .ecosystem {
+            text-align: center;
+            background: linear-gradient(180deg, transparent, rgba(79, 172, 254, 0.05));
+        }
+        .eco-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 4rem;
+            border-radius: 40px;
+            border: 2px solid var(--border-highlight);
+            box-shadow: var(--shadow-glow);
+        }
+        .eco-card img { width: 120px; border-radius: 30px; margin-bottom: 2rem; }
+        .eco-card h3 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+        .eco-card p { font-size: 1.2rem; color: var(--text-dim); margin-bottom: 2.5rem; }
+
+        /* Footer */
+        footer {
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--border);
+            background: rgba(15, 23, 42, 0.8);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        .footer-brand p { color: var(--text-dim); margin: 1.5rem 0; max-width: 300px; }
+        .footer-links h4 { margin-bottom: 1.5rem; font-size: 1.1rem; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.75rem; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; transition: var(--transition); }
+        .footer-links a:hover { color: var(--primary); padding-left: 5px; }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .social-links { display: flex; gap: 1.5rem; }
+        .social-links a { font-size: 1.5rem; color: var(--text-muted); transition: var(--transition); }
+        .social-links a:hover { color: var(--primary); transform: scale(1.2); }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .code-showcase { grid-template-columns: 1fr; padding: 2rem; }
+            .hero h1 { font-size: 3.5rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <i class="fas fa-cubes"></i> wpipe-steps
+            </a>
+            <div class="nav-links">
+                <a href="#steps">Step Packs</a>
+                <a href="#features">Features</a>
+                <a href="https://wpipe-steps.readthedocs.io/" target="_blank">Docs</a>
+                <a href="https://pypi.org/project/wpipe-steps/" class="btn-nav">
+                    <i class="fab fa-python"></i> PyPI
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-fx"></div>
+        <div class="container">
+            <div class="hero-badge">
+                <i class="fas fa-shield-alt"></i> v0.48.0 — 50+ Production Steps
+            </div>
+            <h1>Ready-to-Use <br><span class="gradient-text">Pipeline Steps</span></h1>
+            <p>
+                A comprehensive library of modular components for the wpipe orchestration engine. 
+                Stop reinventing the wheel. Import, configure, and run.
+            </p>
+            <div class="hero-btns">
+                <a href="https://pypi.org/project/wpipe-steps/" class="btn btn-main">
+                    Install via PyPI <i class="fas fa-chevron-right"></i>
+                </a>
+                <a href="https://github.com/wisrovi/wpipe-steps" class="btn btn-outline">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Pre-built Steps</p>
+                </div>
+                <div class="stat-item">
+                    <h3>8</h3>
+                    <p>Step Packs</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Sync/Async</h3>
+                    <p>Dual Support</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>wpipe Compatible</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="gradient-text" style="font-weight: 800; text-transform: uppercase;">Why wpipe-steps?</span>
+                <h2>Productivity Meets <span class="gradient-text">Reliability</span></h2>
+                <p>Don't waste time writing boilerplate for common tasks. Use professional, tested steps.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-plug"></i></div>
+                    <h3>Zero Config</h3>
+                    <p>Most steps work out of the box with sensible defaults. Just import and add to your pipeline.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+                    <h3>Sync & Async</h3>
+                    <p>Every step comes in both Synchronous and Asynchronous versions to fit your concurrency needs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-database"></i></div>
+                    <h3>Database Ready</h3>
+                    <p>Full support for Redis, MySQL, MongoDB, SQLite, ClickHouse, and Cassandra.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Security First</h3>
+                    <p>Built-in WAF filtering, Hash generation, and Vault integration for secure pipelines.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Cloud Native</h3>
+                    <p>Steps for AWS S3, Docker, Kubernetes, Terraform, Proxmox, and DigitalOcean.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-code-branch"></i></div>
+                    <h3>wpipe Native</h3>
+                    <p>Designed exclusively for wpipe. Inherits all resilience and checkpointing features.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step Packs Section -->
+    <section id="steps" class="steps-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="gradient-text" style="font-weight: 800; text-transform: uppercase;">Available Packs</span>
+                <h2>Explore the <span class="gradient-text">Inventory</span></h2>
+                <p>Organized by functionality. Check the README for the full table with imports and examples.</p>
+            </div>
+
+            <div class="pack-grid">
+                <div class="pack-card">
+                    <div class="pack-icon"><i class="fas fa-globe"></i></div>
+                    <h3>Connectivity</h3>
+                    <p>HTTP, GraphQL, Webhooks, SFTP, RSS, OAuth2.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> http_request</li>
+                        <li><i class="fas fa-check"></i> graphql_query</li>
+                        <li><i class="fas fa-check"></i> webhook_trigger</li>
+                        <li><i class="fas fa-check"></i> sftp_transfer</li>
+                    </ul>
+                </div>
+                <div class="pack-card">
+                    <div class="pack-icon"><i class="fas fa-database"></i></div>
+                    <h3>Database</h3>
+                    <p>MySQL, MongoDB, SQLite, ClickHouse, Cassandra.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> mysql_query</li>
+                        <li><i class="fas fa-check"></i> mongo_insert</li>
+                        <li><i class="fas fa-check"></i> sqlite_audit</li>
+                        <li><i class="fas fa-check"></i> redis (12 modules)</li>
+                    </ul>
+                </div>
+                <div class="pack-card">
+                    <div class="pack-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Security</h3>
+                    <p>Fail2Ban, Nmap, Shodan, Hash, Vault, WAF.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> fail2ban_check</li>
+                        <li><i class="fas fa-check"></i> nmap_scan</li>
+                        <li><i class="fas fa-check"></i> waf_filter</li>
+                        <li><i class="fas fa-check"></i> hash_generator</li>
+                    </ul>
+                </div>
+                <div class="pack-card">
+                    <div class="pack-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Infrastructure</h3>
+                    <p>S3, Docker, Kubernetes, Terraform, Proxmox.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> s3_upload</li>
+                        <li><i class="fas fa-check"></i> docker_container</li>
+                        <li><i class="fas fa-check"></i> kubernetes_pod_check</li>
+                        <li><i class="fas fa-check"></i> terraform_apply</li>
+                    </ul>
+                </div>
+                <div class="pack-card">
+                    <div class="pack-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>Communication</h3>
+                    <p>Telegram, Slack, Discord, SendGrid, Twilio.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> telegram_notify</li>
+                        <li><i class="fas fa-check"></i> slack_alert</li>
+                        <li><i class="fas fa-check"></i> sendgrid_email</li>
+                        <li><i class="fas fa-check"></i> twilio_sms</li>
+                    </ul>
+                </div>
+                <div class="pack-card">
+                    <div class="pack-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>And More...</h3>
+                    <p>Data processing, Multimedia, AI, and System tools.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> CSV/JSON/PDF/Excel</li>
+                        <li><i class="fas fa-check"></i> Audio/Image Processing</li>
+                        <li><i class="fas fa-check"></i> OpenAI/HuggingFace</li>
+                        <li><i class="fas fa-check"></i> Shell/Resource Mon</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="https://github.com/wisrovi/wpipe-steps/blob/main/README.md" class="btn btn-outline">View Full Inventory in README</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Showcase -->
+    <section>
+        <div class="container">
+            <div class="code-showcase">
+                <div class="code-content">
+                    <span class="gradient-text" style="font-weight: 800; text-transform: uppercase;">Simple Integration</span>
+                    <h2>Import & <span class="gradient-text">Run</span></h2>
+                    <p>Since wpipe-steps inherits from wpipe.BaseStep, integration is seamless. Just import your step and add it to the pipeline.</p>
+                    <ul style="list-style: none; color: var(--text-dim);">
+                        <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Pre-built logic, zero boilerplate</li>
+                        <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Automatic retries and error handling</li>
+                        <li style="margin-bottom: 1rem;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Full async support included</li>
+                    </ul>
+                </div>
+                <div class="code-window">
+                    <div class="code-header">
+                        <div class="dot dot-red"></div>
+                        <div class="dot dot-yellow"></div>
+                        <div class="dot dot-green"></div>
+                    </div>
+                    <span style="color: #8b949e;"># Install: pip install wpipe-steps</span><br><br>
+                    <span style="color: #ff7b72;">from</span> wpipe <span style="color: #ff7b72;">import</span> Pipeline<br>
+                    <span style="color: #ff7b72;">from</span> wpipe_steps.connectivity <span style="color: #ff7b72;">import</span> HttpRequestStep<br><br>
+                    <span style="color: #8b949e;"># Create pipeline with pre-built steps</span><br>
+                    pipe = Pipeline(pipeline_name=<span style="color: #a5d6ff;">"my_api_call"</span>)<br>
+                    pipe.set_steps([<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;HttpRequestStep.as_step(<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name=<span style="color: #a5d6ff;">"fetch_data"</span>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url=<span style="color: #a5d6ff;">"https://api.example.com"</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;)<br>
+                    ])<br><br>
+                    result = pipe.run({})
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosystem Section -->
+    <section id="ecosystem" class="ecosystem">
+        <div class="container">
+            <div class="eco-card">
+                <img src="https://wisrovi.dev/assets/img/logo.png" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%234facfe%22/></svg>'" alt="Wisrovi">
+                <h3>Part of the <span class="gradient-text">Wisrovi Ecosystem</span></h3>
+                <p>
+                    wpipe-steps is designed to work seamlessly with wpipe and other 
+                    Wisrovi libraries (wredis, wmysql, wmongo, etc.) to create 
+                    a complete enterprise-grade data processing suite.
+                </p>
+                <a href="https://wisrovi.dev/" target="_blank" class="btn btn-main">
+                    Visit wisrovi.dev <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section>
+        <div class="container" style="text-align: center;">
+            <h2 style="font-size: 3.5rem; margin-bottom: 2rem;">Ready to boost <span class="gradient-text">productivity</span>?</h2>
+            <div class="hero-btns">
+                <a href="https://pypi.org/project/wpipe-steps/" class="btn btn-main">Install via PyPI</a>
+                <a href="https://github.com/wisrovi/wpipe-steps" class="btn btn-outline">Star on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <i class="fas fa-cubes"></i> wpipe-steps
+                    </a>
+                    <p>The definitive collection of steps for wpipe pipelines. Modular, Resilient, Production-Ready.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/wisrovi" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://es.linkedin.com/in/wisrovi-rodriguez" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/wisrovi" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://wpipe-steps.readthedocs.io/">Documentation</a></li>
+                        <li><a href="https://pypi.org/project/wpipe-steps/">PyPI Package</a></li>
+                        <li><a href="https://github.com/wisrovi/wpipe-steps/releases">Releases</a></li>
+                        <li><a href="https://github.com/wisrovi/wpipe-steps/issues">Issues</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Wisrovi</h4>
+                    <ul>
+                        <li><a href="https://wisrovi.dev/">Main Site</a></li>
+                        <li><a href="https://github.com/wisrovi/wpipe">wpipe Engine</a></li>
+                        <li><a href="https://github.com/wisrovi/wredis">wredis</a></li>
+                        <li><a href="mailto:wisrovi.rodriguez@gmail.com">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="https://github.com/wisrovi/wpipe-steps/blob/main/LICENSE">MIT License</a></li>
+                        <li><a href="https://github.com/wisrovi/wpipe-steps/blob/main/CHANGELOG.md">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024-2026 William Steve Rodriguez Villamizar. MIT Licensed.</p>
+                <p>Designed with <i class="fas fa-heart" style="color: var(--danger);"></i> for the Python Community.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .pack-card, .eco-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
