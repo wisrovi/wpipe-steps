@@ -1,7 +1,9 @@
 from typing import Any, Dict, Optional
 import subprocess
+from wpipe import step, to_obj
 from wpipe_steps.core.base import BaseStep
 
+@step
 class ShellExecStep(BaseStep):
     """
     Step for executing shell commands.
@@ -11,7 +13,8 @@ class ShellExecStep(BaseStep):
         self.command = command
         self.response_key = response_key
 
-    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    @to_obj
+    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
         try:
             result = subprocess.run(self.command, shell=True, capture_output=True, text=True, check=True)
             data[self.response_key] = {

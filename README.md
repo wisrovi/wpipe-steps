@@ -312,6 +312,21 @@ Complete inventory of Redis Steps available in `wpipe_steps.database.redis`:
 
 ---
 
+## 🚙️ System Steps Inventory
+
+Complete inventory of System Steps available in `wpipe_steps.system`:
+
+### System (package: `wpipe_steps.system`)
+| Step Name | Import | Type | Example | Description |
+|-----------|--------|------|---------|-------------|
+| `cpu_monitor` | `from wpipe_steps.system import CpuMonitorStep` | Sync | [cpu_monitor_example.py](examples/system/cpu_monitor/cpu_monitor_example.py) | Monitor CPU usage with threshold alerts |
+| `shell_exec` | `from wpipe_steps.system import ShellExecStep` | Sync | [shell_exec_example.py](examples/system/shell_exec/shell_exec_example.py) | Execute shell commands safely in pipelines |
+| `disk_space_check` | `from wpipe_steps.system import DiskSpaceCheckStep` | Sync | [disk_space_check_example.py](examples/system/disk_space_check/disk_space_check_example.py) | Check available disk space before operations |
+| `health_check` | `from wpipe_steps.system import HealthCheckStep` | Sync | [health_check_example.py](examples/system/health_check/health_check_example.py) | Monitor health of HTTP services |
+| `cron_scheduler` | `from wpipe_steps.system import CronSchedulerStep` | Sync | [cron_scheduler_example.py](examples/system/cron_scheduler/cron_scheduler_example.py) | Calculate next execution time from cron expressions |
+
+---
+
 ## 🚀 Quick Start
 
 ### Installation
@@ -364,8 +379,5 @@ Check the [TODO.txt](./TODO.txt) for the full list of planned steps for each pac
 ---
 
 Diseñado con ❤️ por **William Rodriguez** (wisrovi) para ingenieros que buscan máxima productividad.
-### System (package: `wpipe_steps.system`)| Step Name | Import | Type | Example | Description ||-----------|--------|------|---------|-------------|| `cpu_monitor` | `from wpipe_steps.system import CpuMonitorStep` | Sync | [cpu_monitor_example.py](examples/system/cpu_monitor/cpu_monitor_example.py) | Obtener carga del sistema antes de procesos pesados. || `cpu_monitor` | `from wpipe_steps.system import CpuMonitorStep` | Sync | [cpu_monitor_example.py](examples/system/cpu_monitor/cpu_monitor_example.py) | Obtener carga del sistema antes de procesos pesados. |
-| `shell_exec` | `from wpipe_steps.system import ShellExecStep` | Sync | [shell_exec_example.py](examples/system/shell_exec/shell_exec_example.py) | Ejecución controlada de comandos Bash/PowerShell. |
-| `disk_space_check` | `from wpipe_steps.system import DiskSpaceCheckStep` | Sync | [disk_space_check_example.py](examples/system/disk_space_check/disk_space_check_example.py) | Alerta si queda poco espacio para el proceso. |
 | `health_check` | `from wpipe_steps.system import HealthCheckStep` | Sync | [health_check_example.py](examples/system/health_check/health_check_example.py) | Ping a una lista de servicios críticos. |
 | `cron_scheduler` | `from wpipe_steps.system import CronSchedulerStep` | Sync | [cron_scheduler_example.py](examples/system/cron_scheduler/cron_scheduler_example.py) | Programar la siguiente ejecución del pipeline. |

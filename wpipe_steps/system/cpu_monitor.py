@@ -1,6 +1,8 @@
 from typing import Any, Dict, Optional
+from wpipe import step, to_obj
 from wpipe_steps.core.base import BaseStep
 
+@step
 class CpuMonitorStep(BaseStep):
     """
     Step for monitoring CPU usage.
@@ -10,7 +12,8 @@ class CpuMonitorStep(BaseStep):
         self.threshold_percent = threshold_percent
         self.response_key = response_key
 
-    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    @to_obj
+    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
         psutil = self.ensure_dependency("psutil")
         
         cpu_percent = psutil.cpu_percent(interval=1)

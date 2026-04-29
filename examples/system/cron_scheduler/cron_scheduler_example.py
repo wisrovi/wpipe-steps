@@ -1,21 +1,21 @@
-import sys
-import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../')))
-
+"""
+Example: CronSchedulerStep
+Calculate next execution time based on cron expression.
+"""
 from wpipe import Pipeline
-from wpipe_steps.system.cron_scheduler import CronSchedulerStep
+from wpipe_steps.system import CronSchedulerStep
 
 def main():
-    pipeline = Pipeline(pipeline_name="cron_pipeline")
+    pipeline = Pipeline(pipeline_name="cron_scheduler_example")
     pipeline.set_steps([
-        CronSchedulerStep.as_step(name="calculate_next_run", cron_expr="0 12 * * *")
+        CronSchedulerStep.as_step(
+            name="next_run",
+            cron_expr="*/15 * * * *",  # Every 15 minutes
+            response_key="cron_status"
+        )
     ])
-    
     result = pipeline.run({})
-    print(f"Pipeline Result: {result}")
-    
-    assert "cron_status" in result
-    assert "next_execution" in result["cron_status"]
+    print("Cron Status:", result.get("cron_status"))
 
 if __name__ == "__main__":
     main()

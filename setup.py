@@ -12,7 +12,7 @@ long_description = (
 
 setup(
     name="wpipe-steps",
-    version="0.52.0",
+    version="0.53.0",
     packages=find_packages(include=["wpipe_steps", "wpipe_steps.*"]),
     install_requires=[
         "wpipe>=1.0.0",

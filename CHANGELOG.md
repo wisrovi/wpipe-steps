@@ -4,6 +4,21 @@ All notable changes to WPipe will be documented in this file.
 
 ---
 
+## [0.53.0] - 2026-04-29
+
+### Added
+- **System Pack**: Complete system monitoring and automation steps
+  - `CpuMonitorStep`: Monitor CPU usage with threshold alerts
+  - `ShellExecStep`: Execute shell commands safely in pipelines
+  - `DiskSpaceCheckStep`: Check available disk space before operations
+  - `HealthCheckStep`: Monitor health of HTTP services
+  - `CronSchedulerStep`: Calculate next execution time from cron expressions
+- Refactored to use `@step` and `@to_obj` decorators
+- Examples for all System steps in `examples/system/`
+- Updated README.md with System Steps inventory
+
+---
+
 ## [0.38.0] - 2026-04-28
 
 ### Added

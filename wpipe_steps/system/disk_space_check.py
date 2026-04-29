@@ -1,7 +1,9 @@
 from typing import Any, Dict, Optional
 import shutil
+from wpipe import step, to_obj
 from wpipe_steps.core.base import BaseStep
 
+@step
 class DiskSpaceCheckStep(BaseStep):
     """
     Step for checking disk space.
@@ -12,7 +14,8 @@ class DiskSpaceCheckStep(BaseStep):
         self.response_key = response_key
         self.min_free_gb = min_free_gb
 
-    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    @to_obj
+    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
         total, used, free = shutil.disk_usage(self.path)
         free_gb = free / (2**30)
         

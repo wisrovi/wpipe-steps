@@ -1,7 +1,9 @@
 from typing import Any, Dict, Optional
 from datetime import datetime
+from wpipe import step, to_obj
 from wpipe_steps.core.base import BaseStep
 
+@step
 class CronSchedulerStep(BaseStep):
     """
     Step for calculating next execution time based on a cron expression.
@@ -11,7 +13,8 @@ class CronSchedulerStep(BaseStep):
         self.cron_expr = cron_expr
         self.response_key = response_key
 
-    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    @to_obj
+    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
         croniter = self.ensure_dependency("croniter")
         
         now = datetime.now()

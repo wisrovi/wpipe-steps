@@ -1,6 +1,8 @@
 from typing import Any, Dict, List, Optional
+from wpipe import step, to_obj
 from wpipe_steps.core.base import BaseStep
 
+@step
 class HealthCheckStep(BaseStep):
     """
     Step for checking health of HTTP services.
@@ -10,7 +12,8 @@ class HealthCheckStep(BaseStep):
         self.urls = urls
         self.response_key = response_key
 
-    def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    @to_obj
+    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
         requests = self.ensure_dependency("requests")
         
         status = {}

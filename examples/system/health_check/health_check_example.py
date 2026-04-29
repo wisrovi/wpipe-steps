@@ -1,21 +1,21 @@
-import sys
-import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../')))
-
+"""
+Example: HealthCheckStep
+Monitor health of critical HTTP services.
+"""
 from wpipe import Pipeline
-from wpipe_steps.system.health_check import HealthCheckStep
+from wpipe_steps.system import HealthCheckStep
 
 def main():
-    pipeline = Pipeline(pipeline_name="health_check_pipeline")
+    pipeline = Pipeline(pipeline_name="health_check_example")
     pipeline.set_steps([
-        HealthCheckStep.as_step(name="ping_services", urls=["https://httpbin.org/get"])
+        HealthCheckStep.as_step(
+            name="check_services",
+            urls=["https://httpbin.org/status/200", "https://httpbin.org/status/500"],
+            response_key="health_status"
+        )
     ])
-    
     result = pipeline.run({})
-    print(f"Pipeline Result: {result}")
-    
-    assert "health_status" in result
-    assert "all_healthy" in result["health_status"]
+    print("Health Status:", result.get("health_status"))
 
 if __name__ == "__main__":
     main()
