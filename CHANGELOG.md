@@ -4,6 +4,21 @@ All notable changes to WPipe will be documented in this file.
 
 ---
 
+## [0.105.0] - 2026-05-27
+
+### Fixed
+- **HuggingFace Steps Stability**: Resolved pickling, decorator, and import issues
+  - Fixed pickling issue across all HuggingFace steps
+  - Resolved `@step` decorator and `as_step()` compatibility
+  - Corrected imports in HuggingFace text steps
+  - Updated `HFSentimentAnalysisStep` to working pattern
+  - Updated `HFAutomaticSpeechRecognitionStep` to working pattern
+  - Updated `HFImageClassificationStep` to working pattern
+  - Removed `self._pipeline` from all HuggingFace steps
+- All HuggingFace steps now compatible with binary serialization and pipeline reuse
+
+---
+
 ## [0.104.0] - 2026-04-29
 
 ### Added

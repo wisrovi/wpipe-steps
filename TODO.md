@@ -150,7 +150,7 @@
 - 50 steps en HuggingFace pack (v0.55.0 - v0.104.0)
 
 **PyPI**: https://pypi.org/project/wpipe-steps/
-**Última versión**: v0.104.0 (50 HuggingFace steps locales, sin API key)
+**Última versión**: v0.105.0 (50 HuggingFace steps locales, sin API key)
 
 **Características HuggingFace Pack:**
 - ✅ 100% local (no requiere internet después de descarga)

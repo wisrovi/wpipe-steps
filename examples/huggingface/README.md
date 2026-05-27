@@ -1,6 +1,6 @@
 # HuggingFace Steps Examples
 
-This directory contains functional examples for all 50 HuggingFace steps in wpipe-steps v0.104.0.
+This directory contains functional examples for all 50 HuggingFace steps in wpipe-steps v0.105.0.
 
 ## Quick Start
 
