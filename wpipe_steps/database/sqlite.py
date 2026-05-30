@@ -1,6 +1,6 @@
 from typing import Any, Dict, Optional
 from wpipe_steps.core.base import BaseStep
-from wpipe_steps.core.decorators import step, to_obj
+from wpipe import step, to_obj
 import json
 from datetime import datetime
 

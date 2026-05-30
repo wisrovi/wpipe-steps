@@ -1,6 +1,6 @@
 from typing import Any, Dict, Optional, List
 from wpipe_steps.core.base import BaseStep
-from wpipe_steps.core.decorators import step, to_obj
+from wpipe import step, to_obj
 
 @step
 class CassandraWriteStep(BaseStep):
@@ -11,9 +11,9 @@ class CassandraWriteStep(BaseStep):
 
     def __init__(
         self, 
-        contact_points: List[str],
-        keyspace: str,
-        table: str,
+        contact_points: List[str] = ["127.0.0.1"],
+        keyspace: str = "test",
+        table: str = "items",
         port: int = 9042,
         data_key: Optional[str] = None,
         response_key: str = "cassandra_status",

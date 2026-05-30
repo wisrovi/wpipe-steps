@@ -26,12 +26,12 @@ class BaseStep(ABC):
                 f"👉 Please install it using: pip install {pkg}"
             )
     
-    @abstractmethod
     def execute(self, data: Dict[str, Any]) -> Dict[str, Any]:
         """
-        The main logic of the step. Must be implemented by subclasses.
+        The main logic of the step. Can be implemented by subclasses.
+        If not implemented, subclasses should override __call__.
         """
-        pass
+        raise NotImplementedError("Subclasses must implement execute() or override __call__()")
     
     def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
         return self.execute(data)

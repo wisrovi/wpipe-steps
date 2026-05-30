@@ -1,6 +1,6 @@
 from typing import Any, Dict, Optional, List
 from wpipe_steps.core.base import BaseStep
-from wpipe_steps.core.decorators import step, to_obj
+from wpipe import step, to_obj
 
 @step
 class ClickHouseBulkStep(BaseStep):
@@ -10,9 +10,9 @@ class ClickHouseBulkStep(BaseStep):
 
     def __init__(
         self, 
-        host: str,
-        database: str,
-        table: str,
+        host: str = "localhost",
+        database: str = "default",
+        table: str = "records",
         user: str = "default",
         password: str = "",
         port: int = 8123,

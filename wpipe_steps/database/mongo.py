@@ -1,6 +1,6 @@
 from typing import Any, Dict, Optional, Union, List
 from wpipe_steps.core.base import BaseStep
-from wpipe_steps.core.decorators import step, to_obj
+from wpipe import step, to_obj
 
 @step
 class MongoInsertStep(BaseStep):
@@ -10,9 +10,9 @@ class MongoInsertStep(BaseStep):
 
     def __init__(
         self, 
-        uri: str,
-        database: str,
-        collection: str,
+        uri: str = "mongodb://localhost:27017/",
+        database: str = "test",
+        collection: str = "items",
         document_key: Optional[str] = None,
         custom_document: Optional[Union[Dict[str, Any], List[Dict[str, Any]]]] = None,
         response_key: str = "mongo_status",

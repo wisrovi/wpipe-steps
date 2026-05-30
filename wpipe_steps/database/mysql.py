@@ -1,6 +1,6 @@
 from typing import Any, Dict, Optional, Union
 from wpipe_steps.core.base import BaseStep
-from wpipe_steps.core.decorators import step, to_obj
+from wpipe import step, to_obj
 
 @step
 class MySQLQueryStep(BaseStep):
@@ -10,11 +10,11 @@ class MySQLQueryStep(BaseStep):
 
     def __init__(
         self, 
-        host: str,
-        user: str,
-        password: str,
-        database: str,
-        query: str,
+        host: str = "localhost",
+        user: str = "root",
+        password: str = "",
+        database: str = "test",
+        query: str = "SELECT 1",
         params: Optional[Union[tuple, dict]] = None,
         port: int = 3306,
         fetch_results: bool = True,
