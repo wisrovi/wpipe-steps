@@ -4,6 +4,7 @@
     "func_name": "RSSParserStep",
     "namespace": "wpipe_steps.connectivity.rss",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/connectivity/rss.py"
   },
   {
@@ -11,6 +12,7 @@
     "func_name": "SftpTransferStep",
     "namespace": "wpipe_steps.connectivity.sftp",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/connectivity/sftp.py"
   },
   {
@@ -18,6 +20,7 @@
     "func_name": "WebhookTriggerStep",
     "namespace": "wpipe_steps.connectivity.webhook",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/connectivity/webhook.py"
   },
   {
@@ -25,6 +28,7 @@
     "func_name": "OAuth2AuthStep",
     "namespace": "wpipe_steps.connectivity.oauth2",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/connectivity/oauth2.py"
   },
   {
@@ -32,6 +36,7 @@
     "func_name": "GraphQLQueryStep",
     "namespace": "wpipe_steps.connectivity.graphql",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/connectivity/graphql.py"
   },
   {
@@ -39,6 +44,7 @@
     "func_name": "HttpRequestStep",
     "namespace": "wpipe_steps.connectivity.http",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/connectivity/http.py"
   },
   {
@@ -46,6 +52,7 @@
     "func_name": "ExcelParseStep",
     "namespace": "wpipe_steps.data.excel_parse",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/data/excel_parse.py"
   },
   {
@@ -53,6 +60,7 @@
     "func_name": "CsvToJsonStep",
     "namespace": "wpipe_steps.data.csv_to_json",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/data/csv_to_json.py"
   },
   {
@@ -60,6 +68,7 @@
     "func_name": "TextTranslatorStep",
     "namespace": "wpipe_steps.data.text_translator",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/data/text_translator.py"
   },
   {
@@ -67,6 +76,7 @@
     "func_name": "ZipCompressorStep",
     "namespace": "wpipe_steps.data.zip_compressor",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/data/zip_compressor.py"
   },
   {
@@ -74,6 +84,7 @@
     "func_name": "PdfGeneratorStep",
     "namespace": "wpipe_steps.data.pdf_generator",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/data/pdf_generator.py"
   },
   {
@@ -81,6 +92,7 @@
     "func_name": "SlackAlertStep",
     "namespace": "wpipe_steps.communication.slack",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/communication/slack.py"
   },
   {
@@ -88,6 +100,7 @@
     "func_name": "DiscordBotStep",
     "namespace": "wpipe_steps.communication.discord",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/communication/discord.py"
   },
   {
@@ -95,6 +108,7 @@
     "func_name": "TwitterPostStep",
     "namespace": "wpipe_steps.communication.twitter",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/communication/twitter.py"
   },
   {
@@ -102,6 +116,7 @@
     "func_name": "SendGridMailStep",
     "namespace": "wpipe_steps.communication.sendgrid",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/communication/sendgrid.py"
   },
   {
@@ -109,6 +124,7 @@
     "func_name": "TwilioSmsStep",
     "namespace": "wpipe_steps.communication.twilio",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/communication/twilio.py"
   },
   {
@@ -116,6 +132,7 @@
     "func_name": "TelegramNotifyStep",
     "namespace": "wpipe_steps.communication.telegram",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/communication/telegram.py"
   },
   {
@@ -123,6 +140,7 @@
     "func_name": "KubernetesPodCheckStep",
     "namespace": "wpipe_steps.infrastructure.kubernetes",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/infrastructure/kubernetes.py"
   },
   {
@@ -130,6 +148,7 @@
     "func_name": "DockerContainerStep",
     "namespace": "wpipe_steps.infrastructure.docker",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/infrastructure/docker.py"
   },
   {
@@ -137,6 +156,7 @@
     "func_name": "S3BucketUploadStep",
     "namespace": "wpipe_steps.infrastructure.s3",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/infrastructure/s3.py"
   },
   {
@@ -144,6 +164,7 @@
     "func_name": "WhisperTranscribeStep",
     "namespace": "wpipe_steps.multimedia.whisper_transcribe",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/multimedia/whisper_transcribe.py"
   },
   {
@@ -151,6 +172,7 @@
     "func_name": "AudioNormalizerStep",
     "namespace": "wpipe_steps.multimedia.audio_normalizer",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/multimedia/audio_normalizer.py"
   },
   {
@@ -158,6 +180,7 @@
     "func_name": "TtsGenerateStep",
     "namespace": "wpipe_steps.multimedia.tts_generate",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/multimedia/tts_generate.py"
   },
   {
@@ -165,6 +188,7 @@
     "func_name": "ImageResizerStep",
     "namespace": "wpipe_steps.multimedia.image_resizer",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/multimedia/image_resizer.py"
   },
   {
@@ -172,6 +196,7 @@
     "func_name": "VideoFrameExtractStep",
     "namespace": "wpipe_steps.multimedia.video_frame_extract",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/multimedia/video_frame_extract.py"
   },
   {
@@ -179,6 +204,7 @@
     "func_name": "RedisSortsetsGetScoreSync",
     "namespace": "wpipe_steps.database.redis.sortsets.get_score_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/get_score_sync.py"
   },
   {
@@ -186,6 +212,7 @@
     "func_name": "RedisSortsetsIncrementScoreAsync",
     "namespace": "wpipe_steps.database.redis.sortsets.increment_score_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/increment_score_async.py"
   },
   {
@@ -193,6 +220,7 @@
     "func_name": "RedisSortsetsDeleteAsync",
     "namespace": "wpipe_steps.database.redis.sortsets.delete_sorted_set_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/delete_sorted_set_async.py"
   },
   {
@@ -200,6 +228,7 @@
     "func_name": "RedisSortsetsGetRankSync",
     "namespace": "wpipe_steps.database.redis.sortsets.get_rank_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/get_rank_sync.py"
   },
   {
@@ -207,6 +236,7 @@
     "func_name": "RedisSortsetsRemoveSync",
     "namespace": "wpipe_steps.database.redis.sortsets.remove_from_sorted_set_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/remove_from_sorted_set_sync.py"
   },
   {
@@ -214,6 +244,7 @@
     "func_name": "RedisSortsetsIncrementScoreSync",
     "namespace": "wpipe_steps.database.redis.sortsets.increment_score_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/increment_score_sync.py"
   },
   {
@@ -221,6 +252,7 @@
     "func_name": "RedisSortsetsDeleteSync",
     "namespace": "wpipe_steps.database.redis.sortsets.delete_sorted_set_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/delete_sorted_set_sync.py"
   },
   {
@@ -228,6 +260,7 @@
     "func_name": "__call__",
     "namespace": "wpipe_steps.database.redis.sortsets.get_ttl_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/get_ttl_async.py"
   },
   {
@@ -235,6 +268,7 @@
     "func_name": "RedisSortsetsGetByScoreSync",
     "namespace": "wpipe_steps.database.redis.sortsets.get_sorted_set_by_score_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/get_sorted_set_by_score_sync.py"
   },
   {
@@ -242,6 +276,7 @@
     "func_name": "RedisSortsetsGetReverseAsync",
     "namespace": "wpipe_steps.database.redis.sortsets.get_sorted_set_reverse_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/get_sorted_set_reverse_async.py"
   },
   {
@@ -249,6 +284,7 @@
     "func_name": "RedisSortsetsGetReverseSync",
     "namespace": "wpipe_steps.database.redis.sortsets.get_sorted_set_reverse_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/get_sorted_set_reverse_sync.py"
   },
   {
@@ -256,6 +292,7 @@
     "func_name": "RedisSortsetsAddSync",
     "namespace": "wpipe_steps.database.redis.sortsets.add_to_sorted_set_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/add_to_sorted_set_sync.py"
   },
   {
@@ -263,6 +300,7 @@
     "func_name": "RedisSortsetsAddAsync",
     "namespace": "wpipe_steps.database.redis.sortsets.add_to_sorted_set_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/add_to_sorted_set_async.py"
   },
   {
@@ -270,6 +308,7 @@
     "func_name": "RedisSortsetsSetTtlAsync",
     "namespace": "wpipe_steps.database.redis.sortsets.set_ttl_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/set_ttl_async.py"
   },
   {
@@ -277,6 +316,7 @@
     "func_name": "RedisSortsetsGetAsync",
     "namespace": "wpipe_steps.database.redis.sortsets.get_sorted_set_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/get_sorted_set_async.py"
   },
   {
@@ -284,6 +324,7 @@
     "func_name": "RedisSortsetsGetScoreAsync",
     "namespace": "wpipe_steps.database.redis.sortsets.get_score_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/get_score_async.py"
   },
   {
@@ -291,6 +332,7 @@
     "func_name": "RedisSortsetsRemoveAsync",
     "namespace": "wpipe_steps.database.redis.sortsets.remove_from_sorted_set_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/remove_from_sorted_set_async.py"
   },
   {
@@ -298,6 +340,7 @@
     "func_name": "RedisSortsetsGetSync",
     "namespace": "wpipe_steps.database.redis.sortsets.get_sorted_set_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/get_sorted_set_sync.py"
   },
   {
@@ -305,6 +348,7 @@
     "func_name": "__call__",
     "namespace": "wpipe_steps.database.redis.sortsets.get_ttl_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/get_ttl_sync.py"
   },
   {
@@ -312,6 +356,7 @@
     "func_name": "RedisSortsetsSetTtlSync",
     "namespace": "wpipe_steps.database.redis.sortsets.set_ttl_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/set_ttl_sync.py"
   },
   {
@@ -319,6 +364,7 @@
     "func_name": "RedisSortsetsGetByScoreAsync",
     "namespace": "wpipe_steps.database.redis.sortsets.get_sorted_set_by_score_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/get_sorted_set_by_score_async.py"
   },
   {
@@ -326,6 +372,7 @@
     "func_name": "RedisSortsetsGetRankAsync",
     "namespace": "wpipe_steps.database.redis.sortsets.get_rank_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sortsets/get_rank_async.py"
   },
   {
@@ -333,6 +380,7 @@
     "func_name": "RedisQueuePublishSync",
     "namespace": "wpipe_steps.database.redis.queue.publish_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/queue/publish_sync.py"
   },
   {
@@ -340,6 +388,7 @@
     "func_name": "RedisQueuePublishAsync",
     "namespace": "wpipe_steps.database.redis.queue.publish_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/queue/publish_async.py"
   },
   {
@@ -347,6 +396,7 @@
     "func_name": "RedisQueueGetLengthAsync",
     "namespace": "wpipe_steps.database.redis.queue.get_queue_length_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/queue/get_queue_length_async.py"
   },
   {
@@ -354,6 +404,7 @@
     "func_name": "RedisQueueOnMessageSync",
     "namespace": "wpipe_steps.database.redis.queue.on_message_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/queue/on_message_sync.py"
   },
   {
@@ -361,6 +412,7 @@
     "func_name": "RedisQueueGetLengthSync",
     "namespace": "wpipe_steps.database.redis.queue.get_queue_length_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/queue/get_queue_length_sync.py"
   },
   {
@@ -368,6 +420,7 @@
     "func_name": "RedisQueueOnMessageAsync",
     "namespace": "wpipe_steps.database.redis.queue.on_message_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/queue/on_message_async.py"
   },
   {
@@ -375,6 +428,7 @@
     "func_name": "RedisGeoGetDistanceAsync",
     "namespace": "wpipe_steps.database.redis.geo.get_distance_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/geo/get_distance_async.py"
   },
   {
@@ -382,6 +436,7 @@
     "func_name": "RedisGeoSearchNearbyAsync",
     "namespace": "wpipe_steps.database.redis.geo.search_nearby_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/geo/search_nearby_async.py"
   },
   {
@@ -389,6 +444,7 @@
     "func_name": "RedisGeoSearchNearbyDistSync",
     "namespace": "wpipe_steps.database.redis.geo.search_nearby_with_distance_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/geo/search_nearby_with_distance_sync.py"
   },
   {
@@ -396,6 +452,7 @@
     "func_name": "RedisGeoSearchNearbyDistAsync",
     "namespace": "wpipe_steps.database.redis.geo.search_nearby_with_distance_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/geo/search_nearby_with_distance_async.py"
   },
   {
@@ -403,6 +460,7 @@
     "func_name": "RedisGeoAddSync",
     "namespace": "wpipe_steps.database.redis.geo.add_location_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/geo/add_location_sync.py"
   },
   {
@@ -410,6 +468,7 @@
     "func_name": "RedisGeoGetPositionsAsync",
     "namespace": "wpipe_steps.database.redis.geo.get_positions_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/geo/get_positions_async.py"
   },
   {
@@ -417,6 +476,7 @@
     "func_name": "RedisGeoGetPositionsSync",
     "namespace": "wpipe_steps.database.redis.geo.get_positions_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/geo/get_positions_sync.py"
   },
   {
@@ -424,6 +484,7 @@
     "func_name": "RedisGeoGetDistanceSync",
     "namespace": "wpipe_steps.database.redis.geo.get_distance_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/geo/get_distance_sync.py"
   },
   {
@@ -431,6 +492,7 @@
     "func_name": "RedisGeoAddAsync",
     "namespace": "wpipe_steps.database.redis.geo.add_location_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/geo/add_location_async.py"
   },
   {
@@ -438,6 +500,7 @@
     "func_name": "RedisGeoSearchNearbySync",
     "namespace": "wpipe_steps.database.redis.geo.search_nearby_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/geo/search_nearby_sync.py"
   },
   {
@@ -445,6 +508,7 @@
     "func_name": "RedisHLLCountSync",
     "namespace": "wpipe_steps.database.redis.hyperloglog.count_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/hyperloglog/count_sync.py"
   },
   {
@@ -452,6 +516,7 @@
     "func_name": "RedisHLLAddAsync",
     "namespace": "wpipe_steps.database.redis.hyperloglog.add_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/hyperloglog/add_async.py"
   },
   {
@@ -459,6 +524,7 @@
     "func_name": "RedisHLLCountAsync",
     "namespace": "wpipe_steps.database.redis.hyperloglog.count_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/hyperloglog/count_async.py"
   },
   {
@@ -466,6 +532,7 @@
     "func_name": "RedisHLLAddSync",
     "namespace": "wpipe_steps.database.redis.hyperloglog.add_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/hyperloglog/add_sync.py"
   },
   {
@@ -473,6 +540,7 @@
     "func_name": "RedisTransactionExecuteSync",
     "namespace": "wpipe_steps.database.redis.transactions.execute_transaction_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/transactions/execute_transaction_sync.py"
   },
   {
@@ -480,6 +548,7 @@
     "func_name": "RedisTransactionExecuteAsync",
     "namespace": "wpipe_steps.database.redis.transactions.execute_transaction_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/transactions/execute_transaction_async.py"
   },
   {
@@ -487,6 +556,7 @@
     "func_name": "RedisSetIsMemberAsync",
     "namespace": "wpipe_steps.database.redis.sets.is_member_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sets/is_member_async.py"
   },
   {
@@ -494,6 +564,7 @@
     "func_name": "RedisSetGetMembersAsync",
     "namespace": "wpipe_steps.database.redis.sets.get_set_members_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sets/get_set_members_async.py"
   },
   {
@@ -501,6 +572,7 @@
     "func_name": "RedisSetGetTtlAsync",
     "namespace": "wpipe_steps.database.redis.sets.get_ttl_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sets/get_ttl_async.py"
   },
   {
@@ -508,6 +580,7 @@
     "func_name": "RedisSetAddAsync",
     "namespace": "wpipe_steps.database.redis.sets.add_to_set_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sets/add_to_set_async.py"
   },
   {
@@ -515,6 +588,7 @@
     "func_name": "RedisSetAddSync",
     "namespace": "wpipe_steps.database.redis.sets.add_to_set_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sets/add_to_set_sync.py"
   },
   {
@@ -522,6 +596,7 @@
     "func_name": "RedisSetIsMemberSync",
     "namespace": "wpipe_steps.database.redis.sets.is_member_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sets/is_member_sync.py"
   },
   {
@@ -529,6 +604,7 @@
     "func_name": "RedisSetExtendTtlSync",
     "namespace": "wpipe_steps.database.redis.sets.extend_ttl_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sets/extend_ttl_sync.py"
   },
   {
@@ -536,6 +612,7 @@
     "func_name": "RedisSetGetMembersSync",
     "namespace": "wpipe_steps.database.redis.sets.get_set_members_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sets/get_set_members_sync.py"
   },
   {
@@ -543,6 +620,7 @@
     "func_name": "RedisSetExtendTtlAsync",
     "namespace": "wpipe_steps.database.redis.sets.extend_ttl_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sets/extend_ttl_async.py"
   },
   {
@@ -550,6 +628,7 @@
     "func_name": "RedisSetRemoveSync",
     "namespace": "wpipe_steps.database.redis.sets.remove_from_set_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sets/remove_from_set_sync.py"
   },
   {
@@ -557,6 +636,7 @@
     "func_name": "RedisSetGetTtlSync",
     "namespace": "wpipe_steps.database.redis.sets.get_ttl_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sets/get_ttl_sync.py"
   },
   {
@@ -564,6 +644,7 @@
     "func_name": "RedisSetRemoveAsync",
     "namespace": "wpipe_steps.database.redis.sets.remove_from_set_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/sets/remove_from_set_async.py"
   },
   {
@@ -571,6 +652,7 @@
     "func_name": "RedisStreamOnMessageSync",
     "namespace": "wpipe_steps.database.redis.streams.on_message_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/streams/on_message_sync.py"
   },
   {
@@ -578,6 +660,7 @@
     "func_name": "RedisStreamAddSync",
     "namespace": "wpipe_steps.database.redis.streams.add_to_stream_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/streams/add_to_stream_sync.py"
   },
   {
@@ -585,6 +668,7 @@
     "func_name": "RedisStreamAddAsync",
     "namespace": "wpipe_steps.database.redis.streams.add_to_stream_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/streams/add_to_stream_async.py"
   },
   {
@@ -592,6 +676,7 @@
     "func_name": "RedisStreamOnMessageAsync",
     "namespace": "wpipe_steps.database.redis.streams.on_message_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/streams/on_message_async.py"
   },
   {
@@ -599,6 +684,7 @@
     "func_name": "RedisStreamReadAsync",
     "namespace": "wpipe_steps.database.redis.streams.read_from_stream_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/streams/read_from_stream_async.py"
   },
   {
@@ -606,6 +692,7 @@
     "func_name": "RedisStreamReadSync",
     "namespace": "wpipe_steps.database.redis.streams.read_from_stream_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/streams/read_from_stream_sync.py"
   },
   {
@@ -613,6 +700,7 @@
     "func_name": "RedisPubsubPublishAsync",
     "namespace": "wpipe_steps.database.redis.pubsub.publish_message_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/pubsub/publish_message_async.py"
   },
   {
@@ -620,6 +708,7 @@
     "func_name": "RedisPubsubOnMessageSync",
     "namespace": "wpipe_steps.database.redis.pubsub.on_message_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/pubsub/on_message_sync.py"
   },
   {
@@ -627,6 +716,7 @@
     "func_name": "RedisPubsubOnMessageAsync",
     "namespace": "wpipe_steps.database.redis.pubsub.on_message_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/pubsub/on_message_async.py"
   },
   {
@@ -634,6 +724,7 @@
     "func_name": "RedisPubsubPublishSync",
     "namespace": "wpipe_steps.database.redis.pubsub.publish_message_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/pubsub/publish_message_sync.py"
   },
   {
@@ -641,6 +732,7 @@
     "func_name": "RedisPipelineExecuteAsync",
     "namespace": "wpipe_steps.database.redis.pipeline.execute_pipeline_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/pipeline/execute_pipeline_async.py"
   },
   {
@@ -648,6 +740,7 @@
     "func_name": "RedisPipelineExecuteSync",
     "namespace": "wpipe_steps.database.redis.pipeline.execute_pipeline_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/pipeline/execute_pipeline_sync.py"
   },
   {
@@ -655,6 +748,7 @@
     "func_name": "RedisBitmapCountBitsAsync",
     "namespace": "wpipe_steps.database.redis.bitmaps.count_bits_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/bitmaps/count_bits_async.py"
   },
   {
@@ -662,6 +756,7 @@
     "func_name": "RedisBitmapGetBitSync",
     "namespace": "wpipe_steps.database.redis.bitmaps.get_bit_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/bitmaps/get_bit_sync.py"
   },
   {
@@ -669,6 +764,7 @@
     "func_name": "RedisBitmapGetTtlAsync",
     "namespace": "wpipe_steps.database.redis.bitmaps.get_ttl_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/bitmaps/get_ttl_async.py"
   },
   {
@@ -676,6 +772,7 @@
     "func_name": "RedisBitmapCountBitsSync",
     "namespace": "wpipe_steps.database.redis.bitmaps.count_bits_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/bitmaps/count_bits_sync.py"
   },
   {
@@ -683,6 +780,7 @@
     "func_name": "RedisBitmapGetBitAsync",
     "namespace": "wpipe_steps.database.redis.bitmaps.get_bit_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/bitmaps/get_bit_async.py"
   },
   {
@@ -690,6 +788,7 @@
     "func_name": "RedisBitmapExtendTtlSync",
     "namespace": "wpipe_steps.database.redis.bitmaps.extend_ttl_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/bitmaps/extend_ttl_sync.py"
   },
   {
@@ -697,6 +796,7 @@
     "func_name": "RedisBitmapSetBitSync",
     "namespace": "wpipe_steps.database.redis.bitmaps.set_bit_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/bitmaps/set_bit_sync.py"
   },
   {
@@ -704,6 +804,7 @@
     "func_name": "RedisBitmapExtendTtlAsync",
     "namespace": "wpipe_steps.database.redis.bitmaps.extend_ttl_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/bitmaps/extend_ttl_async.py"
   },
   {
@@ -711,6 +812,7 @@
     "func_name": "RedisBitmapGetTtlSync",
     "namespace": "wpipe_steps.database.redis.bitmaps.get_ttl_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/bitmaps/get_ttl_sync.py"
   },
   {
@@ -718,6 +820,7 @@
     "func_name": "RedisBitmapSetBitAsync",
     "namespace": "wpipe_steps.database.redis.bitmaps.set_bit_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/bitmaps/set_bit_async.py"
   },
   {
@@ -725,6 +828,7 @@
     "func_name": "RedisHashReadAllAsync",
     "namespace": "wpipe_steps.database.redis.hash.read_all_hash_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/hash/read_all_hash_async.py"
   },
   {
@@ -732,6 +836,7 @@
     "func_name": "RedisHashCreateAsync",
     "namespace": "wpipe_steps.database.redis.hash.create_hash_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/hash/create_hash_async.py"
   },
   {
@@ -739,6 +844,7 @@
     "func_name": "RedisHashUpdateAsync",
     "namespace": "wpipe_steps.database.redis.hash.update_hash_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/hash/update_hash_async.py"
   },
   {
@@ -746,6 +852,7 @@
     "func_name": "RedisHashReadAllSync",
     "namespace": "wpipe_steps.database.redis.hash.read_all_hash_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/hash/read_all_hash_sync.py"
   },
   {
@@ -753,6 +860,7 @@
     "func_name": "RedisHashCreateSync",
     "namespace": "wpipe_steps.database.redis.hash.create_hash_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/hash/create_hash_sync.py"
   },
   {
@@ -760,6 +868,7 @@
     "func_name": "RedisHashGetTtlAsync",
     "namespace": "wpipe_steps.database.redis.hash.get_ttl_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/hash/get_ttl_async.py"
   },
   {
@@ -767,6 +876,7 @@
     "func_name": "RedisHashUpdateSync",
     "namespace": "wpipe_steps.database.redis.hash.update_hash_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/hash/update_hash_sync.py"
   },
   {
@@ -774,6 +884,7 @@
     "func_name": "RedisHashDeleteSync",
     "namespace": "wpipe_steps.database.redis.hash.delete_hash_field_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/hash/delete_hash_field_sync.py"
   },
   {
@@ -781,6 +892,7 @@
     "func_name": "RedisHashExtendTtlSync",
     "namespace": "wpipe_steps.database.redis.hash.extend_ttl_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/hash/extend_ttl_sync.py"
   },
   {
@@ -788,6 +900,7 @@
     "func_name": "RedisHashExtendTtlAsync",
     "namespace": "wpipe_steps.database.redis.hash.extend_ttl_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/hash/extend_ttl_async.py"
   },
   {
@@ -795,6 +908,7 @@
     "func_name": "RedisHashGetTtlSync",
     "namespace": "wpipe_steps.database.redis.hash.get_ttl_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/hash/get_ttl_sync.py"
   },
   {
@@ -802,6 +916,7 @@
     "func_name": "RedisHashReadAsync",
     "namespace": "wpipe_steps.database.redis.hash.read_hash_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/hash/read_hash_async.py"
   },
   {
@@ -809,6 +924,7 @@
     "func_name": "RedisHashReadSync",
     "namespace": "wpipe_steps.database.redis.hash.read_hash_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/hash/read_hash_sync.py"
   },
   {
@@ -816,6 +932,7 @@
     "func_name": "RedisHashDeleteAsync",
     "namespace": "wpipe_steps.database.redis.hash.delete_hash_field_async",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/hash/delete_hash_field_async.py"
   },
   {
@@ -823,6 +940,7 @@
     "func_name": "RedisRetryDecoratorSync",
     "namespace": "wpipe_steps.database.redis.cache.retry_decorator_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/cache/retry_decorator_sync.py"
   },
   {
@@ -830,6 +948,7 @@
     "func_name": "RedisCacheDecoratorSync",
     "namespace": "wpipe_steps.database.redis.cache.cache_decorator_sync",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/cache/cache_decorator_sync.py"
   },
   {
@@ -837,6 +956,7 @@
     "func_name": "RedisAsyncCacheDecorator",
     "namespace": "wpipe_steps.database.redis.cache.async_cache_decorator",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/database/redis/cache/async_cache_decorator.py"
   },
   {
@@ -844,6 +964,7 @@
     "func_name": "HuggingFaceInferenceStep",
     "namespace": "wpipe_steps.ai.huggingface_inference",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/ai/huggingface_inference.py"
   },
   {
@@ -851,6 +972,7 @@
     "func_name": "OpenAiPromptStep",
     "namespace": "wpipe_steps.ai.openai_prompt",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/ai/openai_prompt.py"
   },
   {
@@ -858,6 +980,7 @@
     "func_name": "SentimentAnalysisStep",
     "namespace": "wpipe_steps.ai.sentiment_analysis",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/ai/sentiment_analysis.py"
   },
   {
@@ -865,6 +988,7 @@
     "func_name": "LoadYaml",
     "namespace": "wpipe_steps.utils.read_yaml",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/utils/read_yaml.py"
   },
   {
@@ -872,6 +996,7 @@
     "func_name": "WafFilterStep",
     "namespace": "wpipe_steps.security.waf",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/security/waf.py"
   },
   {
@@ -879,6 +1004,7 @@
     "func_name": "Fail2BanCheckStep",
     "namespace": "wpipe_steps.security.fail2ban",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/security/fail2ban.py"
   },
   {
@@ -886,6 +1012,7 @@
     "func_name": "ShodanSearchStep",
     "namespace": "wpipe_steps.security.shodan",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/security/shodan.py"
   },
   {
@@ -893,6 +1020,7 @@
     "func_name": "HashGeneratorStep",
     "namespace": "wpipe_steps.security.hash",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/security/hash.py"
   },
   {
@@ -900,6 +1028,7 @@
     "func_name": "VaultSecretsStep",
     "namespace": "wpipe_steps.security.vault",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/security/vault.py"
   },
   {
@@ -907,6 +1036,7 @@
     "func_name": "NmapScanStep",
     "namespace": "wpipe_steps.security.nmap",
     "repo": "Official",
+    "author": "William Steve Rodriguez Villamizar",
     "file": "wpipe_steps/security/nmap.py"
   }
 ]
