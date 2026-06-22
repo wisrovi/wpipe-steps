@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.database.mongo`
+Namespace: `wpipe_steps.database.mongodb`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.database.mongo import MongoInsertStep
+from wpipe_steps.database.mongodb import MongoInsertStep
 ```
