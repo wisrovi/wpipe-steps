@@ -3,7 +3,7 @@ Example: HFFillMaskStep
 Fill in the blank (masked token) in text.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFFillMaskStep
+from wpipe_steps.ai import HFFillMaskStep
 
 def main():
     pipeline = Pipeline(pipeline_name="fill_mask_example")
