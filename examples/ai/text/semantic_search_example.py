@@ -3,7 +3,7 @@ Example: HFSemanticSearchStep
 Perform semantic search over documents.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFSemanticSearchStep
+from wpipe_steps.ai import HFSemanticSearchStep
 
 def main():
     pipeline = Pipeline(pipeline_name="semantic_search_example")
