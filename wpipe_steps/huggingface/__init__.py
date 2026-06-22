@@ -45,3 +45,6 @@ from .multimodal.doc_vqa import HFDocumentVisualQuestionAnsweringStep
 from .multimodal.image_text import HFImageTextToTextStep
 from .multimodal.any2any import HFAnyToAnyStep
 from .multimodal.table_detection import HFTableDetectionStep
+from .vision.video_classification import HFVideoClassificationStep
+from .vision.video_interpolation import HFVideoFrameInterpolationStep
+
