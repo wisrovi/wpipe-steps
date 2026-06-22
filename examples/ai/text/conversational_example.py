@@ -3,7 +3,7 @@ Example: HFConversationalStep
 Have a conversation with an AI model.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFConversationalStep
+from wpipe_steps.ai import HFConversationalStep
 
 def main():
     pipeline = Pipeline(pipeline_name="conversational_example")
