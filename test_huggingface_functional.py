@@ -9,7 +9,7 @@ print("Testing HuggingFace steps functionality...")
 print("\n1. Testing HFTextClassificationStep...")
 try:
     from wpipe import Pipeline
-    from wpipe_steps.huggingface import HFTextClassificationStep
+    from wpipe_steps.ai import HFTextClassificationStep
     
     pipeline = Pipeline(pipeline_name="test_classification")
     pipeline.set_steps([
@@ -28,7 +28,7 @@ except Exception as e:
 # Test 2: Sentiment Analysis
 print("\n2. Testing HFSentimentAnalysisStep...")
 try:
-    from wpipe_steps.huggingface import HFSentimentAnalysisStep
+    from wpipe_steps.ai import HFSentimentAnalysisStep
     
     pipeline = Pipeline(pipeline_name="test_sentiment")
     pipeline.set_steps([
@@ -45,7 +45,7 @@ except Exception as e:
 # Test 3: Fill Mask
 print("\n3. Testing HFFillMaskStep...")
 try:
-    from wpipe_steps.huggingface import HFFillMaskStep
+    from wpipe_steps.ai import HFFillMaskStep
     
     pipeline = Pipeline(pipeline_name="test_fill_mask")
     pipeline.set_steps([
@@ -63,7 +63,7 @@ except Exception as e:
 # Test 4: Image Classification (just check import and pipeline creation)
 print("\n4. Testing HFImageClassificationStep...")
 try:
-    from wpipe_steps.huggingface import HFImageClassificationStep
+    from wpipe_steps.ai import HFImageClassificationStep
     
     pipeline = Pipeline(pipeline_name="test_image")
     pipeline.set_steps([
