@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.vision.background_removal`
+Namespace: `wpipe_steps.ai.vision.background_removal`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.vision.background_removal import HFImageBackgroundRemovalStep
+from wpipe_steps.ai.vision.background_removal import HFImageBackgroundRemovalStep
 ```
