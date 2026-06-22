@@ -3,7 +3,7 @@ Example: HFOcrStep
 Extract text from images (OCR).
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFOcrStep
+from wpipe_steps.ai import HFOcrStep
 
 def main():
     pipeline = Pipeline(pipeline_name="ocr_example")
