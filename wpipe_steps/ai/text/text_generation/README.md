@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.text.text_generation`
+Namespace: `wpipe_steps.ai.text.text_generation`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.text.text_generation import HFTextGenerationStep
+from wpipe_steps.ai.text.text_generation import HFTextGenerationStep
 ```
