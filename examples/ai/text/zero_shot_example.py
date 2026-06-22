@@ -3,7 +3,7 @@ Example: HFZeroShotClassificationStep
 Classify text into custom labels without training.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFZeroShotClassificationStep
+from wpipe_steps.ai import HFZeroShotClassificationStep
 
 def main():
     pipeline = Pipeline(pipeline_name="zero_shot_example")
