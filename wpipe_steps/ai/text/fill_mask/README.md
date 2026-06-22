@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.text.fill_mask`
+Namespace: `wpipe_steps.ai.text.fill_mask`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.text.fill_mask import HFFillMaskStep
+from wpipe_steps.ai.text.fill_mask import HFFillMaskStep
 ```
