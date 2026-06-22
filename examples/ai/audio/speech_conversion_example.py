@@ -3,7 +3,7 @@ Example: HFSpeechToSpeechStep
 Convert speech from one voice to another.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFSpeechToSpeechStep
+from wpipe_steps.ai import HFSpeechToSpeechStep
 
 def main():
     pipeline = Pipeline(pipeline_name="speech_conversion_example")
