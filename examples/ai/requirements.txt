@@ -1,5 +1,5 @@
 # HuggingFace examples requirements
-# Install wpipe-steps first: pip install wpipe-steps==0.104.0
+# Install wpipe-steps first: pip install wpipe-steps==1.0.0
 
 # Core dependencies
 transformers>=4.36.0
