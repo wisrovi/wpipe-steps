@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.multimodal.doc_vqa`
+Namespace: `wpipe_steps.ai.multimodal.doc_vqa`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.multimodal.doc_vqa import HFDocumentVisualQuestionAnsweringStep
+from wpipe_steps.ai.multimodal.doc_vqa import HFDocumentVisualQuestionAnsweringStep
 ```
