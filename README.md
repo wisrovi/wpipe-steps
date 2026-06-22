@@ -22,7 +22,28 @@ The library is organized into logical "Packs" based on functionality:
 | 🤖 **AI** | `wpipe_steps.ai` | OpenAI, HuggingFace, Sentiment Analysis. |
 | ⚙️ **System** | `wpipe_steps.system` | Resource Monitoring, Shell Exec, Health Checks. |
 
+
+### 🧱 Step Structure Layout
+
+Every step in this library is structured as a self-contained sub-package following this layout:
+
+```text
+wpipe_steps/<pack>/<step_name>/
+├── config/             # Configuration settings and constants
+├── examples/           # Practical usage examples
+├── exceptions/         # Step-specific exceptions
+├── schemas/            # Pydantic/dataclass context schemas
+├── states/             # Main execution state logic
+├── utils/              # Internal utility modules
+├── wrappers/           # Third-party API/library wrappers
+├── README.md           # Step-specific documentation
+├── LICENSE             # Step license (MIT)
+├── requirements.txt    # Step-specific package requirements
+└── __init__.py         # Public interface for imports
+```
+
 ---
+
 
 ## 📋 Connectivity Steps Inventory
 
