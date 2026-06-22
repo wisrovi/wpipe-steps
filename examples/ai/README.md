@@ -1,12 +1,12 @@
 # HuggingFace Steps Examples
 
-This directory contains functional examples for all 50 HuggingFace steps in wpipe-steps v0.105.0.
+This directory contains functional examples for all 50 HuggingFace steps in wpipe-steps v1.0.0.
 
 ## Quick Start
 
 1. Install wpipe-steps:
 ```bash
-pip install wpipe-steps==0.104.0
+pip install wpipe-steps==1.0.0
 ```
 
 2. Install example dependencies:
@@ -90,7 +90,7 @@ python text/classification_example.py
 
 ## Next Steps
 
-The next 50 HuggingFace steps (v0.105.0+) will use the free HuggingFace Inference API,
+The next 50 HuggingFace steps (v1.0.0+) will use the free HuggingFace Inference API,
 which requires an API key but has a free tier available at:
 https://huggingface.co/settings/tokens
 
