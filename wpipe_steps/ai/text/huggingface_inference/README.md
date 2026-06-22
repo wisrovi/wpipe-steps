@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.ai.huggingface_inference`
+Namespace: `wpipe_steps.ai.text.huggingface_inference`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.ai.huggingface_inference import HuggingFaceInferenceStep
+from wpipe_steps.ai.text.huggingface_inference import HuggingFaceInferenceStep
 ```
