@@ -3,7 +3,7 @@ Example: HFFeatureExtractionStep
 Extract features/embeddings from text.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFFeatureExtractionStep
+from wpipe_steps.ai import HFFeatureExtractionStep
 
 def main():
     pipeline = Pipeline(pipeline_name="feature_extraction_example")
