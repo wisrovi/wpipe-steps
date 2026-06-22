@@ -3,7 +3,7 @@ Example: HFAudioClassificationStep
 Classify audio content.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFAudioClassificationStep
+from wpipe_steps.ai import HFAudioClassificationStep
 
 def main():
     pipeline = Pipeline(pipeline_name="audio_classification_example")
