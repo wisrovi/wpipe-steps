@@ -3,7 +3,7 @@ Example: HFTextGenerationStep
 Generate text based on a prompt.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFTextGenerationStep
+from wpipe_steps.ai import HFTextGenerationStep
 
 def main():
     pipeline = Pipeline(pipeline_name="text_generation_example")
