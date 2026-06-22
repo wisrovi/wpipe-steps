@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.text.conversational`
+Namespace: `wpipe_steps.ai.text.conversational`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.text.conversational import HFConversationalStep
+from wpipe_steps.ai.text.conversational import HFConversationalStep
 ```
