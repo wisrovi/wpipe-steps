@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.ai.sentiment_analysis`
+Namespace: `wpipe_steps.ai.text.sentiment_analysis`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.ai.sentiment_analysis import SentimentAnalysisStep
+from wpipe_steps.ai.text.sentiment_analysis import SentimentAnalysisStep
 ```
