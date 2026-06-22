@@ -3,7 +3,7 @@ Example: HFImageTextToTextStep
 Multimodal image+text to text generation.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFImageTextToTextStep
+from wpipe_steps.ai import HFImageTextToTextStep
 
 def main():
     pipeline = Pipeline(pipeline_name="image_text_example")
