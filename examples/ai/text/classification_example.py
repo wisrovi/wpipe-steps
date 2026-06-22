@@ -3,7 +3,7 @@ Example: HFTextClassificationStep
 Classify text sentiment using local HuggingFace model.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFTextClassificationStep
+from wpipe_steps.ai import HFTextClassificationStep
 
 def main():
     pipeline = Pipeline(pipeline_name="text_classification_example")
