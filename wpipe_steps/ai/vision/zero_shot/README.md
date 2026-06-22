@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.vision.zero_shot`
+Namespace: `wpipe_steps.ai.vision.zero_shot`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.vision.zero_shot import HFZeroShotImageClassificationStep
+from wpipe_steps.ai.vision.zero_shot import HFZeroShotImageClassificationStep
 ```
