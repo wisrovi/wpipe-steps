@@ -3,7 +3,7 @@ Example: HFImageToTextStep (Image Captioning)
 Generate text descriptions of images.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFImageToTextStep
+from wpipe_steps.ai import HFImageToTextStep
 
 def main():
     pipeline = Pipeline(pipeline_name="captioning_example")
