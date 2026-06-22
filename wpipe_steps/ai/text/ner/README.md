@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.text.ner`
+Namespace: `wpipe_steps.ai.text.ner`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.text.ner import HFNerStep
+from wpipe_steps.ai.text.ner import HFNerStep
 ```
