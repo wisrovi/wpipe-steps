@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.text.sentence_embeddings`
+Namespace: `wpipe_steps.ai.text.sentence_embeddings`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.text.sentence_embeddings import HFSentenceEmbeddingsStep
+from wpipe_steps.ai.text.sentence_embeddings import HFSentenceEmbeddingsStep
 ```
