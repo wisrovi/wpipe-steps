@@ -3,7 +3,7 @@ Example: HFVideoFrameInterpolationStep
 Generate intermediate frames in video (slow motion).
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFVideoFrameInterpolationStep
+from wpipe_steps.ai import HFVideoFrameInterpolationStep
 
 def main():
     pipeline = Pipeline(pipeline_name="video_interpolation_example")
