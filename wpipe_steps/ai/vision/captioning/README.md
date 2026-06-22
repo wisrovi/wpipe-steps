@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.vision.captioning`
+Namespace: `wpipe_steps.ai.vision.captioning`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.vision.captioning import HFImageToTextStep
+from wpipe_steps.ai.vision.captioning import HFImageToTextStep
 ```
