@@ -3,7 +3,7 @@ Example: HFSummarizationStep
 Summarize long text.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFSummarizationStep
+from wpipe_steps.ai import HFSummarizationStep
 
 def main():
     pipeline = Pipeline(pipeline_name="summarization_example")
