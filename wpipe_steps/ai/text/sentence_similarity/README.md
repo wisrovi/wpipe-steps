@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.text.sentence_similarity`
+Namespace: `wpipe_steps.ai.text.sentence_similarity`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.text.sentence_similarity import HFSentenceSimilarityStep
+from wpipe_steps.ai.text.sentence_similarity import HFSentenceSimilarityStep
 ```
