@@ -1,6 +1,7 @@
 """
 Webhook Trigger Step - Send data to external services.
 """
+from pydantic import BaseModel
 
 import requests
 from typing import Any, Dict, Optional
