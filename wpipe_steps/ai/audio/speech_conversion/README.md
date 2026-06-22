@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.audio.speech_conversion`
+Namespace: `wpipe_steps.ai.audio.speech_conversion`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.audio.speech_conversion import HFSpeechToSpeechStep
+from wpipe_steps.ai.audio.speech_conversion import HFSpeechToSpeechStep
 ```
