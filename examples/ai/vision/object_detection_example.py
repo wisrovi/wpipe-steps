@@ -3,7 +3,7 @@ Example: HFObjectDetectionStep
 Detect objects in images.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFObjectDetectionStep
+from wpipe_steps.ai import HFObjectDetectionStep
 
 def main():
     pipeline = Pipeline(pipeline_name="object_detection_example")
