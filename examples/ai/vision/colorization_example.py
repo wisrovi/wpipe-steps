@@ -3,7 +3,7 @@ Example: HFImageColorizationStep
 Colorize black and white images.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFImageColorizationStep
+from wpipe_steps.ai import HFImageColorizationStep
 
 def main():
     pipeline = Pipeline(pipeline_name="colorization_example")
