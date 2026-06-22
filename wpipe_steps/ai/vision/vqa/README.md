@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.vision.vqa`
+Namespace: `wpipe_steps.ai.vision.vqa`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.vision.vqa import HFVisualQuestionAnsweringStep
+from wpipe_steps.ai.vision.vqa import HFVisualQuestionAnsweringStep
 ```
