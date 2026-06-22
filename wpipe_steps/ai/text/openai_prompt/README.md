@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.ai.openai_prompt`
+Namespace: `wpipe_steps.ai.text.openai_prompt`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.ai.openai_prompt import OpenAiPromptStep
+from wpipe_steps.ai.text.openai_prompt import OpenAiPromptStep
 ```
