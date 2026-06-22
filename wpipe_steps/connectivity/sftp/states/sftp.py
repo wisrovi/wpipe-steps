@@ -1,6 +1,7 @@
 """
 SFTP Transfer Step - Secure file transfer using paramiko.
 """
+from pydantic import BaseModel
 
 import os
 import paramiko
