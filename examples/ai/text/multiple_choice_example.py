@@ -3,7 +3,7 @@ Example: HFMultipleChoiceStep
 Answer multiple choice questions.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFMultipleChoiceStep
+from wpipe_steps.ai import HFMultipleChoiceStep
 
 def main():
     pipeline = Pipeline(pipeline_name="multiple_choice_example")
