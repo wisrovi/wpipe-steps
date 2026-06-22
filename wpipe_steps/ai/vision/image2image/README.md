@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.vision.image2image`
+Namespace: `wpipe_steps.ai.vision.image2image`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.vision.image2image import HFImageToImageStep
+from wpipe_steps.ai.vision.image2image import HFImageToImageStep
 ```
