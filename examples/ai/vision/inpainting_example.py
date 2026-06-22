@@ -3,7 +3,7 @@ Example: HFInpaintingStep
 Fill in missing parts of images (inpainting).
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFInpaintingStep
+from wpipe_steps.ai import HFInpaintingStep
 
 def main():
     pipeline = Pipeline(pipeline_name="inpainting_example")
