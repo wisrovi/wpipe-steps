@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.vision.depth`
+Namespace: `wpipe_steps.ai.vision.depth`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.vision.depth import HFDepthEstimationStep
+from wpipe_steps.ai.vision.depth import HFDepthEstimationStep
 ```
