@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.text.semantic_search`
+Namespace: `wpipe_steps.ai.text.semantic_search`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.text.semantic_search import HFSemanticSearchStep
+from wpipe_steps.ai.text.semantic_search import HFSemanticSearchStep
 ```
