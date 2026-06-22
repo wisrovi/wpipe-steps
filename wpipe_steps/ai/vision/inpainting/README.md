@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.vision.inpainting`
+Namespace: `wpipe_steps.ai.vision.inpainting`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.vision.inpainting import HFInpaintingStep
+from wpipe_steps.ai.vision.inpainting import HFInpaintingStep
 ```
