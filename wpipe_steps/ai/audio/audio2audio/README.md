@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.audio.audio2audio`
+Namespace: `wpipe_steps.ai.audio.audio2audio`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.audio.audio2audio import HFAudioToAudioStep
+from wpipe_steps.ai.audio.audio2audio import HFAudioToAudioStep
 ```
