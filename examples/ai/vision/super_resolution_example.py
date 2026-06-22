@@ -3,7 +3,7 @@ Example: HFImageSuperResolutionStep
 Upscale images (super resolution).
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFImageSuperResolutionStep
+from wpipe_steps.ai import HFImageSuperResolutionStep
 
 def main():
     pipeline = Pipeline(pipeline_name="super_resolution_example")
