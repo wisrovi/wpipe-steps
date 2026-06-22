@@ -3,7 +3,7 @@ Example: HFVisualQuestionAnsweringStep
 Answer questions about images.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFVisualQuestionAnsweringStep
+from wpipe_steps.ai import HFVisualQuestionAnsweringStep
 
 def main():
     pipeline = Pipeline(pipeline_name="vqa_example")
