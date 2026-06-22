@@ -3,7 +3,7 @@ Example: HFImageClassificationStep
 Classify images into categories.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFImageClassificationStep
+from wpipe_steps.ai import HFImageClassificationStep
 
 def main():
     pipeline = Pipeline(pipeline_name="image_classification_example")
