@@ -3,7 +3,7 @@ Example: HFTranslationStep
 Translate text between languages.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFTranslationStep
+from wpipe_steps.ai import HFTranslationStep
 
 def main():
     pipeline = Pipeline(pipeline_name="translation_example")
