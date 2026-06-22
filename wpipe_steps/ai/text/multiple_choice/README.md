@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.text.multiple_choice`
+Namespace: `wpipe_steps.ai.text.multiple_choice`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.text.multiple_choice import HFMultipleChoiceStep
+from wpipe_steps.ai.text.multiple_choice import HFMultipleChoiceStep
 ```
