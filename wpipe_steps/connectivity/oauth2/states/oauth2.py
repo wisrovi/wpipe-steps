@@ -1,6 +1,7 @@
 """
 OAuth2 Auth Step - Handle OAuth2 client credentials flow.
 """
+from pydantic import BaseModel
 
 import requests
 import time
