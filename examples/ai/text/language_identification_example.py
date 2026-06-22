@@ -3,7 +3,7 @@ Example: HFLanguageIdentificationStep
 Identify the language of text.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFLanguageIdentificationStep
+from wpipe_steps.ai import HFLanguageIdentificationStep
 
 def main():
     pipeline = Pipeline(pipeline_name="language_id_example")
