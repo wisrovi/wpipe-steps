@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.vision.style_transfer`
+Namespace: `wpipe_steps.ai.vision.style_transfer`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.vision.style_transfer import HFImageStyleTransferStep
+from wpipe_steps.ai.vision.style_transfer import HFImageStyleTransferStep
 ```
