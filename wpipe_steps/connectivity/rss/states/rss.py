@@ -1,6 +1,7 @@
 """
 RSS Parser Step - Parse RSS/Atom feeds and extract entries.
 """
+from pydantic import BaseModel
 
 import feedparser
 from typing import Any, Dict, List, Optional
