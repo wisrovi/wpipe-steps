@@ -3,7 +3,6 @@ RSS Parser Step - Parse RSS/Atom feeds and extract entries.
 """
 from pydantic import BaseModel
 
-import feedparser
 from typing import Any, Dict, List, Optional
 from wpipe import step, to_obj
 from wpipe_steps.core.base import BaseStep
@@ -51,6 +50,7 @@ class RSSParserStep(BaseStep):
         """
         try:
             # Use user_agent to avoid blocks from some servers
+            feedparser = self.ensure_dependency("feedparser")
             feed = feedparser.parse(data.feed_url, agent=data.user_agent)
             
             if feed.get("bozo", 0) == 1 and not feed.entries:
