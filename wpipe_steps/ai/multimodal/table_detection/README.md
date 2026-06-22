@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.multimodal.table_detection`
+Namespace: `wpipe_steps.ai.multimodal.table_detection`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.multimodal.table_detection import HFTableDetectionStep
+from wpipe_steps.ai.multimodal.table_detection import HFTableDetectionStep
 ```
