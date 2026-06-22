@@ -3,7 +3,7 @@ Example: HFDocumentVisualQuestionAnsweringStep
 Answer questions from document images (multimodal).
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFDocumentVisualQuestionAnsweringStep
+from wpipe_steps.ai import HFDocumentVisualQuestionAnsweringStep
 
 def main():
     pipeline = Pipeline(pipeline_name="doc_vqa_example")
