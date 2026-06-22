@@ -458,6 +458,29 @@ Check the [TODO.txt](./TODO.txt) for the full list of planned steps for each pac
 
 ---
 
+## 🧪 Testing & Code Coverage
+
+This project uses `pytest` for unit testing. All tests can be run either locally or inside an isolated Docker container.
+
+### Running Tests Locally
+To run the tests locally, ensure you have `pytest` installed and run:
+```bash
+pytest tests/
+```
+
+### Calculating Code Coverage
+To run the tests and calculate code coverage, execute the coverage script:
+```bash
+./calculate_coverage.sh
+```
+
+### Running Tests inside Docker Container
+To run all tests inside a clean, isolated Docker container:
+```bash
+./run_tests_docker.sh
+```
+
+---
+
 Diseñado con ❤️ por **William Rodriguez** (wisrovi) para ingenieros que buscan máxima productividad.
-| `health_check` | `from wpipe_steps.system import HealthCheckStep` | Sync | [health_check_example.py](examples/system/health_check/health_check_example.py) | Ping a una lista de servicios críticos. |
-| `cron_scheduler` | `from wpipe_steps.system import CronSchedulerStep` | Sync | [cron_scheduler_example.py](examples/system/cron_scheduler/cron_scheduler_example.py) | Programar la siguiente ejecución del pipeline. |
+
