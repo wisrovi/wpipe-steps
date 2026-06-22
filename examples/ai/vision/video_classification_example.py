@@ -3,7 +3,7 @@ Example: HFVideoClassificationStep
 Classify video content.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFVideoClassificationStep
+from wpipe_steps.ai import HFVideoClassificationStep
 
 def main():
     pipeline = Pipeline(pipeline_name="video_classification_example")
