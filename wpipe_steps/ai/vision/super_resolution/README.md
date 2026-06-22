@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.vision.super_resolution`
+Namespace: `wpipe_steps.ai.vision.super_resolution`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.vision.super_resolution import HFImageSuperResolutionStep
+from wpipe_steps.ai.vision.super_resolution import HFImageSuperResolutionStep
 ```
