@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.text.feature_extraction`
+Namespace: `wpipe_steps.ai.text.feature_extraction`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.text.feature_extraction import HFFeatureExtractionStep
+from wpipe_steps.ai.text.feature_extraction import HFFeatureExtractionStep
 ```
