@@ -3,7 +3,7 @@ Example: HFImageBackgroundRemovalStep
 Remove background from images.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFImageBackgroundRemovalStep
+from wpipe_steps.ai import HFImageBackgroundRemovalStep
 
 def main():
     pipeline = Pipeline(pipeline_name="background_removal_example")
