@@ -3,7 +3,7 @@ Example: HFImageToImageStep
 Transform images (style transfer, enhancement, etc.).
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFImageToImageStep
+from wpipe_steps.ai import HFImageToImageStep
 
 def main():
     pipeline = Pipeline(pipeline_name="image2image_example")
