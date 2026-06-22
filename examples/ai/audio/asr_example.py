@@ -3,7 +3,7 @@ Example: HFAutomaticSpeechRecognitionStep
 Transcribe speech from audio to text.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFAutomaticSpeechRecognitionStep
+from wpipe_steps.ai import HFAutomaticSpeechRecognitionStep
 
 def main():
     pipeline = Pipeline(pipeline_name="asr_example")
