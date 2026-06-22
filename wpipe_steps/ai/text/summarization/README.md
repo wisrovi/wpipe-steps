@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.text.summarization`
+Namespace: `wpipe_steps.ai.text.summarization`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.text.summarization import HFSummarizationStep
+from wpipe_steps.ai.text.summarization import HFSummarizationStep
 ```
