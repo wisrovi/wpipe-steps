@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.text.classification`
+Namespace: `wpipe_steps.ai.text.classification`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.text.classification import HFTextClassificationStep
+from wpipe_steps.ai.text.classification import HFTextClassificationStep
 ```
