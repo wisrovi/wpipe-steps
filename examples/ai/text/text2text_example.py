@@ -3,7 +3,7 @@ Example: HFText2TextGenerationStep
 Generate text-to-text transformations.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFText2TextGenerationStep
+from wpipe_steps.ai import HFText2TextGenerationStep
 
 def main():
     pipeline = Pipeline(pipeline_name="text2text_example")
