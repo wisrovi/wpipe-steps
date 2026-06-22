@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.audio.voice_activity`
+Namespace: `wpipe_steps.ai.audio.voice_activity`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.audio.voice_activity import HFVoiceActivityDetectionStep
+from wpipe_steps.ai.audio.voice_activity import HFVoiceActivityDetectionStep
 ```
