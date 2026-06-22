@@ -3,7 +3,7 @@ Example: HFSentenceEmbeddingsStep
 Generate sentence embeddings.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFSentenceEmbeddingsStep
+from wpipe_steps.ai import HFSentenceEmbeddingsStep
 
 def main():
     pipeline = Pipeline(pipeline_name="sentence_embeddings_example")
