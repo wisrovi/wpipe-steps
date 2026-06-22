@@ -3,7 +3,7 @@ Example: HFFaceDetectionStep
 Detect faces in images.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFFaceDetectionStep
+from wpipe_steps.ai import HFFaceDetectionStep
 
 def main():
     pipeline = Pipeline(pipeline_name="face_detection_example")
