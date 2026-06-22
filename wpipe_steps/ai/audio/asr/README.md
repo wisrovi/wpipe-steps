@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.audio.asr`
+Namespace: `wpipe_steps.ai.audio.asr`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.audio.asr import HFAutomaticSpeechRecognitionStep
+from wpipe_steps.ai.audio.asr import HFAutomaticSpeechRecognitionStep
 ```
