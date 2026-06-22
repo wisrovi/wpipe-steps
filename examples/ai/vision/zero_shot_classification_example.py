@@ -3,7 +3,7 @@ Example: HFZeroShotImageClassificationStep
 Classify images into custom categories without training.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFZeroShotImageClassificationStep
+from wpipe_steps.ai import HFZeroShotImageClassificationStep
 
 def main():
     pipeline = Pipeline(pipeline_name="zero_shot_image_example")
