@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.vision.segmentation`
+Namespace: `wpipe_steps.ai.vision.segmentation`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.vision.segmentation import HFImageSegmentationStep
+from wpipe_steps.ai.vision.segmentation import HFImageSegmentationStep
 ```
