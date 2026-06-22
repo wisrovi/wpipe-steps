@@ -3,7 +3,7 @@ Example: HFTableDetectionStep
 Detect tables in images/documents.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFTableDetectionStep
+from wpipe_steps.ai import HFTableDetectionStep
 
 def main():
     pipeline = Pipeline(pipeline_name="table_detection_example")
