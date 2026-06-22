@@ -3,7 +3,7 @@ Example: HFAudioToAudioStep
 Transform audio from one form to another.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFAudioToAudioStep
+from wpipe_steps.ai import HFAudioToAudioStep
 
 def main():
     pipeline = Pipeline(pipeline_name="audio2audio_example")
