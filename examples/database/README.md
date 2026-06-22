@@ -10,7 +10,7 @@ Shows how to execute SQL queries (SELECT, INSERT, etc.) on MySQL databases using
 ### 2. Redis Cache (`redis_example.py`)
 Demonstrates how to store and retrieve data from Redis using `RedisCacheStep`.
 
-### 3. MongoDB Insert (`mongo_example.py`)
+### 3. MongoDB Insert (`mongodb_example.py`)
 Demonstrates how to insert documents into MongoDB collections using `MongoInsertStep`.
 
 ### 4. SQLite Audit (`sqlite_example.py`)
