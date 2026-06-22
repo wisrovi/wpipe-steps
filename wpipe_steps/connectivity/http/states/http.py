@@ -4,6 +4,7 @@ HTTP Request Step - RESTful API client with automatic retries.
 
 import requests
 from typing import Any, Dict, Optional
+from pydantic import BaseModel
 from wpipe import step, to_obj
 from wpipe_steps.core.base import BaseStep
 
