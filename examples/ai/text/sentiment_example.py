@@ -3,7 +3,7 @@ Example: HFSentimentAnalysisStep
 Analyze sentiment of text using local HuggingFace model.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFSentimentAnalysisStep
+from wpipe_steps.ai import HFSentimentAnalysisStep
 
 def main():
     pipeline = Pipeline(pipeline_name="sentiment_example")
