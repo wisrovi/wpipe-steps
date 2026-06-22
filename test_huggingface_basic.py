@@ -5,7 +5,7 @@ Run: python test_huggingface_basic.py
 print("Testing HuggingFace steps import...")
 
 try:
-    from wpipe_steps.huggingface import (
+    from wpipe_steps.ai import (
         HFTextClassificationStep,
         HFSentimentAnalysisStep,
         HFZeroShotClassificationStep,
@@ -22,7 +22,7 @@ except Exception as e:
     print(f"✗ Text NLP import failed: {e}")
 
 try:
-    from wpipe_steps.huggingface import (
+    from wpipe_steps.ai import (
         HFText2TextGenerationStep,
         HFMultipleChoiceStep,
         HFTableQuestionAnsweringStep,
@@ -39,7 +39,7 @@ except Exception as e:
     print(f"✗ Text/embeddings import failed: {e}")
 
 try:
-    from wpipe_steps.huggingface import (
+    from wpipe_steps.ai import (
         HFAutomaticSpeechRecognitionStep,
         HFAudioClassificationStep,
         HFTextToSpeechStep,
@@ -54,7 +54,7 @@ except Exception as e:
     print(f"✗ Audio import failed: {e}")
 
 try:
-    from wpipe_steps.huggingface import (
+    from wpipe_steps.ai import (
         HFImageClassificationStep,
         HFObjectDetectionStep,
         HFImageSegmentationStep,
@@ -76,7 +76,7 @@ except Exception as e:
     print(f"✗ Vision import failed: {e}")
 
 try:
-    from wpipe_steps.huggingface import (
+    from wpipe_steps.ai import (
         HFVideoClassificationStep,
         HFVideoFrameInterpolationStep,
         HFDocumentVisualQuestionAnsweringStep,
