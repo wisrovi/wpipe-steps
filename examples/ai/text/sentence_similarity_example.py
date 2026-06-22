@@ -3,7 +3,7 @@ Example: HFSentenceSimilarityStep
 Calculate similarity between sentences.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFSentenceSimilarityStep
+from wpipe_steps.ai import HFSentenceSimilarityStep
 
 def main():
     pipeline = Pipeline(pipeline_name="sentence_similarity_example")
