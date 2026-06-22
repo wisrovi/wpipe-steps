@@ -3,7 +3,7 @@ Example: HFImageStyleTransferStep
 Apply artistic style to images.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFImageStyleTransferStep
+from wpipe_steps.ai import HFImageStyleTransferStep
 
 def main():
     pipeline = Pipeline(pipeline_name="style_transfer_example")
