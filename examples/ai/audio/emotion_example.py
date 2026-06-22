@@ -3,7 +3,7 @@ Example: HFAudioEmotionRecognitionStep
 Recognize emotions in audio.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFAudioEmotionRecognitionStep
+from wpipe_steps.ai import HFAudioEmotionRecognitionStep
 
 def main():
     pipeline = Pipeline(pipeline_name="audio_emotion_example")
