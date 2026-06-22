@@ -1,0 +1,21 @@
+# 🧱 CsvToJsonStep
+
+Convert CSV files to JSON format
+
+## 📂 Structure
+This step follows the WPipe professional package structure:
+- `config/`: Configuration constants.
+- `examples/`: Code examples.
+- `exceptions/`: Custom step exceptions.
+- `schemas/`: Pydantic input/output schemas.
+- `states/`: Actual step execution logic.
+- `utils/`: Internal helper utilities.
+- `wrappers/`: Third-party library wrappers.
+
+## ⚙️ Configuration
+Namespace: `wpipe_steps.data.csv_to_json`
+
+## 🚀 How to Use
+```python
+from wpipe_steps.data.csv_to_json import CsvToJsonStep
+```
