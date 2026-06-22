@@ -3,7 +3,7 @@ Example: HFTableQuestionAnsweringStep
 Answer questions about tabular data.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFTableQuestionAnsweringStep
+from wpipe_steps.ai import HFTableQuestionAnsweringStep
 
 def main():
     pipeline = Pipeline(pipeline_name="table_qa_example")
