@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.text.document_qa`
+Namespace: `wpipe_steps.ai.text.document_qa`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.text.document_qa import HFDocumentQuestionAnsweringStep
+from wpipe_steps.ai.text.document_qa import HFDocumentQuestionAnsweringStep
 ```
