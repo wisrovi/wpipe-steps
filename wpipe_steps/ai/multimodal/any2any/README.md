@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.multimodal.any2any`
+Namespace: `wpipe_steps.ai.multimodal.any2any`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.multimodal.any2any import HFAnyToAnyStep
+from wpipe_steps.ai.multimodal.any2any import HFAnyToAnyStep
 ```
