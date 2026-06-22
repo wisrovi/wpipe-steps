@@ -11,7 +11,11 @@
     "examples": "wpipe_steps/security/nmap/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/security/nmap/requirements.txt",
-    "how_to_use": "from wpipe_steps.security.nmap import NmapScanStep"
+    "how_to_use": "from wpipe_steps.security.nmap import NmapScanStep",
+    "category": "security",
+    "subcategory1": "nmap",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "waf_filter",
@@ -25,7 +29,11 @@
     "examples": "wpipe_steps/security/waf/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/security/waf/requirements.txt",
-    "how_to_use": "from wpipe_steps.security.waf import WafFilterStep"
+    "how_to_use": "from wpipe_steps.security.waf import WafFilterStep",
+    "category": "security",
+    "subcategory1": "waf",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "shodan_search",
@@ -39,7 +47,11 @@
     "examples": "wpipe_steps/security/shodan/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/security/shodan/requirements.txt",
-    "how_to_use": "from wpipe_steps.security.shodan import ShodanSearchStep"
+    "how_to_use": "from wpipe_steps.security.shodan import ShodanSearchStep",
+    "category": "security",
+    "subcategory1": "shodan",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "fail2ban_check",
@@ -53,7 +65,11 @@
     "examples": "wpipe_steps/security/fail2ban/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/security/fail2ban/requirements.txt",
-    "how_to_use": "from wpipe_steps.security.fail2ban import Fail2BanCheckStep"
+    "how_to_use": "from wpipe_steps.security.fail2ban import Fail2BanCheckStep",
+    "category": "security",
+    "subcategory1": "fail2ban",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "vault_secrets",
@@ -67,7 +83,11 @@
     "examples": "wpipe_steps/security/vault/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/security/vault/requirements.txt",
-    "how_to_use": "from wpipe_steps.security.vault import VaultSecretsStep"
+    "how_to_use": "from wpipe_steps.security.vault import VaultSecretsStep",
+    "category": "security",
+    "subcategory1": "vault",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "hash_generator",
@@ -81,7 +101,11 @@
     "examples": "wpipe_steps/security/hash/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/security/hash/requirements.txt",
-    "how_to_use": "from wpipe_steps.security.hash import HashGeneratorStep"
+    "how_to_use": "from wpipe_steps.security.hash import HashGeneratorStep",
+    "category": "security",
+    "subcategory1": "hash",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "rss",
@@ -95,7 +119,11 @@
     "examples": "wpipe_steps/connectivity/rss/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/connectivity/rss/requirements.txt",
-    "how_to_use": "from wpipe_steps.connectivity.rss import RSSContext"
+    "how_to_use": "from wpipe_steps.connectivity.rss import RSSContext",
+    "category": "connectivity",
+    "subcategory1": "rss",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "graphql",
@@ -109,7 +137,11 @@
     "examples": "wpipe_steps/connectivity/graphql/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/connectivity/graphql/requirements.txt",
-    "how_to_use": "from wpipe_steps.connectivity.graphql import GraphQLContext"
+    "how_to_use": "from wpipe_steps.connectivity.graphql import GraphQLContext",
+    "category": "connectivity",
+    "subcategory1": "graphql",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "oauth2",
@@ -123,7 +155,11 @@
     "examples": "wpipe_steps/connectivity/oauth2/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/connectivity/oauth2/requirements.txt",
-    "how_to_use": "from wpipe_steps.connectivity.oauth2 import OAuth2Context"
+    "how_to_use": "from wpipe_steps.connectivity.oauth2 import OAuth2Context",
+    "category": "connectivity",
+    "subcategory1": "oauth2",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "http",
@@ -137,7 +173,11 @@
     "examples": "wpipe_steps/connectivity/http/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/connectivity/http/requirements.txt",
-    "how_to_use": "from wpipe_steps.connectivity.http import HttpRequestContext"
+    "how_to_use": "from wpipe_steps.connectivity.http import HttpRequestContext",
+    "category": "connectivity",
+    "subcategory1": "http",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "sftp",
@@ -151,7 +191,11 @@
     "examples": "wpipe_steps/connectivity/sftp/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/connectivity/sftp/requirements.txt",
-    "how_to_use": "from wpipe_steps.connectivity.sftp import SFTPContext"
+    "how_to_use": "from wpipe_steps.connectivity.sftp import SFTPContext",
+    "category": "connectivity",
+    "subcategory1": "sftp",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "webhook",
@@ -165,7 +209,11 @@
     "examples": "wpipe_steps/connectivity/webhook/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/connectivity/webhook/requirements.txt",
-    "how_to_use": "from wpipe_steps.connectivity.webhook import WebhookContext"
+    "how_to_use": "from wpipe_steps.connectivity.webhook import WebhookContext",
+    "category": "connectivity",
+    "subcategory1": "webhook",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "s3_upload",
@@ -179,7 +227,11 @@
     "examples": "wpipe_steps/infrastructure/s3/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/infrastructure/s3/requirements.txt",
-    "how_to_use": "from wpipe_steps.infrastructure.s3 import S3BucketUploadStep"
+    "how_to_use": "from wpipe_steps.infrastructure.s3 import S3BucketUploadStep",
+    "category": "infrastructure",
+    "subcategory1": "s3",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "docker_step",
@@ -193,7 +245,11 @@
     "examples": "wpipe_steps/infrastructure/docker_step/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/infrastructure/docker_step/requirements.txt",
-    "how_to_use": "from wpipe_steps.infrastructure.docker_step import DockerContainerStep"
+    "how_to_use": "from wpipe_steps.infrastructure.docker_step import DockerContainerStep",
+    "category": "infrastructure",
+    "subcategory1": "docker_step",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "terraform",
@@ -207,7 +263,11 @@
     "examples": "wpipe_steps/infrastructure/terraform/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/infrastructure/terraform/requirements.txt",
-    "how_to_use": "from wpipe_steps.infrastructure.terraform import TerraformApplyStep"
+    "how_to_use": "from wpipe_steps.infrastructure.terraform import TerraformApplyStep",
+    "category": "infrastructure",
+    "subcategory1": "terraform",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "k8s",
@@ -221,7 +281,11 @@
     "examples": "wpipe_steps/infrastructure/k8s/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/infrastructure/k8s/requirements.txt",
-    "how_to_use": "from wpipe_steps.infrastructure.k8s import KubernetesPodCheckStep"
+    "how_to_use": "from wpipe_steps.infrastructure.k8s import KubernetesPodCheckStep",
+    "category": "infrastructure",
+    "subcategory1": "k8s",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "proxmox",
@@ -235,7 +299,11 @@
     "examples": "wpipe_steps/infrastructure/proxmox/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/infrastructure/proxmox/requirements.txt",
-    "how_to_use": "from wpipe_steps.infrastructure.proxmox import ProxmoxVMStep"
+    "how_to_use": "from wpipe_steps.infrastructure.proxmox import ProxmoxVMStep",
+    "category": "infrastructure",
+    "subcategory1": "proxmox",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "digitalocean",
@@ -249,7 +317,11 @@
     "examples": "wpipe_steps/infrastructure/digitalocean/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/infrastructure/digitalocean/requirements.txt",
-    "how_to_use": "from wpipe_steps.infrastructure.digitalocean import DigitalOceanDropletStep"
+    "how_to_use": "from wpipe_steps.infrastructure.digitalocean import DigitalOceanDropletStep",
+    "category": "infrastructure",
+    "subcategory1": "digitalocean",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "telegram_notify",
@@ -263,7 +335,11 @@
     "examples": "wpipe_steps/communication/telegram/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/communication/telegram/requirements.txt",
-    "how_to_use": "from wpipe_steps.communication.telegram import TelegramNotifyStep"
+    "how_to_use": "from wpipe_steps.communication.telegram import TelegramNotifyStep",
+    "category": "communication",
+    "subcategory1": "telegram",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "sendgrid_email",
@@ -277,7 +353,11 @@
     "examples": "wpipe_steps/communication/sendgrid/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/communication/sendgrid/requirements.txt",
-    "how_to_use": "from wpipe_steps.communication.sendgrid import SendGridMailStep"
+    "how_to_use": "from wpipe_steps.communication.sendgrid import SendGridMailStep",
+    "category": "communication",
+    "subcategory1": "sendgrid",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "twilio_sms",
@@ -291,7 +371,11 @@
     "examples": "wpipe_steps/communication/twilio/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/communication/twilio/requirements.txt",
-    "how_to_use": "from wpipe_steps.communication.twilio import TwilioSmsStep"
+    "how_to_use": "from wpipe_steps.communication.twilio import TwilioSmsStep",
+    "category": "communication",
+    "subcategory1": "twilio",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "discord_bot",
@@ -305,7 +389,11 @@
     "examples": "wpipe_steps/communication/discord/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/communication/discord/requirements.txt",
-    "how_to_use": "from wpipe_steps.communication.discord import DiscordBotStep"
+    "how_to_use": "from wpipe_steps.communication.discord import DiscordBotStep",
+    "category": "communication",
+    "subcategory1": "discord",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "twitter_post",
@@ -319,7 +407,11 @@
     "examples": "wpipe_steps/communication/twitter/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/communication/twitter/requirements.txt",
-    "how_to_use": "from wpipe_steps.communication.twitter import TwitterPostStep"
+    "how_to_use": "from wpipe_steps.communication.twitter import TwitterPostStep",
+    "category": "communication",
+    "subcategory1": "twitter",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "slack_alert",
@@ -333,7 +425,11 @@
     "examples": "wpipe_steps/communication/slack/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/communication/slack/requirements.txt",
-    "how_to_use": "from wpipe_steps.communication.slack import SlackAlertStep"
+    "how_to_use": "from wpipe_steps.communication.slack import SlackAlertStep",
+    "category": "communication",
+    "subcategory1": "slack",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "audio_normalizer",
@@ -347,7 +443,11 @@
     "examples": "wpipe_steps/multimedia/audio_normalizer/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/multimedia/audio_normalizer/requirements.txt",
-    "how_to_use": "from wpipe_steps.multimedia.audio_normalizer import AudioNormalizerStep"
+    "how_to_use": "from wpipe_steps.multimedia.audio_normalizer import AudioNormalizerStep",
+    "category": "multimedia",
+    "subcategory1": "audio_normalizer",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "tts_generate",
@@ -361,7 +461,11 @@
     "examples": "wpipe_steps/multimedia/tts_generate/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/multimedia/tts_generate/requirements.txt",
-    "how_to_use": "from wpipe_steps.multimedia.tts_generate import TtsGenerateStep"
+    "how_to_use": "from wpipe_steps.multimedia.tts_generate import TtsGenerateStep",
+    "category": "multimedia",
+    "subcategory1": "tts_generate",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "whisper_transcribe",
@@ -375,7 +479,11 @@
     "examples": "wpipe_steps/multimedia/whisper_transcribe/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/multimedia/whisper_transcribe/requirements.txt",
-    "how_to_use": "from wpipe_steps.multimedia.whisper_transcribe import WhisperTranscribeStep"
+    "how_to_use": "from wpipe_steps.multimedia.whisper_transcribe import WhisperTranscribeStep",
+    "category": "multimedia",
+    "subcategory1": "whisper_transcribe",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "image_resizer",
@@ -389,7 +497,11 @@
     "examples": "wpipe_steps/multimedia/image_resizer/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/multimedia/image_resizer/requirements.txt",
-    "how_to_use": "from wpipe_steps.multimedia.image_resizer import ImageResizerStep"
+    "how_to_use": "from wpipe_steps.multimedia.image_resizer import ImageResizerStep",
+    "category": "multimedia",
+    "subcategory1": "image_resizer",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "video_frame_extract",
@@ -403,7 +515,11 @@
     "examples": "wpipe_steps/multimedia/video_frame_extract/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/multimedia/video_frame_extract/requirements.txt",
-    "how_to_use": "from wpipe_steps.multimedia.video_frame_extract import VideoFrameExtractStep"
+    "how_to_use": "from wpipe_steps.multimedia.video_frame_extract import VideoFrameExtractStep",
+    "category": "multimedia",
+    "subcategory1": "video_frame_extract",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "zip_compressor",
@@ -417,7 +533,11 @@
     "examples": "wpipe_steps/data/zip_compressor/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/data/zip_compressor/requirements.txt",
-    "how_to_use": "from wpipe_steps.data.zip_compressor import ZipCompressorStep"
+    "how_to_use": "from wpipe_steps.data.zip_compressor import ZipCompressorStep",
+    "category": "data",
+    "subcategory1": "zip_compressor",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "csv_to_json",
@@ -431,7 +551,11 @@
     "examples": "wpipe_steps/data/csv_to_json/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/data/csv_to_json/requirements.txt",
-    "how_to_use": "from wpipe_steps.data.csv_to_json import CsvToJsonStep"
+    "how_to_use": "from wpipe_steps.data.csv_to_json import CsvToJsonStep",
+    "category": "data",
+    "subcategory1": "csv_to_json",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "excel_parse",
@@ -445,7 +569,11 @@
     "examples": "wpipe_steps/data/excel_parse/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/data/excel_parse/requirements.txt",
-    "how_to_use": "from wpipe_steps.data.excel_parse import ExcelParseStep"
+    "how_to_use": "from wpipe_steps.data.excel_parse import ExcelParseStep",
+    "category": "data",
+    "subcategory1": "excel_parse",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "pdf_generator",
@@ -459,7 +587,11 @@
     "examples": "wpipe_steps/data/pdf_generator/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/data/pdf_generator/requirements.txt",
-    "how_to_use": "from wpipe_steps.data.pdf_generator import PdfGeneratorStep"
+    "how_to_use": "from wpipe_steps.data.pdf_generator import PdfGeneratorStep",
+    "category": "data",
+    "subcategory1": "pdf_generator",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "text_translator",
@@ -473,7 +605,11 @@
     "examples": "wpipe_steps/data/text_translator/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/data/text_translator/requirements.txt",
-    "how_to_use": "from wpipe_steps.data.text_translator import TextTranslatorStep"
+    "how_to_use": "from wpipe_steps.data.text_translator import TextTranslatorStep",
+    "category": "data",
+    "subcategory1": "text_translator",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "cpu_monitor",
@@ -487,7 +623,11 @@
     "examples": "wpipe_steps/system/cpu_monitor/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/system/cpu_monitor/requirements.txt",
-    "how_to_use": "from wpipe_steps.system.cpu_monitor import CpuMonitorStep"
+    "how_to_use": "from wpipe_steps.system.cpu_monitor import CpuMonitorStep",
+    "category": "system",
+    "subcategory1": "cpu_monitor",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "cron_scheduler",
@@ -501,7 +641,11 @@
     "examples": "wpipe_steps/system/cron_scheduler/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/system/cron_scheduler/requirements.txt",
-    "how_to_use": "from wpipe_steps.system.cron_scheduler import CronSchedulerStep"
+    "how_to_use": "from wpipe_steps.system.cron_scheduler import CronSchedulerStep",
+    "category": "system",
+    "subcategory1": "cron_scheduler",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "shell_exec",
@@ -515,7 +659,11 @@
     "examples": "wpipe_steps/system/shell_exec/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/system/shell_exec/requirements.txt",
-    "how_to_use": "from wpipe_steps.system.shell_exec import ShellExecStep"
+    "how_to_use": "from wpipe_steps.system.shell_exec import ShellExecStep",
+    "category": "system",
+    "subcategory1": "shell_exec",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "disk_space_check",
@@ -529,7 +677,11 @@
     "examples": "wpipe_steps/system/disk_space_check/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/system/disk_space_check/requirements.txt",
-    "how_to_use": "from wpipe_steps.system.disk_space_check import DiskSpaceCheckStep"
+    "how_to_use": "from wpipe_steps.system.disk_space_check import DiskSpaceCheckStep",
+    "category": "system",
+    "subcategory1": "disk_space_check",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "health_check",
@@ -543,7 +695,11 @@
     "examples": "wpipe_steps/system/health_check/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/system/health_check/requirements.txt",
-    "how_to_use": "from wpipe_steps.system.health_check import HealthCheckStep"
+    "how_to_use": "from wpipe_steps.system.health_check import HealthCheckStep",
+    "category": "system",
+    "subcategory1": "health_check",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "text2text",
@@ -557,7 +713,11 @@
     "examples": "wpipe_steps/ai/text/text2text/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/text2text/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.text2text import HFText2TextGenerationStep"
+    "how_to_use": "from wpipe_steps.ai.text.text2text import HFText2TextGenerationStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "text2text",
+    "subcategory3": ""
   },
   {
     "name": "fill_mask",
@@ -571,7 +731,11 @@
     "examples": "wpipe_steps/ai/text/fill_mask/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/fill_mask/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.fill_mask import HFFillMaskStep"
+    "how_to_use": "from wpipe_steps.ai.text.fill_mask import HFFillMaskStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "fill_mask",
+    "subcategory3": ""
   },
   {
     "name": "reranking",
@@ -585,7 +749,11 @@
     "examples": "wpipe_steps/ai/text/reranking/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/reranking/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.reranking import HFRerankingStep"
+    "how_to_use": "from wpipe_steps.ai.text.reranking import HFRerankingStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "reranking",
+    "subcategory3": ""
   },
   {
     "name": "openai_prompt",
@@ -599,7 +767,11 @@
     "examples": "wpipe_steps/ai/text/openai_prompt/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/openai_prompt/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.openai_prompt import OpenAiPromptStep"
+    "how_to_use": "from wpipe_steps.ai.text.openai_prompt import OpenAiPromptStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "openai_prompt",
+    "subcategory3": ""
   },
   {
     "name": "sentence_embeddings",
@@ -613,7 +785,11 @@
     "examples": "wpipe_steps/ai/text/sentence_embeddings/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/sentence_embeddings/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.sentence_embeddings import HFSentenceEmbeddingsStep"
+    "how_to_use": "from wpipe_steps.ai.text.sentence_embeddings import HFSentenceEmbeddingsStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "sentence_embeddings",
+    "subcategory3": ""
   },
   {
     "name": "semantic_search",
@@ -627,7 +803,11 @@
     "examples": "wpipe_steps/ai/text/semantic_search/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/semantic_search/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.semantic_search import HFSemanticSearchStep"
+    "how_to_use": "from wpipe_steps.ai.text.semantic_search import HFSemanticSearchStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "semantic_search",
+    "subcategory3": ""
   },
   {
     "name": "classification",
@@ -641,7 +821,11 @@
     "examples": "wpipe_steps/ai/text/classification/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/classification/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.classification import HFTextClassificationStep"
+    "how_to_use": "from wpipe_steps.ai.text.classification import HFTextClassificationStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "classification",
+    "subcategory3": ""
   },
   {
     "name": "question_answering",
@@ -655,7 +839,11 @@
     "examples": "wpipe_steps/ai/text/question_answering/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/question_answering/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.question_answering import HFQuestionAnsweringStep"
+    "how_to_use": "from wpipe_steps.ai.text.question_answering import HFQuestionAnsweringStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "question_answering",
+    "subcategory3": ""
   },
   {
     "name": "language_id",
@@ -669,7 +857,11 @@
     "examples": "wpipe_steps/ai/text/language_id/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/language_id/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.language_id import HFLanguageIdentificationStep"
+    "how_to_use": "from wpipe_steps.ai.text.language_id import HFLanguageIdentificationStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "language_id",
+    "subcategory3": ""
   },
   {
     "name": "conversational",
@@ -683,7 +875,11 @@
     "examples": "wpipe_steps/ai/text/conversational/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/conversational/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.conversational import HFConversationalStep"
+    "how_to_use": "from wpipe_steps.ai.text.conversational import HFConversationalStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "conversational",
+    "subcategory3": ""
   },
   {
     "name": "feature_extraction",
@@ -697,7 +893,11 @@
     "examples": "wpipe_steps/ai/text/feature_extraction/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/feature_extraction/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.feature_extraction import HFFeatureExtractionStep"
+    "how_to_use": "from wpipe_steps.ai.text.feature_extraction import HFFeatureExtractionStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "feature_extraction",
+    "subcategory3": ""
   },
   {
     "name": "sentiment",
@@ -711,7 +911,11 @@
     "examples": "wpipe_steps/ai/text/sentiment/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/sentiment/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.sentiment import HFSentimentAnalysisStep"
+    "how_to_use": "from wpipe_steps.ai.text.sentiment import HFSentimentAnalysisStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "sentiment",
+    "subcategory3": ""
   },
   {
     "name": "document_qa",
@@ -725,7 +929,11 @@
     "examples": "wpipe_steps/ai/text/document_qa/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/document_qa/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.document_qa import HFDocumentQuestionAnsweringStep"
+    "how_to_use": "from wpipe_steps.ai.text.document_qa import HFDocumentQuestionAnsweringStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "document_qa",
+    "subcategory3": ""
   },
   {
     "name": "translation",
@@ -739,7 +947,11 @@
     "examples": "wpipe_steps/ai/text/translation/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/translation/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.translation import HFTranslationStep"
+    "how_to_use": "from wpipe_steps.ai.text.translation import HFTranslationStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "translation",
+    "subcategory3": ""
   },
   {
     "name": "sentence_similarity",
@@ -753,7 +965,11 @@
     "examples": "wpipe_steps/ai/text/sentence_similarity/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/sentence_similarity/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.sentence_similarity import HFSentenceSimilarityStep"
+    "how_to_use": "from wpipe_steps.ai.text.sentence_similarity import HFSentenceSimilarityStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "sentence_similarity",
+    "subcategory3": ""
   },
   {
     "name": "sentiment_analysis",
@@ -767,7 +983,11 @@
     "examples": "wpipe_steps/ai/text/sentiment_analysis/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/sentiment_analysis/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.sentiment_analysis import SentimentAnalysisStep"
+    "how_to_use": "from wpipe_steps.ai.text.sentiment_analysis import SentimentAnalysisStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "sentiment_analysis",
+    "subcategory3": ""
   },
   {
     "name": "text_generation",
@@ -781,7 +1001,11 @@
     "examples": "wpipe_steps/ai/text/text_generation/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/text_generation/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.text_generation import HFTextGenerationStep"
+    "how_to_use": "from wpipe_steps.ai.text.text_generation import HFTextGenerationStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "text_generation",
+    "subcategory3": ""
   },
   {
     "name": "ner",
@@ -795,7 +1019,11 @@
     "examples": "wpipe_steps/ai/text/ner/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/ner/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.ner import HFNerStep"
+    "how_to_use": "from wpipe_steps.ai.text.ner import HFNerStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "ner",
+    "subcategory3": ""
   },
   {
     "name": "table_qa",
@@ -809,7 +1037,11 @@
     "examples": "wpipe_steps/ai/text/table_qa/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/table_qa/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.table_qa import HFTableQuestionAnsweringStep"
+    "how_to_use": "from wpipe_steps.ai.text.table_qa import HFTableQuestionAnsweringStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "table_qa",
+    "subcategory3": ""
   },
   {
     "name": "multiple_choice",
@@ -823,7 +1055,11 @@
     "examples": "wpipe_steps/ai/text/multiple_choice/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/multiple_choice/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.multiple_choice import HFMultipleChoiceStep"
+    "how_to_use": "from wpipe_steps.ai.text.multiple_choice import HFMultipleChoiceStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "multiple_choice",
+    "subcategory3": ""
   },
   {
     "name": "summarization",
@@ -837,7 +1073,11 @@
     "examples": "wpipe_steps/ai/text/summarization/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/summarization/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.summarization import HFSummarizationStep"
+    "how_to_use": "from wpipe_steps.ai.text.summarization import HFSummarizationStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "summarization",
+    "subcategory3": ""
   },
   {
     "name": "zero_shot",
@@ -851,7 +1091,11 @@
     "examples": "wpipe_steps/ai/text/zero_shot/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/zero_shot/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.zero_shot import HFZeroShotClassificationStep"
+    "how_to_use": "from wpipe_steps.ai.text.zero_shot import HFZeroShotClassificationStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "zero_shot",
+    "subcategory3": ""
   },
   {
     "name": "huggingface_inference",
@@ -865,7 +1109,11 @@
     "examples": "wpipe_steps/ai/text/huggingface_inference/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/text/huggingface_inference/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.text.huggingface_inference import HuggingFaceInferenceStep"
+    "how_to_use": "from wpipe_steps.ai.text.huggingface_inference import HuggingFaceInferenceStep",
+    "category": "ai",
+    "subcategory1": "text",
+    "subcategory2": "huggingface_inference",
+    "subcategory3": ""
   },
   {
     "name": "captioning",
@@ -879,7 +1127,11 @@
     "examples": "wpipe_steps/ai/vision/captioning/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/vision/captioning/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.vision.captioning import HFImageToTextStep"
+    "how_to_use": "from wpipe_steps.ai.vision.captioning import HFImageToTextStep",
+    "category": "ai",
+    "subcategory1": "vision",
+    "subcategory2": "captioning",
+    "subcategory3": ""
   },
   {
     "name": "video_classification",
@@ -893,7 +1145,11 @@
     "examples": "wpipe_steps/ai/vision/video_classification/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/vision/video_classification/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.vision.video_classification import HFVideoClassificationStep"
+    "how_to_use": "from wpipe_steps.ai.vision.video_classification import HFVideoClassificationStep",
+    "category": "ai",
+    "subcategory1": "vision",
+    "subcategory2": "video_classification",
+    "subcategory3": ""
   },
   {
     "name": "vqa",
@@ -907,7 +1163,11 @@
     "examples": "wpipe_steps/ai/vision/vqa/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/vision/vqa/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.vision.vqa import HFVisualQuestionAnsweringStep"
+    "how_to_use": "from wpipe_steps.ai.vision.vqa import HFVisualQuestionAnsweringStep",
+    "category": "ai",
+    "subcategory1": "vision",
+    "subcategory2": "vqa",
+    "subcategory3": ""
   },
   {
     "name": "background_removal",
@@ -921,7 +1181,11 @@
     "examples": "wpipe_steps/ai/vision/background_removal/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/vision/background_removal/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.vision.background_removal import HFImageBackgroundRemovalStep"
+    "how_to_use": "from wpipe_steps.ai.vision.background_removal import HFImageBackgroundRemovalStep",
+    "category": "ai",
+    "subcategory1": "vision",
+    "subcategory2": "background_removal",
+    "subcategory3": ""
   },
   {
     "name": "face_detection",
@@ -935,7 +1199,11 @@
     "examples": "wpipe_steps/ai/vision/face_detection/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/vision/face_detection/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.vision.face_detection import HFFaceDetectionStep"
+    "how_to_use": "from wpipe_steps.ai.vision.face_detection import HFFaceDetectionStep",
+    "category": "ai",
+    "subcategory1": "vision",
+    "subcategory2": "face_detection",
+    "subcategory3": ""
   },
   {
     "name": "super_resolution",
@@ -949,7 +1217,11 @@
     "examples": "wpipe_steps/ai/vision/super_resolution/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/vision/super_resolution/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.vision.super_resolution import HFImageSuperResolutionStep"
+    "how_to_use": "from wpipe_steps.ai.vision.super_resolution import HFImageSuperResolutionStep",
+    "category": "ai",
+    "subcategory1": "vision",
+    "subcategory2": "super_resolution",
+    "subcategory3": ""
   },
   {
     "name": "classification",
@@ -963,7 +1235,11 @@
     "examples": "wpipe_steps/ai/vision/classification/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/vision/classification/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.vision.classification import HFImageClassificationStep"
+    "how_to_use": "from wpipe_steps.ai.vision.classification import HFImageClassificationStep",
+    "category": "ai",
+    "subcategory1": "vision",
+    "subcategory2": "classification",
+    "subcategory3": ""
   },
   {
     "name": "detection",
@@ -977,7 +1253,11 @@
     "examples": "wpipe_steps/ai/vision/detection/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/vision/detection/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.vision.detection import HFObjectDetectionStep"
+    "how_to_use": "from wpipe_steps.ai.vision.detection import HFObjectDetectionStep",
+    "category": "ai",
+    "subcategory1": "vision",
+    "subcategory2": "detection",
+    "subcategory3": ""
   },
   {
     "name": "style_transfer",
@@ -991,7 +1271,11 @@
     "examples": "wpipe_steps/ai/vision/style_transfer/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/vision/style_transfer/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.vision.style_transfer import HFImageStyleTransferStep"
+    "how_to_use": "from wpipe_steps.ai.vision.style_transfer import HFImageStyleTransferStep",
+    "category": "ai",
+    "subcategory1": "vision",
+    "subcategory2": "style_transfer",
+    "subcategory3": ""
   },
   {
     "name": "inpainting",
@@ -1005,7 +1289,11 @@
     "examples": "wpipe_steps/ai/vision/inpainting/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/vision/inpainting/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.vision.inpainting import HFInpaintingStep"
+    "how_to_use": "from wpipe_steps.ai.vision.inpainting import HFInpaintingStep",
+    "category": "ai",
+    "subcategory1": "vision",
+    "subcategory2": "inpainting",
+    "subcategory3": ""
   },
   {
     "name": "ocr",
@@ -1019,7 +1307,11 @@
     "examples": "wpipe_steps/ai/vision/ocr/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/vision/ocr/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.vision.ocr import HFOcrStep"
+    "how_to_use": "from wpipe_steps.ai.vision.ocr import HFOcrStep",
+    "category": "ai",
+    "subcategory1": "vision",
+    "subcategory2": "ocr",
+    "subcategory3": ""
   },
   {
     "name": "segmentation",
@@ -1033,7 +1325,11 @@
     "examples": "wpipe_steps/ai/vision/segmentation/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/vision/segmentation/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.vision.segmentation import HFImageSegmentationStep"
+    "how_to_use": "from wpipe_steps.ai.vision.segmentation import HFImageSegmentationStep",
+    "category": "ai",
+    "subcategory1": "vision",
+    "subcategory2": "segmentation",
+    "subcategory3": ""
   },
   {
     "name": "colorization",
@@ -1047,7 +1343,11 @@
     "examples": "wpipe_steps/ai/vision/colorization/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/vision/colorization/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.vision.colorization import HFImageColorizationStep"
+    "how_to_use": "from wpipe_steps.ai.vision.colorization import HFImageColorizationStep",
+    "category": "ai",
+    "subcategory1": "vision",
+    "subcategory2": "colorization",
+    "subcategory3": ""
   },
   {
     "name": "video_interpolation",
@@ -1061,7 +1361,11 @@
     "examples": "wpipe_steps/ai/vision/video_interpolation/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/vision/video_interpolation/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.vision.video_interpolation import HFVideoFrameInterpolationStep"
+    "how_to_use": "from wpipe_steps.ai.vision.video_interpolation import HFVideoFrameInterpolationStep",
+    "category": "ai",
+    "subcategory1": "vision",
+    "subcategory2": "video_interpolation",
+    "subcategory3": ""
   },
   {
     "name": "image2image",
@@ -1075,7 +1379,11 @@
     "examples": "wpipe_steps/ai/vision/image2image/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/vision/image2image/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.vision.image2image import HFImageToImageStep"
+    "how_to_use": "from wpipe_steps.ai.vision.image2image import HFImageToImageStep",
+    "category": "ai",
+    "subcategory1": "vision",
+    "subcategory2": "image2image",
+    "subcategory3": ""
   },
   {
     "name": "depth",
@@ -1089,7 +1397,11 @@
     "examples": "wpipe_steps/ai/vision/depth/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/vision/depth/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.vision.depth import HFDepthEstimationStep"
+    "how_to_use": "from wpipe_steps.ai.vision.depth import HFDepthEstimationStep",
+    "category": "ai",
+    "subcategory1": "vision",
+    "subcategory2": "depth",
+    "subcategory3": ""
   },
   {
     "name": "zero_shot",
@@ -1103,7 +1415,11 @@
     "examples": "wpipe_steps/ai/vision/zero_shot/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/vision/zero_shot/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.vision.zero_shot import HFZeroShotImageClassificationStep"
+    "how_to_use": "from wpipe_steps.ai.vision.zero_shot import HFZeroShotImageClassificationStep",
+    "category": "ai",
+    "subcategory1": "vision",
+    "subcategory2": "zero_shot",
+    "subcategory3": ""
   },
   {
     "name": "image_text",
@@ -1117,7 +1433,11 @@
     "examples": "wpipe_steps/ai/multimodal/image_text/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/multimodal/image_text/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.multimodal.image_text import HFImageTextToTextStep"
+    "how_to_use": "from wpipe_steps.ai.multimodal.image_text import HFImageTextToTextStep",
+    "category": "ai",
+    "subcategory1": "multimodal",
+    "subcategory2": "image_text",
+    "subcategory3": ""
   },
   {
     "name": "table_detection",
@@ -1131,7 +1451,11 @@
     "examples": "wpipe_steps/ai/multimodal/table_detection/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/multimodal/table_detection/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.multimodal.table_detection import HFTableDetectionStep"
+    "how_to_use": "from wpipe_steps.ai.multimodal.table_detection import HFTableDetectionStep",
+    "category": "ai",
+    "subcategory1": "multimodal",
+    "subcategory2": "table_detection",
+    "subcategory3": ""
   },
   {
     "name": "any2any",
@@ -1145,7 +1469,11 @@
     "examples": "wpipe_steps/ai/multimodal/any2any/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/multimodal/any2any/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.multimodal.any2any import HFAnyToAnyStep"
+    "how_to_use": "from wpipe_steps.ai.multimodal.any2any import HFAnyToAnyStep",
+    "category": "ai",
+    "subcategory1": "multimodal",
+    "subcategory2": "any2any",
+    "subcategory3": ""
   },
   {
     "name": "doc_vqa",
@@ -1159,7 +1487,11 @@
     "examples": "wpipe_steps/ai/multimodal/doc_vqa/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/multimodal/doc_vqa/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.multimodal.doc_vqa import HFDocumentVisualQuestionAnsweringStep"
+    "how_to_use": "from wpipe_steps.ai.multimodal.doc_vqa import HFDocumentVisualQuestionAnsweringStep",
+    "category": "ai",
+    "subcategory1": "multimodal",
+    "subcategory2": "doc_vqa",
+    "subcategory3": ""
   },
   {
     "name": "emotion",
@@ -1173,7 +1505,11 @@
     "examples": "wpipe_steps/ai/audio/emotion/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/audio/emotion/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.audio.emotion import HFAudioEmotionRecognitionStep"
+    "how_to_use": "from wpipe_steps.ai.audio.emotion import HFAudioEmotionRecognitionStep",
+    "category": "ai",
+    "subcategory1": "audio",
+    "subcategory2": "emotion",
+    "subcategory3": ""
   },
   {
     "name": "audio2audio",
@@ -1187,7 +1523,11 @@
     "examples": "wpipe_steps/ai/audio/audio2audio/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/audio/audio2audio/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.audio.audio2audio import HFAudioToAudioStep"
+    "how_to_use": "from wpipe_steps.ai.audio.audio2audio import HFAudioToAudioStep",
+    "category": "ai",
+    "subcategory1": "audio",
+    "subcategory2": "audio2audio",
+    "subcategory3": ""
   },
   {
     "name": "classification",
@@ -1201,7 +1541,11 @@
     "examples": "wpipe_steps/ai/audio/classification/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/audio/classification/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.audio.classification import HFAudioClassificationStep"
+    "how_to_use": "from wpipe_steps.ai.audio.classification import HFAudioClassificationStep",
+    "category": "ai",
+    "subcategory1": "audio",
+    "subcategory2": "classification",
+    "subcategory3": ""
   },
   {
     "name": "diarization",
@@ -1215,7 +1559,11 @@
     "examples": "wpipe_steps/ai/audio/diarization/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/audio/diarization/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.audio.diarization import HFSpeakerDiarizationStep"
+    "how_to_use": "from wpipe_steps.ai.audio.diarization import HFSpeakerDiarizationStep",
+    "category": "ai",
+    "subcategory1": "audio",
+    "subcategory2": "diarization",
+    "subcategory3": ""
   },
   {
     "name": "speech_conversion",
@@ -1229,7 +1577,11 @@
     "examples": "wpipe_steps/ai/audio/speech_conversion/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/audio/speech_conversion/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.audio.speech_conversion import HFSpeechToSpeechStep"
+    "how_to_use": "from wpipe_steps.ai.audio.speech_conversion import HFSpeechToSpeechStep",
+    "category": "ai",
+    "subcategory1": "audio",
+    "subcategory2": "speech_conversion",
+    "subcategory3": ""
   },
   {
     "name": "asr",
@@ -1243,7 +1595,11 @@
     "examples": "wpipe_steps/ai/audio/asr/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/audio/asr/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.audio.asr import HFAutomaticSpeechRecognitionStep"
+    "how_to_use": "from wpipe_steps.ai.audio.asr import HFAutomaticSpeechRecognitionStep",
+    "category": "ai",
+    "subcategory1": "audio",
+    "subcategory2": "asr",
+    "subcategory3": ""
   },
   {
     "name": "voice_activity",
@@ -1257,7 +1613,11 @@
     "examples": "wpipe_steps/ai/audio/voice_activity/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/audio/voice_activity/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.audio.voice_activity import HFVoiceActivityDetectionStep"
+    "how_to_use": "from wpipe_steps.ai.audio.voice_activity import HFVoiceActivityDetectionStep",
+    "category": "ai",
+    "subcategory1": "audio",
+    "subcategory2": "voice_activity",
+    "subcategory3": ""
   },
   {
     "name": "tts",
@@ -1271,7 +1631,11 @@
     "examples": "wpipe_steps/ai/audio/tts/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/ai/audio/tts/requirements.txt",
-    "how_to_use": "from wpipe_steps.ai.audio.tts import HFTextToSpeechStep"
+    "how_to_use": "from wpipe_steps.ai.audio.tts import HFTextToSpeechStep",
+    "category": "ai",
+    "subcategory1": "audio",
+    "subcategory2": "tts",
+    "subcategory3": ""
   },
   {
     "name": "clickhouse",
@@ -1285,7 +1649,11 @@
     "examples": "wpipe_steps/database/clickhouse/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/clickhouse/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.clickhouse import ClickHouseBulkStep"
+    "how_to_use": "from wpipe_steps.database.clickhouse import ClickHouseBulkStep",
+    "category": "database",
+    "subcategory1": "clickhouse",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "redis",
@@ -1299,7 +1667,11 @@
     "examples": "wpipe_steps/database/redis/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis import RedisCacheStep"
+    "how_to_use": "from wpipe_steps.database.redis import RedisCacheStep",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "is_member_sync",
@@ -1313,7 +1685,11 @@
     "examples": "wpipe_steps/database/redis/sets/is_member_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sets/is_member_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sets.is_member_sync import IsMemberContext"
+    "how_to_use": "from wpipe_steps.database.redis.sets.is_member_sync import IsMemberContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sets",
+    "subcategory3": "is_member_sync"
   },
   {
     "name": "remove_from_set_sync",
@@ -1327,7 +1703,11 @@
     "examples": "wpipe_steps/database/redis/sets/remove_from_set_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sets/remove_from_set_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sets.remove_from_set_sync import RemoveFromSetContext"
+    "how_to_use": "from wpipe_steps.database.redis.sets.remove_from_set_sync import RemoveFromSetContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sets",
+    "subcategory3": "remove_from_set_sync"
   },
   {
     "name": "add_to_set_async",
@@ -1341,7 +1721,11 @@
     "examples": "wpipe_steps/database/redis/sets/add_to_set_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sets/add_to_set_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sets.add_to_set_async import AddToSetContext"
+    "how_to_use": "from wpipe_steps.database.redis.sets.add_to_set_async import AddToSetContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sets",
+    "subcategory3": "add_to_set_async"
   },
   {
     "name": "get_ttl_sync",
@@ -1355,7 +1739,11 @@
     "examples": "wpipe_steps/database/redis/sets/get_ttl_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sets/get_ttl_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sets.get_ttl_sync import SetTtlContext"
+    "how_to_use": "from wpipe_steps.database.redis.sets.get_ttl_sync import SetTtlContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sets",
+    "subcategory3": "get_ttl_sync"
   },
   {
     "name": "is_member_async",
@@ -1369,7 +1757,11 @@
     "examples": "wpipe_steps/database/redis/sets/is_member_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sets/is_member_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sets.is_member_async import IsMemberContext"
+    "how_to_use": "from wpipe_steps.database.redis.sets.is_member_async import IsMemberContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sets",
+    "subcategory3": "is_member_async"
   },
   {
     "name": "get_ttl_async",
@@ -1383,7 +1775,11 @@
     "examples": "wpipe_steps/database/redis/sets/get_ttl_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sets/get_ttl_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sets.get_ttl_async import SetTtlContext"
+    "how_to_use": "from wpipe_steps.database.redis.sets.get_ttl_async import SetTtlContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sets",
+    "subcategory3": "get_ttl_async"
   },
   {
     "name": "get_set_members_async",
@@ -1397,7 +1793,11 @@
     "examples": "wpipe_steps/database/redis/sets/get_set_members_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sets/get_set_members_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sets.get_set_members_async import GetSetMembersContext"
+    "how_to_use": "from wpipe_steps.database.redis.sets.get_set_members_async import GetSetMembersContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sets",
+    "subcategory3": "get_set_members_async"
   },
   {
     "name": "add_to_set_sync",
@@ -1411,7 +1811,11 @@
     "examples": "wpipe_steps/database/redis/sets/add_to_set_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sets/add_to_set_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sets.add_to_set_sync import AddToSetContext"
+    "how_to_use": "from wpipe_steps.database.redis.sets.add_to_set_sync import AddToSetContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sets",
+    "subcategory3": "add_to_set_sync"
   },
   {
     "name": "get_set_members_sync",
@@ -1425,7 +1829,11 @@
     "examples": "wpipe_steps/database/redis/sets/get_set_members_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sets/get_set_members_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sets.get_set_members_sync import GetSetMembersContext"
+    "how_to_use": "from wpipe_steps.database.redis.sets.get_set_members_sync import GetSetMembersContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sets",
+    "subcategory3": "get_set_members_sync"
   },
   {
     "name": "extend_ttl_async",
@@ -1439,7 +1847,11 @@
     "examples": "wpipe_steps/database/redis/sets/extend_ttl_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sets/extend_ttl_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sets.extend_ttl_async import SetExtendTtlContext"
+    "how_to_use": "from wpipe_steps.database.redis.sets.extend_ttl_async import SetExtendTtlContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sets",
+    "subcategory3": "extend_ttl_async"
   },
   {
     "name": "extend_ttl_sync",
@@ -1453,7 +1865,11 @@
     "examples": "wpipe_steps/database/redis/sets/extend_ttl_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sets/extend_ttl_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sets.extend_ttl_sync import SetExtendTtlContext"
+    "how_to_use": "from wpipe_steps.database.redis.sets.extend_ttl_sync import SetExtendTtlContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sets",
+    "subcategory3": "extend_ttl_sync"
   },
   {
     "name": "remove_from_set_async",
@@ -1467,7 +1883,11 @@
     "examples": "wpipe_steps/database/redis/sets/remove_from_set_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sets/remove_from_set_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sets.remove_from_set_async import RemoveFromSetContext"
+    "how_to_use": "from wpipe_steps.database.redis.sets.remove_from_set_async import RemoveFromSetContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sets",
+    "subcategory3": "remove_from_set_async"
   },
   {
     "name": "count_bits_sync",
@@ -1481,7 +1901,11 @@
     "examples": "wpipe_steps/database/redis/bitmaps/count_bits_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/bitmaps/count_bits_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.bitmaps.count_bits_sync import CountBitsContext"
+    "how_to_use": "from wpipe_steps.database.redis.bitmaps.count_bits_sync import CountBitsContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "bitmaps",
+    "subcategory3": "count_bits_sync"
   },
   {
     "name": "get_ttl_sync",
@@ -1495,7 +1919,11 @@
     "examples": "wpipe_steps/database/redis/bitmaps/get_ttl_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/bitmaps/get_ttl_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.bitmaps.get_ttl_sync import BitmapTtlContext"
+    "how_to_use": "from wpipe_steps.database.redis.bitmaps.get_ttl_sync import BitmapTtlContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "bitmaps",
+    "subcategory3": "get_ttl_sync"
   },
   {
     "name": "get_ttl_async",
@@ -1509,7 +1937,11 @@
     "examples": "wpipe_steps/database/redis/bitmaps/get_ttl_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/bitmaps/get_ttl_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.bitmaps.get_ttl_async import BitmapTtlContext"
+    "how_to_use": "from wpipe_steps.database.redis.bitmaps.get_ttl_async import BitmapTtlContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "bitmaps",
+    "subcategory3": "get_ttl_async"
   },
   {
     "name": "set_bit_async",
@@ -1523,7 +1955,11 @@
     "examples": "wpipe_steps/database/redis/bitmaps/set_bit_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/bitmaps/set_bit_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.bitmaps.set_bit_async import SetBitContext"
+    "how_to_use": "from wpipe_steps.database.redis.bitmaps.set_bit_async import SetBitContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "bitmaps",
+    "subcategory3": "set_bit_async"
   },
   {
     "name": "count_bits_async",
@@ -1537,7 +1973,11 @@
     "examples": "wpipe_steps/database/redis/bitmaps/count_bits_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/bitmaps/count_bits_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.bitmaps.count_bits_async import CountBitsContext"
+    "how_to_use": "from wpipe_steps.database.redis.bitmaps.count_bits_async import CountBitsContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "bitmaps",
+    "subcategory3": "count_bits_async"
   },
   {
     "name": "get_bit_async",
@@ -1551,7 +1991,11 @@
     "examples": "wpipe_steps/database/redis/bitmaps/get_bit_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/bitmaps/get_bit_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.bitmaps.get_bit_async import GetBitContext"
+    "how_to_use": "from wpipe_steps.database.redis.bitmaps.get_bit_async import GetBitContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "bitmaps",
+    "subcategory3": "get_bit_async"
   },
   {
     "name": "set_bit_sync",
@@ -1565,7 +2009,11 @@
     "examples": "wpipe_steps/database/redis/bitmaps/set_bit_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/bitmaps/set_bit_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.bitmaps.set_bit_sync import SetBitContext"
+    "how_to_use": "from wpipe_steps.database.redis.bitmaps.set_bit_sync import SetBitContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "bitmaps",
+    "subcategory3": "set_bit_sync"
   },
   {
     "name": "extend_ttl_async",
@@ -1579,7 +2027,11 @@
     "examples": "wpipe_steps/database/redis/bitmaps/extend_ttl_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/bitmaps/extend_ttl_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.bitmaps.extend_ttl_async import BitmapExtendTtlContext"
+    "how_to_use": "from wpipe_steps.database.redis.bitmaps.extend_ttl_async import BitmapExtendTtlContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "bitmaps",
+    "subcategory3": "extend_ttl_async"
   },
   {
     "name": "extend_ttl_sync",
@@ -1593,7 +2045,11 @@
     "examples": "wpipe_steps/database/redis/bitmaps/extend_ttl_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/bitmaps/extend_ttl_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.bitmaps.extend_ttl_sync import BitmapExtendTtlContext"
+    "how_to_use": "from wpipe_steps.database.redis.bitmaps.extend_ttl_sync import BitmapExtendTtlContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "bitmaps",
+    "subcategory3": "extend_ttl_sync"
   },
   {
     "name": "get_bit_sync",
@@ -1607,7 +2063,11 @@
     "examples": "wpipe_steps/database/redis/bitmaps/get_bit_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/bitmaps/get_bit_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.bitmaps.get_bit_sync import GetBitContext"
+    "how_to_use": "from wpipe_steps.database.redis.bitmaps.get_bit_sync import GetBitContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "bitmaps",
+    "subcategory3": "get_bit_sync"
   },
   {
     "name": "get_positions_sync",
@@ -1621,7 +2081,11 @@
     "examples": "wpipe_steps/database/redis/geo/get_positions_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/geo/get_positions_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.geo.get_positions_sync import GetPositionsContext"
+    "how_to_use": "from wpipe_steps.database.redis.geo.get_positions_sync import GetPositionsContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "geo",
+    "subcategory3": "get_positions_sync"
   },
   {
     "name": "get_distance_async",
@@ -1635,7 +2099,11 @@
     "examples": "wpipe_steps/database/redis/geo/get_distance_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/geo/get_distance_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.geo.get_distance_async import GetDistanceContext"
+    "how_to_use": "from wpipe_steps.database.redis.geo.get_distance_async import GetDistanceContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "geo",
+    "subcategory3": "get_distance_async"
   },
   {
     "name": "search_nearby_with_distance_sync",
@@ -1649,7 +2117,11 @@
     "examples": "wpipe_steps/database/redis/geo/search_nearby_with_distance_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/geo/search_nearby_with_distance_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.geo.search_nearby_with_distance_sync import SearchNearbyWithDistanceContext"
+    "how_to_use": "from wpipe_steps.database.redis.geo.search_nearby_with_distance_sync import SearchNearbyWithDistanceContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "geo",
+    "subcategory3": "search_nearby_with_distance_sync"
   },
   {
     "name": "get_distance_sync",
@@ -1663,7 +2135,11 @@
     "examples": "wpipe_steps/database/redis/geo/get_distance_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/geo/get_distance_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.geo.get_distance_sync import GetDistanceContext"
+    "how_to_use": "from wpipe_steps.database.redis.geo.get_distance_sync import GetDistanceContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "geo",
+    "subcategory3": "get_distance_sync"
   },
   {
     "name": "search_nearby_async",
@@ -1677,7 +2153,11 @@
     "examples": "wpipe_steps/database/redis/geo/search_nearby_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/geo/search_nearby_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.geo.search_nearby_async import SearchNearbyContext"
+    "how_to_use": "from wpipe_steps.database.redis.geo.search_nearby_async import SearchNearbyContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "geo",
+    "subcategory3": "search_nearby_async"
   },
   {
     "name": "search_nearby_with_distance_async",
@@ -1691,7 +2171,11 @@
     "examples": "wpipe_steps/database/redis/geo/search_nearby_with_distance_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/geo/search_nearby_with_distance_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.geo.search_nearby_with_distance_async import SearchNearbyWithDistanceContext"
+    "how_to_use": "from wpipe_steps.database.redis.geo.search_nearby_with_distance_async import SearchNearbyWithDistanceContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "geo",
+    "subcategory3": "search_nearby_with_distance_async"
   },
   {
     "name": "get_positions_async",
@@ -1705,7 +2189,11 @@
     "examples": "wpipe_steps/database/redis/geo/get_positions_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/geo/get_positions_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.geo.get_positions_async import GetPositionsContext"
+    "how_to_use": "from wpipe_steps.database.redis.geo.get_positions_async import GetPositionsContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "geo",
+    "subcategory3": "get_positions_async"
   },
   {
     "name": "add_location_sync",
@@ -1719,7 +2207,11 @@
     "examples": "wpipe_steps/database/redis/geo/add_location_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/geo/add_location_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.geo.add_location_sync import AddLocationContext"
+    "how_to_use": "from wpipe_steps.database.redis.geo.add_location_sync import AddLocationContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "geo",
+    "subcategory3": "add_location_sync"
   },
   {
     "name": "add_location_async",
@@ -1733,7 +2225,11 @@
     "examples": "wpipe_steps/database/redis/geo/add_location_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/geo/add_location_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.geo.add_location_async import AddLocationContext"
+    "how_to_use": "from wpipe_steps.database.redis.geo.add_location_async import AddLocationContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "geo",
+    "subcategory3": "add_location_async"
   },
   {
     "name": "search_nearby_sync",
@@ -1747,7 +2243,11 @@
     "examples": "wpipe_steps/database/redis/geo/search_nearby_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/geo/search_nearby_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.geo.search_nearby_sync import SearchNearbyContext"
+    "how_to_use": "from wpipe_steps.database.redis.geo.search_nearby_sync import SearchNearbyContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "geo",
+    "subcategory3": "search_nearby_sync"
   },
   {
     "name": "read_from_stream_sync",
@@ -1761,7 +2261,11 @@
     "examples": "wpipe_steps/database/redis/streams/read_from_stream_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/streams/read_from_stream_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.streams.read_from_stream_sync import ReadFromStreamContext"
+    "how_to_use": "from wpipe_steps.database.redis.streams.read_from_stream_sync import ReadFromStreamContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "streams",
+    "subcategory3": "read_from_stream_sync"
   },
   {
     "name": "on_message_async",
@@ -1775,7 +2279,11 @@
     "examples": "wpipe_steps/database/redis/streams/on_message_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/streams/on_message_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.streams.on_message_async import StreamOnMessageContext"
+    "how_to_use": "from wpipe_steps.database.redis.streams.on_message_async import StreamOnMessageContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "streams",
+    "subcategory3": "on_message_async"
   },
   {
     "name": "read_from_stream_async",
@@ -1789,7 +2297,11 @@
     "examples": "wpipe_steps/database/redis/streams/read_from_stream_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/streams/read_from_stream_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.streams.read_from_stream_async import ReadFromStreamContext"
+    "how_to_use": "from wpipe_steps.database.redis.streams.read_from_stream_async import ReadFromStreamContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "streams",
+    "subcategory3": "read_from_stream_async"
   },
   {
     "name": "on_message_sync",
@@ -1803,7 +2315,11 @@
     "examples": "wpipe_steps/database/redis/streams/on_message_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/streams/on_message_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.streams.on_message_sync import StreamOnMessageContext"
+    "how_to_use": "from wpipe_steps.database.redis.streams.on_message_sync import StreamOnMessageContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "streams",
+    "subcategory3": "on_message_sync"
   },
   {
     "name": "add_to_stream_async",
@@ -1817,7 +2333,11 @@
     "examples": "wpipe_steps/database/redis/streams/add_to_stream_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/streams/add_to_stream_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.streams.add_to_stream_async import AddToStreamContext"
+    "how_to_use": "from wpipe_steps.database.redis.streams.add_to_stream_async import AddToStreamContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "streams",
+    "subcategory3": "add_to_stream_async"
   },
   {
     "name": "add_to_stream_sync",
@@ -1831,7 +2351,11 @@
     "examples": "wpipe_steps/database/redis/streams/add_to_stream_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/streams/add_to_stream_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.streams.add_to_stream_sync import AddToStreamContext"
+    "how_to_use": "from wpipe_steps.database.redis.streams.add_to_stream_sync import AddToStreamContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "streams",
+    "subcategory3": "add_to_stream_sync"
   },
   {
     "name": "execute_pipeline_async",
@@ -1845,7 +2369,11 @@
     "examples": "wpipe_steps/database/redis/pipeline/execute_pipeline_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/pipeline/execute_pipeline_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.pipeline.execute_pipeline_async import ExecutePipelineContext"
+    "how_to_use": "from wpipe_steps.database.redis.pipeline.execute_pipeline_async import ExecutePipelineContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "pipeline",
+    "subcategory3": "execute_pipeline_async"
   },
   {
     "name": "execute_pipeline_sync",
@@ -1859,7 +2387,11 @@
     "examples": "wpipe_steps/database/redis/pipeline/execute_pipeline_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/pipeline/execute_pipeline_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.pipeline.execute_pipeline_sync import ExecutePipelineContext"
+    "how_to_use": "from wpipe_steps.database.redis.pipeline.execute_pipeline_sync import ExecutePipelineContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "pipeline",
+    "subcategory3": "execute_pipeline_sync"
   },
   {
     "name": "execute_transaction_async",
@@ -1873,7 +2405,11 @@
     "examples": "wpipe_steps/database/redis/transactions/execute_transaction_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/transactions/execute_transaction_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.transactions.execute_transaction_async import ExecuteTransactionContext"
+    "how_to_use": "from wpipe_steps.database.redis.transactions.execute_transaction_async import ExecuteTransactionContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "transactions",
+    "subcategory3": "execute_transaction_async"
   },
   {
     "name": "execute_transaction_sync",
@@ -1887,7 +2423,11 @@
     "examples": "wpipe_steps/database/redis/transactions/execute_transaction_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/transactions/execute_transaction_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.transactions.execute_transaction_sync import ExecuteTransactionContext"
+    "how_to_use": "from wpipe_steps.database.redis.transactions.execute_transaction_sync import ExecuteTransactionContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "transactions",
+    "subcategory3": "execute_transaction_sync"
   },
   {
     "name": "redis_cache_decorator_sync",
@@ -1901,7 +2441,11 @@
     "examples": "wpipe_steps/database/redis/cache/cache_decorator_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/cache/cache_decorator_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.cache.cache_decorator_sync import RedisCacheDecoratorSync"
+    "how_to_use": "from wpipe_steps.database.redis.cache.cache_decorator_sync import RedisCacheDecoratorSync",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "cache",
+    "subcategory3": "cache_decorator_sync"
   },
   {
     "name": "redis_retry_decorator_sync",
@@ -1915,7 +2459,11 @@
     "examples": "wpipe_steps/database/redis/cache/retry_decorator_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/cache/retry_decorator_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.cache.retry_decorator_sync import RedisRetryDecoratorSync"
+    "how_to_use": "from wpipe_steps.database.redis.cache.retry_decorator_sync import RedisRetryDecoratorSync",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "cache",
+    "subcategory3": "retry_decorator_sync"
   },
   {
     "name": "redis_async_cache_decorator",
@@ -1929,7 +2477,11 @@
     "examples": "wpipe_steps/database/redis/cache/async_cache_decorator/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/cache/async_cache_decorator/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.cache.async_cache_decorator import RedisAsyncCacheDecorator"
+    "how_to_use": "from wpipe_steps.database.redis.cache.async_cache_decorator import RedisAsyncCacheDecorator",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "cache",
+    "subcategory3": "async_cache_decorator"
   },
   {
     "name": "update_hash_sync",
@@ -1943,7 +2495,11 @@
     "examples": "wpipe_steps/database/redis/hash/update_hash_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/hash/update_hash_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.hash.update_hash_sync import UpdateHashContext"
+    "how_to_use": "from wpipe_steps.database.redis.hash.update_hash_sync import UpdateHashContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "hash",
+    "subcategory3": "update_hash_sync"
   },
   {
     "name": "create_hash_sync",
@@ -1957,7 +2513,11 @@
     "examples": "wpipe_steps/database/redis/hash/create_hash_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/hash/create_hash_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.hash.create_hash_sync import CreateHashContext"
+    "how_to_use": "from wpipe_steps.database.redis.hash.create_hash_sync import CreateHashContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "hash",
+    "subcategory3": "create_hash_sync"
   },
   {
     "name": "read_hash_sync",
@@ -1971,7 +2531,11 @@
     "examples": "wpipe_steps/database/redis/hash/read_hash_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/hash/read_hash_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.hash.read_hash_sync import ReadHashContext"
+    "how_to_use": "from wpipe_steps.database.redis.hash.read_hash_sync import ReadHashContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "hash",
+    "subcategory3": "read_hash_sync"
   },
   {
     "name": "read_hash_async",
@@ -1985,7 +2549,11 @@
     "examples": "wpipe_steps/database/redis/hash/read_hash_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/hash/read_hash_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.hash.read_hash_async import ReadHashContext"
+    "how_to_use": "from wpipe_steps.database.redis.hash.read_hash_async import ReadHashContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "hash",
+    "subcategory3": "read_hash_async"
   },
   {
     "name": "get_ttl_sync",
@@ -1999,7 +2567,11 @@
     "examples": "wpipe_steps/database/redis/hash/get_ttl_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/hash/get_ttl_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.hash.get_ttl_sync import HashTtlContext"
+    "how_to_use": "from wpipe_steps.database.redis.hash.get_ttl_sync import HashTtlContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "hash",
+    "subcategory3": "get_ttl_sync"
   },
   {
     "name": "get_ttl_async",
@@ -2013,7 +2585,11 @@
     "examples": "wpipe_steps/database/redis/hash/get_ttl_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/hash/get_ttl_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.hash.get_ttl_async import HashTtlContext"
+    "how_to_use": "from wpipe_steps.database.redis.hash.get_ttl_async import HashTtlContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "hash",
+    "subcategory3": "get_ttl_async"
   },
   {
     "name": "read_all_hash_async",
@@ -2027,7 +2603,11 @@
     "examples": "wpipe_steps/database/redis/hash/read_all_hash_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/hash/read_all_hash_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.hash.read_all_hash_async import ReadAllHashContext"
+    "how_to_use": "from wpipe_steps.database.redis.hash.read_all_hash_async import ReadAllHashContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "hash",
+    "subcategory3": "read_all_hash_async"
   },
   {
     "name": "read_all_hash_sync",
@@ -2041,7 +2621,11 @@
     "examples": "wpipe_steps/database/redis/hash/read_all_hash_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/hash/read_all_hash_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.hash.read_all_hash_sync import ReadAllHashContext"
+    "how_to_use": "from wpipe_steps.database.redis.hash.read_all_hash_sync import ReadAllHashContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "hash",
+    "subcategory3": "read_all_hash_sync"
   },
   {
     "name": "extend_ttl_async",
@@ -2055,7 +2639,11 @@
     "examples": "wpipe_steps/database/redis/hash/extend_ttl_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/hash/extend_ttl_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.hash.extend_ttl_async import HashExtendTtlContext"
+    "how_to_use": "from wpipe_steps.database.redis.hash.extend_ttl_async import HashExtendTtlContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "hash",
+    "subcategory3": "extend_ttl_async"
   },
   {
     "name": "update_hash_async",
@@ -2069,7 +2657,11 @@
     "examples": "wpipe_steps/database/redis/hash/update_hash_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/hash/update_hash_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.hash.update_hash_async import UpdateHashContext"
+    "how_to_use": "from wpipe_steps.database.redis.hash.update_hash_async import UpdateHashContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "hash",
+    "subcategory3": "update_hash_async"
   },
   {
     "name": "extend_ttl_sync",
@@ -2083,7 +2675,11 @@
     "examples": "wpipe_steps/database/redis/hash/extend_ttl_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/hash/extend_ttl_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.hash.extend_ttl_sync import HashExtendTtlContext"
+    "how_to_use": "from wpipe_steps.database.redis.hash.extend_ttl_sync import HashExtendTtlContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "hash",
+    "subcategory3": "extend_ttl_sync"
   },
   {
     "name": "create_hash_async",
@@ -2097,7 +2693,11 @@
     "examples": "wpipe_steps/database/redis/hash/create_hash_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/hash/create_hash_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.hash.create_hash_async import CreateHashContext"
+    "how_to_use": "from wpipe_steps.database.redis.hash.create_hash_async import CreateHashContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "hash",
+    "subcategory3": "create_hash_async"
   },
   {
     "name": "delete_hash_field_async",
@@ -2111,7 +2711,11 @@
     "examples": "wpipe_steps/database/redis/hash/delete_hash_field_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/hash/delete_hash_field_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.hash.delete_hash_field_async import DeleteHashFieldContext"
+    "how_to_use": "from wpipe_steps.database.redis.hash.delete_hash_field_async import DeleteHashFieldContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "hash",
+    "subcategory3": "delete_hash_field_async"
   },
   {
     "name": "delete_hash_field_sync",
@@ -2125,7 +2729,11 @@
     "examples": "wpipe_steps/database/redis/hash/delete_hash_field_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/hash/delete_hash_field_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.hash.delete_hash_field_sync import DeleteHashFieldContext"
+    "how_to_use": "from wpipe_steps.database.redis.hash.delete_hash_field_sync import DeleteHashFieldContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "hash",
+    "subcategory3": "delete_hash_field_sync"
   },
   {
     "name": "count_sync",
@@ -2139,7 +2747,11 @@
     "examples": "wpipe_steps/database/redis/hyperloglog/count_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/hyperloglog/count_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.hyperloglog.count_sync import HyperLogLogCountContext"
+    "how_to_use": "from wpipe_steps.database.redis.hyperloglog.count_sync import HyperLogLogCountContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "hyperloglog",
+    "subcategory3": "count_sync"
   },
   {
     "name": "count_async",
@@ -2153,7 +2765,11 @@
     "examples": "wpipe_steps/database/redis/hyperloglog/count_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/hyperloglog/count_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.hyperloglog.count_async import HyperLogLogCountContext"
+    "how_to_use": "from wpipe_steps.database.redis.hyperloglog.count_async import HyperLogLogCountContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "hyperloglog",
+    "subcategory3": "count_async"
   },
   {
     "name": "add_async",
@@ -2167,7 +2783,11 @@
     "examples": "wpipe_steps/database/redis/hyperloglog/add_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/hyperloglog/add_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.hyperloglog.add_async import HyperLogLogAddContext"
+    "how_to_use": "from wpipe_steps.database.redis.hyperloglog.add_async import HyperLogLogAddContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "hyperloglog",
+    "subcategory3": "add_async"
   },
   {
     "name": "add_sync",
@@ -2181,7 +2801,11 @@
     "examples": "wpipe_steps/database/redis/hyperloglog/add_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/hyperloglog/add_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.hyperloglog.add_sync import HyperLogLogAddContext"
+    "how_to_use": "from wpipe_steps.database.redis.hyperloglog.add_sync import HyperLogLogAddContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "hyperloglog",
+    "subcategory3": "add_sync"
   },
   {
     "name": "publish_async",
@@ -2195,7 +2819,11 @@
     "examples": "wpipe_steps/database/redis/queue/publish_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/queue/publish_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.queue.publish_async import QueuePublishContext"
+    "how_to_use": "from wpipe_steps.database.redis.queue.publish_async import QueuePublishContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "queue",
+    "subcategory3": "publish_async"
   },
   {
     "name": "on_message_async",
@@ -2209,7 +2837,11 @@
     "examples": "wpipe_steps/database/redis/queue/on_message_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/queue/on_message_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.queue.on_message_async import QueueOnMessageContext"
+    "how_to_use": "from wpipe_steps.database.redis.queue.on_message_async import QueueOnMessageContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "queue",
+    "subcategory3": "on_message_async"
   },
   {
     "name": "get_queue_length_sync",
@@ -2223,7 +2855,11 @@
     "examples": "wpipe_steps/database/redis/queue/get_queue_length_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/queue/get_queue_length_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.queue.get_queue_length_sync import QueueLengthContext"
+    "how_to_use": "from wpipe_steps.database.redis.queue.get_queue_length_sync import QueueLengthContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "queue",
+    "subcategory3": "get_queue_length_sync"
   },
   {
     "name": "on_message_sync",
@@ -2237,7 +2873,11 @@
     "examples": "wpipe_steps/database/redis/queue/on_message_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/queue/on_message_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.queue.on_message_sync import QueueOnMessageContext"
+    "how_to_use": "from wpipe_steps.database.redis.queue.on_message_sync import QueueOnMessageContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "queue",
+    "subcategory3": "on_message_sync"
   },
   {
     "name": "get_queue_length_async",
@@ -2251,7 +2891,11 @@
     "examples": "wpipe_steps/database/redis/queue/get_queue_length_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/queue/get_queue_length_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.queue.get_queue_length_async import QueueLengthContext"
+    "how_to_use": "from wpipe_steps.database.redis.queue.get_queue_length_async import QueueLengthContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "queue",
+    "subcategory3": "get_queue_length_async"
   },
   {
     "name": "publish_sync",
@@ -2265,7 +2909,11 @@
     "examples": "wpipe_steps/database/redis/queue/publish_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/queue/publish_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.queue.publish_sync import QueuePublishContext"
+    "how_to_use": "from wpipe_steps.database.redis.queue.publish_sync import QueuePublishContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "queue",
+    "subcategory3": "publish_sync"
   },
   {
     "name": "add_to_sorted_set_async",
@@ -2279,7 +2927,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/add_to_sorted_set_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/add_to_sorted_set_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.add_to_sorted_set_async import AddToSortedSetContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.add_to_sorted_set_async import AddToSortedSetContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "add_to_sorted_set_async"
   },
   {
     "name": "get_score_async",
@@ -2293,7 +2945,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/get_score_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/get_score_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_score_async import GetScoreContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_score_async import GetScoreContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "get_score_async"
   },
   {
     "name": "remove_from_sorted_set_async",
@@ -2307,7 +2963,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/remove_from_sorted_set_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/remove_from_sorted_set_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.remove_from_sorted_set_async import RemoveFromSortedSetContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.remove_from_sorted_set_async import RemoveFromSortedSetContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "remove_from_sorted_set_async"
   },
   {
     "name": "get_rank_async",
@@ -2321,7 +2981,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/get_rank_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/get_rank_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_rank_async import GetRankContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_rank_async import GetRankContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "get_rank_async"
   },
   {
     "name": "add_to_sorted_set_sync",
@@ -2335,7 +2999,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/add_to_sorted_set_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/add_to_sorted_set_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.add_to_sorted_set_sync import AddToSortedSetContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.add_to_sorted_set_sync import AddToSortedSetContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "add_to_sorted_set_sync"
   },
   {
     "name": "delete_sorted_set_sync",
@@ -2349,7 +3017,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/delete_sorted_set_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/delete_sorted_set_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.delete_sorted_set_sync import DeleteSortedSetContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.delete_sorted_set_sync import DeleteSortedSetContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "delete_sorted_set_sync"
   },
   {
     "name": "get_sorted_set_reverse_sync",
@@ -2363,7 +3035,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/get_sorted_set_reverse_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/get_sorted_set_reverse_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_sorted_set_reverse_sync import GetSortedSetReverseContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_sorted_set_reverse_sync import GetSortedSetReverseContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "get_sorted_set_reverse_sync"
   },
   {
     "name": "get_rank_sync",
@@ -2377,7 +3053,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/get_rank_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/get_rank_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_rank_sync import GetRankContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_rank_sync import GetRankContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "get_rank_sync"
   },
   {
     "name": "get_sorted_set_async",
@@ -2391,7 +3071,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/get_sorted_set_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/get_sorted_set_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_sorted_set_async import GetSortedSetContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_sorted_set_async import GetSortedSetContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "get_sorted_set_async"
   },
   {
     "name": "get_ttl_sync",
@@ -2405,7 +3089,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/get_ttl_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/get_ttl_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_ttl_sync import GetTtlContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_ttl_sync import GetTtlContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "get_ttl_sync"
   },
   {
     "name": "get_ttl_async",
@@ -2419,7 +3107,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/get_ttl_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/get_ttl_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_ttl_async import GetTtlContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_ttl_async import GetTtlContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "get_ttl_async"
   },
   {
     "name": "delete_sorted_set_async",
@@ -2433,7 +3125,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/delete_sorted_set_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/delete_sorted_set_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.delete_sorted_set_async import DeleteSortedSetContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.delete_sorted_set_async import DeleteSortedSetContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "delete_sorted_set_async"
   },
   {
     "name": "get_sorted_set_reverse_async",
@@ -2447,7 +3143,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/get_sorted_set_reverse_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/get_sorted_set_reverse_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_sorted_set_reverse_async import GetSortedSetReverseContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_sorted_set_reverse_async import GetSortedSetReverseContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "get_sorted_set_reverse_async"
   },
   {
     "name": "get_sorted_set_sync",
@@ -2461,7 +3161,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/get_sorted_set_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/get_sorted_set_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_sorted_set_sync import GetSortedSetContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_sorted_set_sync import GetSortedSetContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "get_sorted_set_sync"
   },
   {
     "name": "increment_score_async",
@@ -2475,7 +3179,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/increment_score_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/increment_score_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.increment_score_async import IncrementScoreContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.increment_score_async import IncrementScoreContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "increment_score_async"
   },
   {
     "name": "set_ttl_async",
@@ -2489,7 +3197,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/set_ttl_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/set_ttl_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.set_ttl_async import SetTtlSortedSetContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.set_ttl_async import SetTtlSortedSetContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "set_ttl_async"
   },
   {
     "name": "get_sorted_set_by_score_sync",
@@ -2503,7 +3215,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/get_sorted_set_by_score_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/get_sorted_set_by_score_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_sorted_set_by_score_sync import GetSortedSetByScoreContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_sorted_set_by_score_sync import GetSortedSetByScoreContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "get_sorted_set_by_score_sync"
   },
   {
     "name": "set_ttl_sync",
@@ -2517,7 +3233,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/set_ttl_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/set_ttl_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.set_ttl_sync import SetTtlSortedSetContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.set_ttl_sync import SetTtlSortedSetContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "set_ttl_sync"
   },
   {
     "name": "get_sorted_set_by_score_async",
@@ -2531,7 +3251,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/get_sorted_set_by_score_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/get_sorted_set_by_score_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_sorted_set_by_score_async import GetSortedSetByScoreContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_sorted_set_by_score_async import GetSortedSetByScoreContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "get_sorted_set_by_score_async"
   },
   {
     "name": "get_score_sync",
@@ -2545,7 +3269,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/get_score_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/get_score_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_score_sync import GetScoreContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.get_score_sync import GetScoreContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "get_score_sync"
   },
   {
     "name": "remove_from_sorted_set_sync",
@@ -2559,7 +3287,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/remove_from_sorted_set_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/remove_from_sorted_set_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.remove_from_sorted_set_sync import RemoveFromSortedSetContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.remove_from_sorted_set_sync import RemoveFromSortedSetContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "remove_from_sorted_set_sync"
   },
   {
     "name": "increment_score_sync",
@@ -2573,7 +3305,11 @@
     "examples": "wpipe_steps/database/redis/sortsets/increment_score_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/sortsets/increment_score_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.sortsets.increment_score_sync import IncrementScoreContext"
+    "how_to_use": "from wpipe_steps.database.redis.sortsets.increment_score_sync import IncrementScoreContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "sortsets",
+    "subcategory3": "increment_score_sync"
   },
   {
     "name": "on_message_async",
@@ -2587,7 +3323,11 @@
     "examples": "wpipe_steps/database/redis/pubsub/on_message_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/pubsub/on_message_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.pubsub.on_message_async import OnMessageContext"
+    "how_to_use": "from wpipe_steps.database.redis.pubsub.on_message_async import OnMessageContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "pubsub",
+    "subcategory3": "on_message_async"
   },
   {
     "name": "publish_message_async",
@@ -2601,7 +3341,11 @@
     "examples": "wpipe_steps/database/redis/pubsub/publish_message_async/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/pubsub/publish_message_async/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.pubsub.publish_message_async import PublishMessageContext"
+    "how_to_use": "from wpipe_steps.database.redis.pubsub.publish_message_async import PublishMessageContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "pubsub",
+    "subcategory3": "publish_message_async"
   },
   {
     "name": "on_message_sync",
@@ -2615,7 +3359,11 @@
     "examples": "wpipe_steps/database/redis/pubsub/on_message_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/pubsub/on_message_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.pubsub.on_message_sync import OnMessageContext"
+    "how_to_use": "from wpipe_steps.database.redis.pubsub.on_message_sync import OnMessageContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "pubsub",
+    "subcategory3": "on_message_sync"
   },
   {
     "name": "publish_message_sync",
@@ -2629,7 +3377,11 @@
     "examples": "wpipe_steps/database/redis/pubsub/publish_message_sync/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/redis/pubsub/publish_message_sync/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.redis.pubsub.publish_message_sync import PublishMessageContext"
+    "how_to_use": "from wpipe_steps.database.redis.pubsub.publish_message_sync import PublishMessageContext",
+    "category": "database",
+    "subcategory1": "redis",
+    "subcategory2": "pubsub",
+    "subcategory3": "publish_message_sync"
   },
   {
     "name": "sqlite",
@@ -2643,7 +3395,11 @@
     "examples": "wpipe_steps/database/sqlite/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/sqlite/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.sqlite import SQLiteAuditStep"
+    "how_to_use": "from wpipe_steps.database.sqlite import SQLiteAuditStep",
+    "category": "database",
+    "subcategory1": "sqlite",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "cassandra",
@@ -2657,7 +3413,11 @@
     "examples": "wpipe_steps/database/cassandra/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/cassandra/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.cassandra import CassandraWriteStep"
+    "how_to_use": "from wpipe_steps.database.cassandra import CassandraWriteStep",
+    "category": "database",
+    "subcategory1": "cassandra",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "mongodb",
@@ -2671,7 +3431,11 @@
     "examples": "wpipe_steps/database/mongodb/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/mongodb/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.mongodb import MongoInsertStep"
+    "how_to_use": "from wpipe_steps.database.mongodb import MongoInsertStep",
+    "category": "database",
+    "subcategory1": "mongodb",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "mysql",
@@ -2685,7 +3449,11 @@
     "examples": "wpipe_steps/database/mysql/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/database/mysql/requirements.txt",
-    "how_to_use": "from wpipe_steps.database.mysql import MySQLQueryStep"
+    "how_to_use": "from wpipe_steps.database.mysql import MySQLQueryStep",
+    "category": "database",
+    "subcategory1": "mysql",
+    "subcategory2": "",
+    "subcategory3": ""
   },
   {
     "name": "read_yaml",
@@ -2699,6 +3467,10 @@
     "examples": "wpipe_steps/utils/read_yaml/examples/",
     "environment": "Compatible with Linux, Windows and macOS.",
     "requirements": "wpipe_steps/utils/read_yaml/requirements.txt",
-    "how_to_use": "from wpipe_steps.utils.read_yaml import InputContext"
+    "how_to_use": "from wpipe_steps.utils.read_yaml import InputContext",
+    "category": "utils",
+    "subcategory1": "read_yaml",
+    "subcategory2": "",
+    "subcategory3": ""
   }
 ]
