@@ -3,7 +3,7 @@ Example: HFNerStep
 Extract named entities from text.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFNerStep
+from wpipe_steps.ai import HFNerStep
 
 def main():
     pipeline = Pipeline(pipeline_name="ner_example")
