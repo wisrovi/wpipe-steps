@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.vision.ocr`
+Namespace: `wpipe_steps.ai.vision.ocr`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.vision.ocr import HFOcrStep
+from wpipe_steps.ai.vision.ocr import HFOcrStep
 ```
