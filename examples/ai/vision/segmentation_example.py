@@ -3,7 +3,7 @@ Example: HFImageSegmentationStep
 Segment images (identify objects at pixel level).
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFImageSegmentationStep
+from wpipe_steps.ai import HFImageSegmentationStep
 
 def main():
     pipeline = Pipeline(pipeline_name="segmentation_example")
