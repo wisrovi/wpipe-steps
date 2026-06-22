@@ -3,7 +3,7 @@ Example: HFSpeakerDiarizationStep
 Identify speakers in audio (who spoke when).
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFSpeakerDiarizationStep
+from wpipe_steps.ai import HFSpeakerDiarizationStep
 
 def main():
     pipeline = Pipeline(pipeline_name="diarization_example")
