@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.text.reranking`
+Namespace: `wpipe_steps.ai.text.reranking`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.text.reranking import HFRerankingStep
+from wpipe_steps.ai.text.reranking import HFRerankingStep
 ```
