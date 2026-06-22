@@ -3,7 +3,7 @@ Example: HFRerankingStep
 Rerank documents based on relevance to a query.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFRerankingStep
+from wpipe_steps.ai import HFRerankingStep
 
 def main():
     pipeline = Pipeline(pipeline_name="reranking_example")
