@@ -3,7 +3,7 @@ Example: HFQuestionAnsweringStep
 Answer questions based on context.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFQuestionAnsweringStep
+from wpipe_steps.ai import HFQuestionAnsweringStep
 
 def main():
     pipeline = Pipeline(pipeline_name="qa_example")
