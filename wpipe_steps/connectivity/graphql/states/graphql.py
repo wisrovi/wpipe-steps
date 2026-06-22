@@ -1,6 +1,7 @@
 """
 GraphQL Query Step - Execute GraphQL queries and mutations.
 """
+from pydantic import BaseModel
 
 import requests
 from typing import Any, Dict, Optional
