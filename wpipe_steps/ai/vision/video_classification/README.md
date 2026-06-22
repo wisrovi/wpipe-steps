@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.vision.video_classification`
+Namespace: `wpipe_steps.ai.vision.video_classification`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.vision.video_classification import HFVideoClassificationStep
+from wpipe_steps.ai.vision.video_classification import HFVideoClassificationStep
 ```
