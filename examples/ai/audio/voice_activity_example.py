@@ -3,7 +3,7 @@ Example: HFVoiceActivityDetectionStep
 Detect voice activity in audio.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFVoiceActivityDetectionStep
+from wpipe_steps.ai import HFVoiceActivityDetectionStep
 
 def main():
     pipeline = Pipeline(pipeline_name="vad_example")
