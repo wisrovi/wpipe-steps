@@ -3,7 +3,7 @@ Example: HFDepthEstimationStep
 Estimate depth in images (3D from 2D).
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFDepthEstimationStep
+from wpipe_steps.ai import HFDepthEstimationStep
 
 def main():
     pipeline = Pipeline(pipeline_name="depth_estimation_example")
