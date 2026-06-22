@@ -3,8 +3,6 @@ SFTP Transfer Step - Secure file transfer using paramiko.
 """
 from pydantic import BaseModel
 
-import os
-import paramiko
 from typing import Any, Dict, Optional, Literal
 from wpipe import step, to_obj
 from wpipe_steps.core.base import BaseStep
@@ -55,6 +53,7 @@ class SftpTransferStep(BaseStep):
         Returns:
             Dictionary with operation result.
         """
+        paramiko = self.ensure_dependency("paramiko")
         transport = paramiko.Transport((data.host, data.port))
         try:
             if data.key_filename:
