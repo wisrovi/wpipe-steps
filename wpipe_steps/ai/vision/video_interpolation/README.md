@@ -13,9 +13,9 @@ This step follows the WPipe professional package structure:
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
-Namespace: `wpipe_steps.huggingface.vision.video_interpolation`
+Namespace: `wpipe_steps.ai.vision.video_interpolation`
 
 ## 🚀 How to Use
 ```python
-from wpipe_steps.huggingface.vision.video_interpolation import HFVideoFrameInterpolationStep
+from wpipe_steps.ai.vision.video_interpolation import HFVideoFrameInterpolationStep
 ```
