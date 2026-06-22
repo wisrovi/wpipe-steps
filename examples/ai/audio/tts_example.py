@@ -3,7 +3,7 @@ Example: HFTextToSpeechStep
 Convert text to speech.
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFTextToSpeechStep
+from wpipe_steps.ai import HFTextToSpeechStep
 
 def main():
     pipeline = Pipeline(pipeline_name="tts_example")
