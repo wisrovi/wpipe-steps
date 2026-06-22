@@ -3,7 +3,7 @@ Example: HFAnyToAnyStep
 Multimodal any-to-any conversion (text, image, audio).
 """
 from wpipe import Pipeline
-from wpipe_steps.huggingface import HFAnyToAnyStep
+from wpipe_steps.ai import HFAnyToAnyStep
 
 def main():
     pipeline = Pipeline(pipeline_name="any2any_example")
