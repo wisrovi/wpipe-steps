@@ -274,8 +274,84 @@ class TelegramSendFileStep(BaseTelegramStep):
             raise RuntimeError(f"Telegram File Notification failed: {str(e)}")
 
 
-# Alias for backward compatibility
-TelegramNotifyStep = TelegramSendTextStep
+@step(
+    name="telegram_notify",
+    version="v1.0",
+    description="Send messages, images, or files via Telegram dynamically using Wtelegram",
+    tags=["communication", "telegram", "dispatcher", "sync"]
+)
+class TelegramNotifyStep(BaseTelegramStep):
+    """
+    Unified step for sending text, images, or files via Telegram dynamically using Wtelegram.
+    Reads `data['telegram']['type']` ('text', 'image', 'file') to dispatch appropriately.
+    """
+
+    def __init__(
+        self,
+        bot_token: Optional[str] = None,
+        chat_id: Optional[str] = None,
+        auth_instance: Optional[Any] = None,
+        db_path: str = "wauth_telegram.db",
+        message: Optional[str] = None,
+        message_key: Optional[str] = None,
+        chat_id_key: Optional[str] = None,
+        response_key: str = "telegram_status",
+        name: Optional[str] = None,
+        version: str = "v1.0"
+    ):
+        super().__init__(
+            bot_token=bot_token,
+            chat_id=chat_id,
+            auth_instance=auth_instance,
+            db_path=db_path,
+            chat_id_key=chat_id_key,
+            response_key=response_key,
+            name=name,
+            version=version
+        )
+        self.message = message
+        self.message_key = message_key
+
+    @to_obj
+    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        telegram_data = data.get("telegram") if isinstance(data.get("telegram"), dict) else {}
+        msg_type = (telegram_data.get("type") or "text").lower()
+
+        if msg_type in ("image", "photo"):
+            step = TelegramSendImageStep(
+                bot_token=self.bot_token,
+                chat_id=self.chat_id,
+                auth_instance=self.auth_instance,
+                db_path=self.db_path,
+                chat_id_key=self.chat_id_key,
+                response_key=self.response_key,
+            )
+            return step(data)
+
+        elif msg_type in ("file", "document"):
+            step = TelegramSendFileStep(
+                bot_token=self.bot_token,
+                chat_id=self.chat_id,
+                auth_instance=self.auth_instance,
+                db_path=self.db_path,
+                chat_id_key=self.chat_id_key,
+                response_key=self.response_key,
+            )
+            return step(data)
+
+        else:
+            step = TelegramSendTextStep(
+                bot_token=self.bot_token,
+                chat_id=self.chat_id,
+                auth_instance=self.auth_instance,
+                db_path=self.db_path,
+                message=self.message,
+                message_key=self.message_key,
+                chat_id_key=self.chat_id_key,
+                response_key=self.response_key,
+            )
+            return step(data)
+
 
 
 
