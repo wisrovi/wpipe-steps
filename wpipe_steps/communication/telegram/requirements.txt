@@ -1,1 +1,4 @@
 requests>=2.31.0
+wconnect>=0.1.0
+wauth>=0.1.0
+
