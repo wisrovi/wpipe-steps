@@ -2,6 +2,7 @@ from typing import Any, Dict, Optional
 from wpipe import step, to_obj
 from wpipe_steps.core.base import BaseStep
 from wconnect import Wtelegram
+from wauth import WAuth
 
 
 class BaseTelegramStep(BaseStep):
@@ -14,6 +15,7 @@ class BaseTelegramStep(BaseStep):
         bot_token: Optional[str] = None,
         chat_id: Optional[str] = None,
         auth_instance: Optional[Any] = None,
+        db_path: str = "wauth_telegram.db",
         chat_id_key: Optional[str] = None,
         response_key: str = "telegram_status",
         name: Optional[str] = None,
@@ -22,6 +24,7 @@ class BaseTelegramStep(BaseStep):
         super().__init__(name, version)
         self.bot_token = bot_token
         self.chat_id = chat_id
+        self.db_path = db_path
         self.auth_instance = auth_instance
         self.chat_id_key = chat_id_key
         self.response_key = response_key
@@ -46,11 +49,16 @@ class BaseTelegramStep(BaseStep):
         return self.chat_id or extracted or data.get("chat_id")
 
     def _get_client(self, chat_id: Optional[str] = None) -> Wtelegram:
+        auth = self.auth_instance
+        if auth is None and not self.bot_token:
+            auth = WAuth(db_path=self.db_path)
+
         return Wtelegram(
             bot_token=self.bot_token,
             chat_id=chat_id or self.chat_id,
-            auth_instance=self.auth_instance
+            auth_instance=auth
         )
+
 
 
 @step(
@@ -69,6 +77,7 @@ class TelegramSendTextStep(BaseTelegramStep):
         bot_token: Optional[str] = None,
         chat_id: Optional[str] = None,
         auth_instance: Optional[Any] = None,
+        db_path: str = "wauth_telegram.db",
         message: Optional[str] = None,
         message_key: Optional[str] = None,
         chat_id_key: Optional[str] = None,
@@ -80,6 +89,7 @@ class TelegramSendTextStep(BaseTelegramStep):
             bot_token=bot_token,
             chat_id=chat_id,
             auth_instance=auth_instance,
+            db_path=db_path,
             chat_id_key=chat_id_key,
             response_key=response_key,
             name=name,
@@ -129,6 +139,7 @@ class TelegramSendImageStep(BaseTelegramStep):
         bot_token: Optional[str] = None,
         chat_id: Optional[str] = None,
         auth_instance: Optional[Any] = None,
+        db_path: str = "wauth_telegram.db",
         image_path: Optional[str] = None,
         image_path_key: Optional[str] = None,
         caption: Optional[str] = None,
@@ -142,6 +153,7 @@ class TelegramSendImageStep(BaseTelegramStep):
             bot_token=bot_token,
             chat_id=chat_id,
             auth_instance=auth_instance,
+            db_path=db_path,
             chat_id_key=chat_id_key,
             response_key=response_key,
             name=name,
@@ -202,6 +214,7 @@ class TelegramSendFileStep(BaseTelegramStep):
         bot_token: Optional[str] = None,
         chat_id: Optional[str] = None,
         auth_instance: Optional[Any] = None,
+        db_path: str = "wauth_telegram.db",
         file_path: Optional[str] = None,
         file_path_key: Optional[str] = None,
         caption: Optional[str] = None,
@@ -215,6 +228,7 @@ class TelegramSendFileStep(BaseTelegramStep):
             bot_token=bot_token,
             chat_id=chat_id,
             auth_instance=auth_instance,
+            db_path=db_path,
             chat_id_key=chat_id_key,
             response_key=response_key,
             name=name,
@@ -224,6 +238,7 @@ class TelegramSendFileStep(BaseTelegramStep):
         self.file_path_key = file_path_key
         self.caption = caption
         self.caption_key = caption_key
+
 
     @to_obj
     def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
