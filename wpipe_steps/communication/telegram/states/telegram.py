@@ -4,6 +4,38 @@ from wpipe_steps.core.base import BaseStep
 from wconnect import Wtelegram
 
 
+class BaseTelegramStep(BaseStep):
+    """
+    Base class for Telegram steps handling client initialization and authentication.
+    """
+
+    def __init__(
+        self,
+        bot_token: Optional[str] = None,
+        chat_id: Optional[str] = None,
+        auth_instance: Optional[Any] = None,
+        chat_id_key: Optional[str] = None,
+        response_key: str = "telegram_status",
+        name: Optional[str] = None,
+        version: str = "v1.0"
+    ):
+        super().__init__(name, version)
+        self.bot_token = bot_token
+        self.chat_id = chat_id
+        self.auth_instance = auth_instance
+        self.chat_id_key = chat_id_key
+        self.response_key = response_key
+
+    def _get_chat_id(self, data: Dict[str, Any]) -> Optional[str]:
+        return self.chat_id or (data.get(self.chat_id_key) if self.chat_id_key else self.chat_id)
+
+    def _get_client(self, chat_id: Optional[str] = None) -> Wtelegram:
+        return Wtelegram(
+            bot_token=self.bot_token,
+            chat_id=chat_id or self.chat_id,
+            auth_instance=self.auth_instance
+        )
+
 
 @step(
     name="telegram_send_text",
@@ -11,7 +43,7 @@ from wconnect import Wtelegram
     description="Send text messages via Telegram using Wtelegram",
     tags=["communication", "telegram", "text", "sync"]
 )
-class TelegramSendTextStep(BaseStep):
+class TelegramSendTextStep(BaseTelegramStep):
     """
     Step for sending text messages via Telegram using Wtelegram.
     """
@@ -28,23 +60,26 @@ class TelegramSendTextStep(BaseStep):
         name: Optional[str] = None,
         version: str = "v1.0"
     ):
-        super().__init__(name, version)
-        self.bot_token = bot_token
-        self.chat_id = chat_id
-        self.auth_instance = auth_instance
+        super().__init__(
+            bot_token=bot_token,
+            chat_id=chat_id,
+            auth_instance=auth_instance,
+            chat_id_key=chat_id_key,
+            response_key=response_key,
+            name=name,
+            version=version
+        )
         self.message = message
         self.message_key = message_key
-        self.chat_id_key = chat_id_key
-        self.response_key = response_key
 
     @to_obj
     def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
         try:
-            chat_id = self.chat_id or data.get(self.chat_id_key) if self.chat_id_key else self.chat_id
+            target_chat_id = self._get_chat_id(data)
             text = self.message or (data.get(self.message_key) if self.message_key else None) or "WPipe Notification"
 
-            with Wtelegram(bot_token=self.bot_token, chat_id=chat_id, auth_instance=self.auth_instance) as sender:
-                response = sender.send_text(text=text, chat_id=chat_id)
+            with self._get_client(target_chat_id) as sender:
+                response = sender.send_text(text=text, chat_id=target_chat_id)
 
             data[self.response_key] = {
                 "success": True,
@@ -64,7 +99,7 @@ class TelegramSendTextStep(BaseStep):
     description="Send image/photo via Telegram using Wtelegram",
     tags=["communication", "telegram", "image", "sync"]
 )
-class TelegramSendImageStep(BaseStep):
+class TelegramSendImageStep(BaseTelegramStep):
     """
     Step for sending photos via Telegram using Wtelegram.
     """
@@ -83,29 +118,32 @@ class TelegramSendImageStep(BaseStep):
         name: Optional[str] = None,
         version: str = "v1.0"
     ):
-        super().__init__(name, version)
-        self.bot_token = bot_token
-        self.chat_id = chat_id
-        self.auth_instance = auth_instance
+        super().__init__(
+            bot_token=bot_token,
+            chat_id=chat_id,
+            auth_instance=auth_instance,
+            chat_id_key=chat_id_key,
+            response_key=response_key,
+            name=name,
+            version=version
+        )
         self.image_path = image_path
         self.image_path_key = image_path_key
         self.caption = caption
         self.caption_key = caption_key
-        self.chat_id_key = chat_id_key
-        self.response_key = response_key
 
     @to_obj
     def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
         try:
-            chat_id = self.chat_id or data.get(self.chat_id_key) if self.chat_id_key else self.chat_id
+            target_chat_id = self._get_chat_id(data)
             path = self.image_path or (data.get(self.image_path_key) if self.image_path_key else None)
             if not path:
                 raise ValueError("Image path is required either via image_path or data[image_path_key]")
 
             text = self.caption or (data.get(self.caption_key) if self.caption_key else None)
 
-            with Wtelegram(bot_token=self.bot_token, chat_id=chat_id, auth_instance=self.auth_instance) as sender:
-                response = sender.send_photo(photo_path=path, caption=text, chat_id=chat_id)
+            with self._get_client(target_chat_id) as sender:
+                response = sender.send_photo(photo_path=path, caption=text, chat_id=target_chat_id)
 
             data[self.response_key] = {
                 "success": True,
@@ -126,7 +164,7 @@ class TelegramSendImageStep(BaseStep):
     description="Send generic documents/files via Telegram using Wtelegram",
     tags=["communication", "telegram", "file", "sync"]
 )
-class TelegramSendFileStep(BaseStep):
+class TelegramSendFileStep(BaseTelegramStep):
     """
     Step for sending generic files/documents via Telegram using Wtelegram.
     """
@@ -145,29 +183,32 @@ class TelegramSendFileStep(BaseStep):
         name: Optional[str] = None,
         version: str = "v1.0"
     ):
-        super().__init__(name, version)
-        self.bot_token = bot_token
-        self.chat_id = chat_id
-        self.auth_instance = auth_instance
+        super().__init__(
+            bot_token=bot_token,
+            chat_id=chat_id,
+            auth_instance=auth_instance,
+            chat_id_key=chat_id_key,
+            response_key=response_key,
+            name=name,
+            version=version
+        )
         self.file_path = file_path
         self.file_path_key = file_path_key
         self.caption = caption
         self.caption_key = caption_key
-        self.chat_id_key = chat_id_key
-        self.response_key = response_key
 
     @to_obj
     def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
         try:
-            chat_id = self.chat_id or data.get(self.chat_id_key) if self.chat_id_key else self.chat_id
+            target_chat_id = self._get_chat_id(data)
             path = self.file_path or (data.get(self.file_path_key) if self.file_path_key else None)
             if not path:
                 raise ValueError("File path is required either via file_path or data[file_path_key]")
 
             text = self.caption or (data.get(self.caption_key) if self.caption_key else None)
 
-            with Wtelegram(bot_token=self.bot_token, chat_id=chat_id, auth_instance=self.auth_instance) as sender:
-                response = sender.send_document(document_path=path, caption=text, chat_id=chat_id)
+            with self._get_client(target_chat_id) as sender:
+                response = sender.send_document(document_path=path, caption=text, chat_id=target_chat_id)
 
             data[self.response_key] = {
                 "success": True,
@@ -184,4 +225,5 @@ class TelegramSendFileStep(BaseStep):
 
 # Alias for backward compatibility
 TelegramNotifyStep = TelegramSendTextStep
+
 
