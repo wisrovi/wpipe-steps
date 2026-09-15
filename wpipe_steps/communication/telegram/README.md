@@ -31,7 +31,7 @@ Sends text messages via Telegram.
 ```python
 from wpipe_steps.communication.telegram import TelegramSendTextStep
 
-step = TelegramSendTextStep.as_step(
+step = TelegramSendTextStep(
     name="Send_Text",
     bot_token="YOUR_BOT_TOKEN",
     chat_id="YOUR_CHAT_ID",
@@ -45,7 +45,7 @@ Sends photos/images via Telegram.
 ```python
 from wpipe_steps.communication.telegram import TelegramSendImageStep
 
-step = TelegramSendImageStep.as_step(
+step = TelegramSendImageStep(
     name="Send_Image",
     bot_token="YOUR_BOT_TOKEN",
     chat_id="YOUR_CHAT_ID",
@@ -60,7 +60,7 @@ Sends documents or general files via Telegram.
 ```python
 from wpipe_steps.communication.telegram import TelegramSendFileStep
 
-step = TelegramSendFileStep.as_step(
+step = TelegramSendFileStep(
     name="Send_File",
     bot_token="YOUR_BOT_TOKEN",
     chat_id="YOUR_CHAT_ID",
@@ -68,4 +68,5 @@ step = TelegramSendFileStep.as_step(
     caption="Monthly report PDF",
 )
 ```
+
 
