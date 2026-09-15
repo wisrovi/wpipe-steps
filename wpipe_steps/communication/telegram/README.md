@@ -25,7 +25,19 @@ Namespace: `wpipe_steps.communication.telegram`
 
 ## 🚀 Available Steps
 
-### 1. `TelegramSendTextStep` (Alias: `TelegramNotifyStep`)
+### 1. `TelegramNotifyStep` (Dynamic Dispatcher)
+Unified step that dynamically dispatches to text, image, or file sending logic based on `data['telegram']['type']` (`"text"`, `"image"`, `"file"`).
+
+```python
+from wpipe_steps.communication.telegram import TelegramNotifyStep
+
+step = TelegramNotifyStep(
+    name="Send_Telegram_Dynamic",
+    bot_token="YOUR_BOT_TOKEN",
+)
+```
+
+### 2. `TelegramSendTextStep`
 Sends text messages via Telegram.
 
 ```python
@@ -39,7 +51,7 @@ step = TelegramSendTextStep(
 )
 ```
 
-### 2. `TelegramSendImageStep`
+### 3. `TelegramSendImageStep`
 Sends photos/images via Telegram.
 
 ```python
@@ -54,7 +66,7 @@ step = TelegramSendImageStep(
 )
 ```
 
-### 3. `TelegramSendFileStep`
+### 4. `TelegramSendFileStep`
 Sends documents or general files via Telegram.
 
 ```python
@@ -68,5 +80,6 @@ step = TelegramSendFileStep(
     caption="Monthly report PDF",
 )
 ```
+
 
 
