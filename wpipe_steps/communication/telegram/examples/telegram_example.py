@@ -1,39 +1,56 @@
-import sys
-from pathlib import Path
-
-sys.path.append(str(Path(__file__).parent.parent.parent))
-
 from wpipe import Pipeline
-from wpipe_steps.communication import TelegramNotifyStep
+from wpipe_steps.communication import (
+    TelegramSendTextStep,
+    TelegramSendImageStep,
+    TelegramSendFileStep,
+)
+
 
 def print_result(data):
     """Step to print Telegram result."""
     status = data.get("telegram_status", {})
     if status.get("success"):
-        print(f"\n✅ Telegram Sent!")
-        print(f"Message: {status['message_sent']}")
+        print(f"✅ Telegram Action Succeeded: {status}")
     else:
-        print(f"\n❌ Telegram Failed: {status.get('error')}")
+        print(f"❌ Telegram Action Failed: {status.get('error')}")
     return data
+
 
 def main():
     pipeline = Pipeline(pipeline_name="Telegram_Demo", verbose=True)
 
-    # Replace with your actual bot token and chat_id
-    notify = TelegramNotifyStep.as_step(
-        name="Send_Telegram",
+    # Example 1: Text step
+    send_text = TelegramSendTextStep.as_step(
+        name="Send_Telegram_Text",
         bot_token="YOUR_BOT_TOKEN",
         chat_id="YOUR_CHAT_ID",
-        message="🚀 Pipeline completed successfully!"
+        message="🚀 Pipeline completed successfully!",
     )
 
-    pipeline.set_steps([
-        notify,
-        print_result
-    ])
+    # Example 2: Image step
+    send_image = TelegramSendImageStep.as_step(
+        name="Send_Telegram_Image",
+        bot_token="YOUR_BOT_TOKEN",
+        chat_id="YOUR_CHAT_ID",
+        image_path="/path/to/image.png",
+        caption="Pipeline chart result",
+    )
+
+    # Example 3: File step
+    send_file = TelegramSendFileStep.as_step(
+        name="Send_Telegram_File",
+        bot_token="YOUR_BOT_TOKEN",
+        chat_id="YOUR_CHAT_ID",
+        file_path="/path/to/document.pdf",
+        caption="Pipeline execution report",
+    )
+
+    pipeline.set_steps([send_text, print_result])
 
     print("🚀 Starting Telegram Demo Pipeline...")
     pipeline.run({})
 
+
 if __name__ == "__main__":
     main()
+
