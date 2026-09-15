@@ -1,27 +1,33 @@
 # 🧱 Telegram Steps (WPipe)
 
-Send text messages, images, and files via Telegram using `wconnect.wmessenger.Wtelegram`.
+Send text messages, images, and files via Telegram using `wconnect.wmessenger.Wtelegram` and `wauth`.
 
 ## 🛠️ Key Technologies & Dependencies
 
 - **Python 3.10+**
 - **[wconnect / wmessenger](https://pypi.org/project/wconnect/)**: Unified messaging engine (`Wtelegram`) for Telegram integration.
+- **[wauth](https://pypi.org/project/wauth/)**: Vault and token authentication management.
 - **WPipe Framework**: Base step class (`BaseStep`) and `@step` decorators.
 
 ## 📂 Structure
 
 This step follows the WPipe professional package structure:
 - `config/`: Configuration constants.
-- `examples/`: Code examples for text, image, and file steps.
+- `examples/`: Code examples (`send_text.py`, `send_image.py`, `send_file.py`, `send_auto.py`).
 - `exceptions/`: Custom step exceptions.
 - `schemas/`: Pydantic input/output schemas.
-- `states/`: Actual step execution logic (`TelegramSendTextStep`, `TelegramSendImageStep`, `TelegramSendFileStep`).
+- `states/`: Actual step execution logic (`TelegramNotifyStep`, `TelegramSendTextStep`, `TelegramSendImageStep`, `TelegramSendFileStep`).
 - `utils/`: Internal helper utilities.
 - `wrappers/`: Third-party library wrappers.
 
 ## ⚙️ Configuration
 
 Namespace: `wpipe_steps.communication.telegram`
+
+All steps inherit from `BaseTelegramStep` and accept:
+- `bot_token` (optional): Directly supply the Telegram Bot Token.
+- `auth_instance` (optional): Pre-configured `WAuth` instance.
+- `db_path` (optional, default `"wauth_telegram.db"`): SQLite database path for `WAuth` fallback.
 
 ## 🚀 Available Steps
 
@@ -34,6 +40,7 @@ from wpipe_steps.communication.telegram import TelegramNotifyStep
 step = TelegramNotifyStep(
     name="Send_Telegram_Dynamic",
     bot_token="YOUR_BOT_TOKEN",
+    db_path="wauth_telegram.db",
 )
 ```
 
@@ -80,6 +87,7 @@ step = TelegramSendFileStep(
     caption="Monthly report PDF",
 )
 ```
+
 
 
 
