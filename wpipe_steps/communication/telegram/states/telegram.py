@@ -29,24 +29,40 @@ class BaseTelegramStep(BaseStep):
         self.chat_id_key = chat_id_key
         self.response_key = response_key
 
-    def _extract_from_data(self, data: Dict[str, Any], key: Optional[str]) -> Any:
-        """Helper to extract a value from data, supporting dot notation for nested dicts."""
-        if not key or not data:
+    def _get_val(self, obj: Any, key: str, default: Any = None) -> Any:
+        """Helper to safely extract a key/attribute from a dict or object."""
+        if obj is None or not key:
+            return default
+        if isinstance(obj, dict):
+            return obj.get(key, default)
+        return getattr(obj, key, default)
+
+    def _extract_from_data(self, data: Any, key: Optional[str]) -> Any:
+        """Helper to extract a value from data, supporting dot notation for nested dicts/objects."""
+        if not key or data is None:
             return None
         parts = key.split(".")
         curr = data
         for part in parts:
-            if isinstance(curr, dict) and part in curr:
-                curr = curr[part]
-            else:
+            if curr is None:
                 return None
+            curr = self._get_val(curr, part)
         return curr
 
-    def _get_chat_id(self, data: Dict[str, Any]) -> Optional[str]:
+    def _get_chat_id(self, data: Any) -> Optional[str]:
         extracted = self._extract_from_data(data, self.chat_id_key) if self.chat_id_key else None
-        if not extracted and isinstance(data.get("telegram"), dict):
-            extracted = data["telegram"].get("chat_id")
-        return self.chat_id or extracted or data.get("chat_id")
+        telegram_data = self._get_val(data, "telegram")
+        if not extracted and telegram_data:
+            extracted = self._get_val(telegram_data, "chat_id")
+        return self.chat_id or extracted or self._get_val(data, "chat_id")
+
+    def _set_response(self, data: Any, val: Dict[str, Any]) -> Any:
+        """Helper to set response_key in dict or object."""
+        if isinstance(data, dict):
+            data[self.response_key] = val
+        else:
+            setattr(data, self.response_key, val)
+        return data
 
     def _get_client(self, chat_id: Optional[str] = None) -> Wtelegram:
         auth = self.auth_instance
@@ -54,11 +70,9 @@ class BaseTelegramStep(BaseStep):
             auth = WAuth(db_path=self.db_path)
 
         return Wtelegram(
-            bot_token=self.bot_token,
-            chat_id=chat_id or self.chat_id,
+            token=self.bot_token,
             auth_instance=auth
         )
-
 
 
 @step(
@@ -99,27 +113,27 @@ class TelegramSendTextStep(BaseTelegramStep):
         self.message_key = message_key
 
     @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def __call__(self, data: Any) -> Any:
         try:
             target_chat_id = self._get_chat_id(data)
             extracted_msg = self._extract_from_data(data, self.message_key) if self.message_key else None
-            if not extracted_msg and isinstance(data.get("telegram"), dict):
-                extracted_msg = data["telegram"].get("message")
+            telegram_data = self._get_val(data, "telegram")
+            if not extracted_msg and telegram_data:
+                extracted_msg = self._get_val(telegram_data, "message")
             
-            text = self.message or extracted_msg or data.get("message") or "WPipe Notification"
+            text = self.message or extracted_msg or self._get_val(data, "message") or "WPipe Notification"
 
             with self._get_client(target_chat_id) as sender:
-                response = sender.send_text(text=text, chat_id=target_chat_id)
+                response = sender.send(to=target_chat_id, message=text)
 
-            data[self.response_key] = {
-                "success": True,
+            return self._set_response(data, {
+                "success": bool(response),
                 "message_sent": text,
                 "response": str(response)
-            }
-            return data
+            })
 
         except Exception as e:
-            data[self.response_key] = {"success": False, "error": str(e)}
+            self._set_response(data, {"success": False, "error": str(e)})
             raise RuntimeError(f"Telegram Text Notification failed: {str(e)}")
 
 
@@ -165,36 +179,36 @@ class TelegramSendImageStep(BaseTelegramStep):
         self.caption_key = caption_key
 
     @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def __call__(self, data: Any) -> Any:
         try:
             target_chat_id = self._get_chat_id(data)
             extracted_path = self._extract_from_data(data, self.image_path_key) if self.image_path_key else None
-            if not extracted_path and isinstance(data.get("telegram"), dict):
-                extracted_path = data["telegram"].get("message") or data["telegram"].get("path") or data["telegram"].get("image_path")
+            telegram_data = self._get_val(data, "telegram")
+            if not extracted_path and telegram_data:
+                extracted_path = self._get_val(telegram_data, "message") or self._get_val(telegram_data, "path") or self._get_val(telegram_data, "image_path")
 
-            path = self.image_path or extracted_path or data.get("image_path")
+            path = self.image_path or extracted_path or self._get_val(data, "image_path")
             if not path:
                 raise ValueError("Image path is required either via image_path parameter or data dict")
 
             extracted_caption = self._extract_from_data(data, self.caption_key) if self.caption_key else None
-            if not extracted_caption and isinstance(data.get("telegram"), dict):
-                extracted_caption = data["telegram"].get("caption")
+            if not extracted_caption and telegram_data:
+                extracted_caption = self._get_val(telegram_data, "caption")
 
             text = self.caption or extracted_caption
 
             with self._get_client(target_chat_id) as sender:
-                response = sender.send_photo(photo_path=path, caption=text, chat_id=target_chat_id)
+                response = sender.send_photo(to=target_chat_id, photo=path, caption=text)
 
-            data[self.response_key] = {
-                "success": True,
+            return self._set_response(data, {
+                "success": bool(response),
                 "image_sent": path,
                 "caption": text,
                 "response": str(response)
-            }
-            return data
+            })
 
         except Exception as e:
-            data[self.response_key] = {"success": False, "error": str(e)}
+            self._set_response(data, {"success": False, "error": str(e)})
             raise RuntimeError(f"Telegram Image Notification failed: {str(e)}")
 
 
@@ -239,39 +253,39 @@ class TelegramSendFileStep(BaseTelegramStep):
         self.caption = caption
         self.caption_key = caption_key
 
-
     @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
+    def __call__(self, data: Any) -> Any:
         try:
             target_chat_id = self._get_chat_id(data)
             extracted_path = self._extract_from_data(data, self.file_path_key) if self.file_path_key else None
-            if not extracted_path and isinstance(data.get("telegram"), dict):
-                extracted_path = data["telegram"].get("message") or data["telegram"].get("path") or data["telegram"].get("file_path")
+            telegram_data = self._get_val(data, "telegram")
+            if not extracted_path and telegram_data:
+                extracted_path = self._get_val(telegram_data, "message") or self._get_val(telegram_data, "path") or self._get_val(telegram_data, "file_path")
 
-            path = self.file_path or extracted_path or data.get("file_path")
+            path = self.file_path or extracted_path or self._get_val(data, "file_path")
             if not path:
                 raise ValueError("File path is required either via file_path parameter or data dict")
 
             extracted_caption = self._extract_from_data(data, self.caption_key) if self.caption_key else None
-            if not extracted_caption and isinstance(data.get("telegram"), dict):
-                extracted_caption = data["telegram"].get("caption")
+            if not extracted_caption and telegram_data:
+                extracted_caption = self._get_val(telegram_data, "caption")
 
             text = self.caption or extracted_caption
 
             with self._get_client(target_chat_id) as sender:
-                response = sender.send_document(document_path=path, caption=text, chat_id=target_chat_id)
+                response = sender.send_document(to=target_chat_id, path=path, caption=text)
 
-            data[self.response_key] = {
-                "success": True,
+            return self._set_response(data, {
+                "success": bool(response),
                 "file_sent": path,
                 "caption": text,
                 "response": str(response)
-            }
-            return data
+            })
 
         except Exception as e:
-            data[self.response_key] = {"success": False, "error": str(e)}
+            self._set_response(data, {"success": False, "error": str(e)})
             raise RuntimeError(f"Telegram File Notification failed: {str(e)}")
+
 
 
 @step(
@@ -313,9 +327,9 @@ class TelegramNotifyStep(BaseTelegramStep):
         self.message_key = message_key
 
     @to_obj
-    def __call__(self, data: Dict[str, Any]) -> Dict[str, Any]:
-        telegram_data = data.get("telegram") if isinstance(data.get("telegram"), dict) else {}
-        msg_type = (telegram_data.get("type") or "text").lower()
+    def __call__(self, data: Any) -> Any:
+        telegram_data = self._get_val(data, "telegram")
+        msg_type = (self._get_val(telegram_data, "type", "text") or "text").lower()
 
         if msg_type in ("image", "photo"):
             step = TelegramSendImageStep(
@@ -351,6 +365,7 @@ class TelegramNotifyStep(BaseTelegramStep):
                 response_key=self.response_key,
             )
             return step(data)
+
 
 
 
